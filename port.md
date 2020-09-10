@@ -24,7 +24,7 @@ Handle additional port number present to facilitate people with out-of-subnet lo
 - [x] There is no commented out code in this PR.
 - [x] I have followed the [development checklist][dev-checklist]
 - [x] The code has been formatted using Black (`black --fast homeassistant tests`)
-- [ ] Tests have been added to verify that the new code works.
+- [x] Tests have been added to verify that the new code works.
 
 If user exposed functionality or configuration variables are added/changed:
 
