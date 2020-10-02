@@ -1,6 +1,6 @@
 ## Proposed change
-Fix `unique_id`s having incorrect value (i.e. `None`).
-
+Small fixes from testers feedback applied.
+With autumn and winter seasons coming climate systems are started again :)
 
 ## Type of change
 
@@ -13,8 +13,8 @@ Fix `unique_id`s having incorrect value (i.e. `None`).
 
 ## Additional information
 
-- This PR fixes or closes issue: fixes #38389
-- This PR is related to issue:
+- This PR fixes or closes issue: fixes #
+- This PR is related to issue: 
 - Link to documentation pull request: 
 
 ## Checklist
@@ -24,7 +24,7 @@ Fix `unique_id`s having incorrect value (i.e. `None`).
 - [x] There is no commented out code in this PR.
 - [x] I have followed the [development checklist][dev-checklist]
 - [x] The code has been formatted using Black (`black --fast homeassistant tests`)
-- [x] Tests have been added to verify that the new code works.
+- [ ] Tests have been added to verify that the new code works.
 
 If user exposed functionality or configuration variables are added/changed:
 
@@ -34,7 +34,7 @@ If the code communicates with devices, web services, or third-party tools:
 
 - [x] The [manifest file][manifest-docs] has all fields filled out correctly.  
       Updated and included derived files by running: `python3 -m script.hassfest`.
-- [x] New or updated dependencies have been added to `requirements_all.txt`.  
+- [ ] New or updated dependencies have been added to `requirements_all.txt`.  
       Updated by running `python3 -m script.gen_requirements_all`.
 - [ ] Untested files have been added to `.coveragerc`.
 
