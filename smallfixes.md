@@ -1,6 +1,5 @@
 ## Proposed change
-Small fixes from testers feedback applied.
-With autumn and winter seasons coming climate systems are started again :)
+Small fixes from testers feedback applied including climate handling and state. With autumn and winter seasons coming climate systems are started again as such we incorporated forthcoming changes from it :) During this process we also moved to (more) centralized consts to optimize readabilty and debugging.
 
 ## Type of change
 
@@ -24,7 +23,7 @@ With autumn and winter seasons coming climate systems are started again :)
 - [x] There is no commented out code in this PR.
 - [x] I have followed the [development checklist][dev-checklist]
 - [x] The code has been formatted using Black (`black --fast homeassistant tests`)
-- [ ] Tests have been added to verify that the new code works.
+- [x] Tests have been added to verify that the new code works.
 
 If user exposed functionality or configuration variables are added/changed:
 
@@ -34,7 +33,7 @@ If the code communicates with devices, web services, or third-party tools:
 
 - [x] The [manifest file][manifest-docs] has all fields filled out correctly.  
       Updated and included derived files by running: `python3 -m script.hassfest`.
-- [ ] New or updated dependencies have been added to `requirements_all.txt`.  
+- [x] New or updated dependencies have been added to `requirements_all.txt`.  
       Updated by running `python3 -m script.gen_requirements_all`.
-- [ ] Untested files have been added to `.coveragerc`.
+- [x] Untested files have been added to `.coveragerc`.
 
