@@ -139,5 +139,10 @@ echo "
         </body>
 </html>" >> ${pdir}/index.html
 
-git status
+git config --global user.name 'diff2html'
+git config --global user.email 'plugwise@users.noreply.github.com'
+git remote set-url origin https://x-access-token:${{ secrets.PAT_CT }}@github.com/$GITHUB_REPOSITORY
+git checkout $GITHUB_HEAD_REF
+git commit -am "Update: ${GITHUB_REF##*/} - Diff report completed"
+git push origin ${GITHUB_REF##*/}
 
