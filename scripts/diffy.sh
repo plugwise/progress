@@ -84,9 +84,7 @@ echo "
 cat ${branches}| while read prbranch
 do
         cd ${prdir}
-        git fetch origin ${prbranch}
-        git checkout origin/${prbranch}
-        #git rebase origin/${prbranch}
+        git checkout ${prbranch}
 
         cd $clonedir
         echo "" >  ${difffile}
