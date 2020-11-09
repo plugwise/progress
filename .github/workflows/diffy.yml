@@ -30,20 +30,15 @@ jobs:
         node-version: 10.x
     - name: Install diff2html
       run: npm install diff2html
-    - name: Restore base diff environment
+    - name: Cache base diff environment
       id: cache-clones
       uses: actions/cache@v2
       with:
         path: clones
         key: >-
-          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{
-          hashFiles('scripts/diffy.sh') }}-${{
-          hashFiles('branches.txt') }}-${{
-          hashFiles('betabranches.txt') }}
+          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/setup.sh') }}
         restore-keys: |
-          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/diffy.sh') }}-${{ hashFiles('branches.txt') }}-${{ hashFiles('betabranches.txt') }}}
-          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/diffy.sh') }}-${{ hashFiles('branches.txt') }}
-          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/diffy.sh') }}
+          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/setup.sh') }}
           ${{ env.CACHE_VERSION}}-${{ runner.os }}-base
     - name: Setup clones
       run: scripts/setup.sh
@@ -60,10 +55,7 @@ jobs:
       with:
         path: clones
         key: >-
-          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{
-          hashFiles('scripts/diffy.sh') }}-${{
-          hashFiles('branches.txt') }}-${{
-          hashFiles('betabranches.txt') }}
+          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/setup.sh') }}
     - name: Fail job if cache restore failed
       if: steps.cache-clones.outputs.cache-hit != 'true'
       run: |
