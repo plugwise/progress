@@ -73,7 +73,7 @@ do
         justprbranch=`echo ${prbranch} | sed 's/^plugwise-//g'`
         echo "
                         <li><a href='diff_${prbranch}.html'>Unified diff core:dev vs pw-core:${prbranch}</a> - <a href='https://github.com/plugwise/progress/blob/master/${justprbranch}.md'>PR suggested text</a> (<a href='https://raw.githu
-busercontent.com/plugwise/progress/master/${justprbranch}.md'>raw</a>) - <a href='https://github.com/home-assistant/core/compare/dev...plugwise:plugwise-${prbranch}?expand=1'>Create PR@Core</a></li>" >> ${pdir}/index.html
+busercontent.com/plugwise/progress/master/${justprbranch}.md'>raw</a>) - <a href='https://github.com/home-assistant/core/compare/dev...plugwise:${prbranch}?expand=1'>Create PR@Core</a></li>" >> ${pdir}/index.html
 
         cd ${betadir}
         git checkout master
