@@ -57,7 +57,7 @@ fi
 ## MAIN check
 cd $basedir
 echo "" >  ${difffile}
-diff -X ${basedir}/ignorelist -ur ${coredir}/ ${betadir}/ >> ${difffile}
+diff -X ${basedir}/ignorelist.txt -ur ${coredir}/ ${betadir}/ >> ${difffile}
 
 diff2html -F ${pdir}/diff.html -i file -- ${difffile}
 
@@ -83,7 +83,7 @@ do
 
         cd $basedir
         echo "" >  ${difffile}
-        diff -X ${basedir}/ignorelist -ur ${betadir}/ ${coredir}/ >> ${difffile}
+        diff -X ${basedir}/ignorelist.txt -ur ${betadir}/ ${coredir}/ >> ${difffile}
 
         diff2html -F ${pdir}/diff_${betabranch}.html -i file -- ${difffile}
 
@@ -108,7 +108,7 @@ do
 
         cd $basedir
         echo "" >  ${difffile}
-        diff -X ${basedir}/ignorelist -ur ${coredir}/ ${prdir}/ >> ${difffile}
+        diff -X ${basedir}/ignorelist.txt -ur ${coredir}/ ${prdir}/ >> ${difffile}
 
         diff2html -F ${pdir}/diff_${prbranch}.html -i file -- ${difffile}
 
@@ -140,7 +140,7 @@ do
 
         cd $basedir
         echo "" >  ${difffile}
-        diff -X ${basedir}/ignorelist -ur ${bmdir}/ ${prdir}/ >> ${difffile}
+        diff -X ${basedir}/ignorelist.txt -ur ${bmdir}/ ${prdir}/ >> ${difffile}
 
         diff2html -F ${pdir}/bm_diff_${prbranch}.html -i file -- ${difffile}
 
