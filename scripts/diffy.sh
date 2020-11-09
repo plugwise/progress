@@ -123,6 +123,7 @@ ls -alrt
 
 git remote set-url origin https://x-access-token:${{ secrets.PROGRESS_DEPLOYKEY }}@github.com/$GITHUB_REPOSITORY
 git checkout $GITHUB_HEAD_REF
-git commit -am "Update: ${GITHUB_REF##*/} - Diff report completed"
+git add -A 
+git commit -m "Update: ${GITHUB_REF##*/} - Diff report completed"
 git push origin ${GITHUB_REF##*/}
 
