@@ -116,7 +116,10 @@ echo "
         </body>
 </html>" >> ${pdir}/index.html
 
-git remote set-url origin https://x-access-token:${{ secrets.PAT_CT }}@github.com/$GITHUB_REPOSITORY
+cd ${pdir}
+pwd
+ls -alrt
+
 git checkout $GITHUB_HEAD_REF
 git commit -am "Update: ${GITHUB_REF##*/} - Diff report completed"
 git push origin ${GITHUB_REF##*/}
