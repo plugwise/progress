@@ -7,8 +7,8 @@ bmdir="${clonedir}/beta-master/custom_components/plugwise/"
 difffile="${clonedir}/plugwise.diff"
 pdir="$(pwd)"
 
-branches="$(cat ${pdir}/branches.txt)"
-betabranches="$(cat ${pdir}/betabranches.txt)"
+branches="${pdir}/branches.txt"
+betabranches="${pdir}/betabranches.txt"
 
 # Clone all repos (and set upstream where needed)
 cd $clonedir
@@ -55,7 +55,7 @@ echo "
                 <p>Branch differences (still in beta)</p>
                 <ul>" >> ${pdir}/index.html
 
-echo ${betabranches}| while read betabranch
+cat ${betabranches}| while read betabranch
 do
         cd ${betadir}
         git checkout ${betabranch}
@@ -78,7 +78,7 @@ echo "
                 <p>Various PR branch differences against Core (dev/upstreaming)</p>
                 <ul>" >> ${pdir}/index.html
 
-echo ${branches}| while read prbranch
+cat ${branches}| while read prbranch
 do
         cd ${prdir}
         git checkout ${prbranch}
@@ -112,7 +112,7 @@ echo "
                 <p>Various PR branch differences against -beta master (downstreaming/verify)</p>
                 <ul>" >> ${pdir}/index.html
 
-echo ${branches}| while read prbranch
+cat ${branches}| while read prbranch
 do
         cd ${prdir}
         git checkout ${prbranch}
