@@ -41,7 +41,7 @@ jobs:
           hashFiles('branches.txt') }}-${{
           hashFiles('betabranches.txt') }}
         restore-keys: |
-          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/diffy.sh') }}-${{ hashFiles('branches.txt') }-${{ hashFiles('betabranches.txt') }}}
+          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/diffy.sh') }}-${{ hashFiles('branches.txt') }}-${{ hashFiles('betabranches.txt') }}}
           ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/diffy.sh') }}-${{ hashFiles('branches.txt') }}
           ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/diffy.sh') }}
     - name: Run diffy
