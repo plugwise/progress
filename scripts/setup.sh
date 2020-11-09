@@ -17,11 +17,11 @@ cd $clonedir
 #if [ ! -d ha-core ]; then
 #        git clone https://github.com/home-assistant/core ha-core
 #fi
-if [ ! -d pw-core ]; then
+#if [ ! -d pw-core ]; then
 #        git clone https://github.com/plugwise/home-assistant.core pw-core
-        cd ${prdir}
+#        cd ${prdir}
 #        git remote add upstream https://github.com/home-assistant/core.git
-fi
+#fi
 #if [ ! -d beta ]; then
 #        git clone https://github.com/plugwise/plugwise-beta beta
 #fi
@@ -29,3 +29,5 @@ fi
 #        git clone https://github.com/plugwise/plugwise-beta beta-master
 #fi
 
+        cd ${prdir}
+        git remote add upstream https://github.com/home-assistant/core.git
