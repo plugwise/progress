@@ -14,30 +14,32 @@ betabranches="$(cat ${pdir}/betabranches.txt)"
 cd $clonedir
         echo "*** $coredir"
         cd ${coredir}
+	git remote -v
         git checkout dev
         git fetch
         git rebase
 cd $clonedir
         echo "*** $prdir"
         cd ${prdir}
+	git remote -v
         git checkout --track origin/dev
         git fetch upstream dev
         git rebase upstream/dev
 cd $clonedir
         echo "*** $betadir"
         cd ${betadir}
+	git remote -v
         git pull
 cd $clonedir
         echo "*** $bmdir"
         cd ${bmdir}
+	git remote -v
         git pull
 
 
 cd $clonedir
 echo "" >  ${difffile}
 diff -X ${pdir}/ignorelist.txt -ur ${coredir}/ ${betadir}/ >> ${difffile}
-
-diff2html -F ${pdir}/diff.html -i file -- ${difffile}
 
 echo "<html>
         <head>

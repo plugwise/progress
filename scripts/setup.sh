@@ -11,7 +11,6 @@ branches="$(cat ${pdir}/branches.txt)"
 betabranches="$(cat ${pdir}/betabranches.txt)"
 
 mkdir -p ${clonedir}
-find ./ -name diff2html -type f
 
 # Clone all repos (and set upstream where needed)
 cd $clonedir
