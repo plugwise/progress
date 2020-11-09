@@ -52,19 +52,19 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: plugwise/home-assistant.core
-        token: ${{ secrets.hacore_deploykey }}
+        ssh-key: ${{ secrets.hacore_deploykey }}
         path: clones/pw-core
     - name: Checkout beta component (branch-switch)
       uses: actions/checkout@v2
       with:
         repository: plugwise/plugwise-beta
-        token: ${{ secrets.hacore_deploykey }}
+        ssh-key: ${{ secrets.hacore_deploykey }}
         path: clones/beta
     - name: Checkout beta component (branch-switch)
       uses: actions/checkout@v2
       with:
         repository: plugwise/plugwise-beta
-        token: ${{ secrets.plugwise_deploykey }}
+        ssh-key: ${{ secrets.plugwise_deploykey }}
         path: clones/beta-master
 
     - name: Setup clones
