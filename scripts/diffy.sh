@@ -36,9 +36,6 @@ cd $clonedir
 	git remote -v
         git pull
 
-alias diff2html=~/node_modules/diff2html-cli/bin/diff2html
-
-
 cd $clonedir
 echo "" >  ${difffile}
 diff -X ${pdir}/ignorelist.txt -ur ${coredir}/ ${betadir}/ >> ${difffile}
