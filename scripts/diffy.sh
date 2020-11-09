@@ -57,9 +57,9 @@ fi
 ## MAIN check
 cd $basedir
 echo "" >  ${difffile}
-diff -X ${basedir}/ignorelist.txt -ur ${coredir}/ ${betadir}/ >> ${difffile}
+diff -X ${pdir}/ignorelist.txt -ur ${coredir}/ ${betadir}/ >> ${difffile}
 
-${basedir}/node_modules/diff2html -F ${pdir}/diff.html -i file -- ${difffile}
+${pdir}/node_modules/diff2html -F ${pdir}/diff.html -i file -- ${difffile}
 
 echo "<html>
         <head>
@@ -83,9 +83,9 @@ do
 
         cd $basedir
         echo "" >  ${difffile}
-        diff -X ${basedir}/ignorelist.txt -ur ${betadir}/ ${coredir}/ >> ${difffile}
+        diff -X ${pdir}/ignorelist.txt -ur ${betadir}/ ${coredir}/ >> ${difffile}
 
-        ${basedir}/node_modules/diff2html -F ${pdir}/diff_${betabranch}.html -i file -- ${difffile}
+        ${pdir}/node_modules/diff2html -F ${pdir}/diff_${betabranch}.html -i file -- ${difffile}
 
         echo "
                         <li><a href='diff_${betabranch}.html'>Unified diff core:dev vs beta:${betabranch}</a></li>" >> ${pdir}/index.html
@@ -108,9 +108,9 @@ do
 
         cd $basedir
         echo "" >  ${difffile}
-        diff -X ${basedir}/ignorelist.txt -ur ${coredir}/ ${prdir}/ >> ${difffile}
+        diff -X ${pdir}/ignorelist.txt -ur ${coredir}/ ${prdir}/ >> ${difffile}
 
-        ${basedir}/node_modules/diff2html -F ${pdir}/diff_${prbranch}.html -i file -- ${difffile}
+        ${pdir}/node_modules/diff2html -F ${pdir}/diff_${prbranch}.html -i file -- ${difffile}
 
         justprbranch=`echo ${prbranch} | sed 's/^plugwise-//g'`
         echo "
@@ -140,9 +140,9 @@ do
 
         cd $basedir
         echo "" >  ${difffile}
-        diff -X ${basedir}/ignorelist.txt -ur ${bmdir}/ ${prdir}/ >> ${difffile}
+        diff -X ${pdir}/ignorelist.txt -ur ${bmdir}/ ${prdir}/ >> ${difffile}
 
-        ${basedir}/node_modules/diff2html -F ${pdir}/bm_diff_${prbranch}.html -i file -- ${difffile}
+        ${pdir}/node_modules/diff2html -F ${pdir}/bm_diff_${prbranch}.html -i file -- ${difffile}
 
         justprbranch=`echo ${prbranch} | sed 's/^plugwise-//g'`
         echo "
