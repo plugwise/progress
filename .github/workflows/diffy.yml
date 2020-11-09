@@ -43,7 +43,34 @@ jobs:
         node-version: 10.x
     - name: Install diff2html
       run: npm -g install diff2html-cli diff2html
+    - name: Checkout HA core
+      uses: actions/checkout@v2
+      with:
+        repository: home-assistant/core
+        path: clones/ha-core
+    - name: Checkout Plugwise fork of HA core
+      uses: actions/checkout@v2
+      with:
+        repository: plugwise/home-assistant.core
+        token: ${{ secrets.hacore_deploykey }}
+        path: clones/pw-core
+    - name: Checkout beta component (branch-switch)
+      uses: actions/checkout@v2
+      with:
+        repository: plugwise/plugwise-beta
+        token: ${{ secrets.hacore_deploykey }}
+        path: clones/beta
+    - name: Checkout beta component (branch-switch)
+      uses: actions/checkout@v2
+      with:
+        repository: plugwise/plugwise-beta
+        token: ${{ secrets.plugwise_deploykey }}
+        path: clones/beta-master
+	ref: master
+
     - name: Setup clones
       run: scripts/setup.sh
     - name: Run diffy
       run: scripts/diffy.sh
+
+
