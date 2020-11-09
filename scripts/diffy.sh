@@ -59,7 +59,7 @@ cd $basedir
 echo "" >  ${difffile}
 diff -X ${basedir}/ignorelist.txt -ur ${coredir}/ ${betadir}/ >> ${difffile}
 
-diff2html -F ${pdir}/diff.html -i file -- ${difffile}
+${basedir}/node_modules/diff2html -F ${pdir}/diff.html -i file -- ${difffile}
 
 echo "<html>
         <head>
@@ -85,7 +85,7 @@ do
         echo "" >  ${difffile}
         diff -X ${basedir}/ignorelist.txt -ur ${betadir}/ ${coredir}/ >> ${difffile}
 
-        diff2html -F ${pdir}/diff_${betabranch}.html -i file -- ${difffile}
+        ${basedir}/node_modules/diff2html -F ${pdir}/diff_${betabranch}.html -i file -- ${difffile}
 
         echo "
                         <li><a href='diff_${betabranch}.html'>Unified diff core:dev vs beta:${betabranch}</a></li>" >> ${pdir}/index.html
@@ -110,7 +110,7 @@ do
         echo "" >  ${difffile}
         diff -X ${basedir}/ignorelist.txt -ur ${coredir}/ ${prdir}/ >> ${difffile}
 
-        diff2html -F ${pdir}/diff_${prbranch}.html -i file -- ${difffile}
+        ${basedir}/node_modules/diff2html -F ${pdir}/diff_${prbranch}.html -i file -- ${difffile}
 
         justprbranch=`echo ${prbranch} | sed 's/^plugwise-//g'`
         echo "
@@ -142,7 +142,7 @@ do
         echo "" >  ${difffile}
         diff -X ${basedir}/ignorelist.txt -ur ${bmdir}/ ${prdir}/ >> ${difffile}
 
-        diff2html -F ${pdir}/bm_diff_${prbranch}.html -i file -- ${difffile}
+        ${basedir}/node_modules/diff2html -F ${pdir}/bm_diff_${prbranch}.html -i file -- ${difffile}
 
         justprbranch=`echo ${prbranch} | sed 's/^plugwise-//g'`
         echo "
