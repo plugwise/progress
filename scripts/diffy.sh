@@ -10,8 +10,6 @@ pdir="$(pwd)"
 branches="$(cat ${pdir}/branches.txt)"
 betabranches="$(cat ${pdir}/betabranches.txt)"
 
-find ./ -name diff2html -type f
-
 # Clone all repos (and set upstream where needed)
 cd $clonedir
         echo "*** $coredir"
@@ -39,7 +37,7 @@ cd $clonedir
 echo "" >  ${difffile}
 diff -X ${pdir}/ignorelist.txt -ur ${coredir}/ ${betadir}/ >> ${difffile}
 
-${pdir}/node_modules/diff2html -F ${pdir}/diff.html -i file -- ${difffile}
+diff2html -F ${pdir}/diff.html -i file -- ${difffile}
 
 echo "<html>
         <head>
@@ -65,7 +63,7 @@ do
         echo "" >  ${difffile}
         diff -X ${pdir}/ignorelist.txt -ur ${betadir}/ ${coredir}/ >> ${difffile}
 
-        ${pdir}/node_modules/diff2html -F ${pdir}/diff_${betabranch}.html -i file -- ${difffile}
+        diff2html -F ${pdir}/diff_${betabranch}.html -i file -- ${difffile}
 
         echo "
                         <li><a href='diff_${betabranch}.html'>Unified diff core:dev vs beta:${betabranch}</a></li>" >> ${pdir}/index.html
@@ -90,7 +88,7 @@ do
         echo "" >  ${difffile}
         diff -X ${pdir}/ignorelist.txt -ur ${coredir}/ ${prdir}/ >> ${difffile}
 
-        ${pdir}/node_modules/diff2html -F ${pdir}/diff_${prbranch}.html -i file -- ${difffile}
+        diff2html -F ${pdir}/diff_${prbranch}.html -i file -- ${difffile}
 
         justprbranch=`echo ${prbranch} | sed 's/^plugwise-//g'`
         echo "
@@ -122,7 +120,7 @@ do
         echo "" >  ${difffile}
         diff -X ${pdir}/ignorelist.txt -ur ${bmdir}/ ${prdir}/ >> ${difffile}
 
-        ${pdir}/node_modules/diff2html -F ${pdir}/bm_diff_${prbranch}.html -i file -- ${difffile}
+        diff2html -F ${pdir}/bm_diff_${prbranch}.html -i file -- ${difffile}
 
         justprbranch=`echo ${prbranch} | sed 's/^plugwise-//g'`
         echo "
