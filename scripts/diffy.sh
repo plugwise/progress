@@ -84,6 +84,7 @@ echo "
 cat ${branches}| while read prbranch
 do
         cd ${prdir}
+	git branch -a
         git checkout ${prbranch}
 
         cd $clonedir
