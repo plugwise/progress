@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash -x
 clonedir="$(pwd)/clones"
 coredir="${clonedir}/ha-core/homeassistant/components/plugwise/"
 prdir="${clonedir}/pw-core/homeassistant/components/plugwise/"
