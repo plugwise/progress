@@ -17,6 +17,8 @@ cd $clonedir
 echo "" >  ${difffile}
 diff -X ${pdir}/ignorelist.txt -ur ${coredir}/ ${betadir}/ >> ${difffile}
 
+diff2html -F ${pdir}/diff.html -i file -- ${difffile}
+
 echo "<html>
         <head>
                 <title>Plugwise Core/beta progress</title>
