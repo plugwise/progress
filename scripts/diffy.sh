@@ -12,6 +12,8 @@ betabranches="$(cat ${pdir}/betabranches.txt)"
 
 mkdir =p ${basedir}
 
+echo "cwd = $(pwd)"
+echo "dir $(find ./ -type d)"
 
 # Clone all repos (and set upstream where needed)
 cd $basedir

@@ -11,7 +11,7 @@ on:
 jobs:
   prepare:
     runs-on: ubuntu-latest
-    name: Check for differences
+    name: Prepare environment
     steps:
     - name: Check out our own code
       uses: actions/checkout@v2
@@ -30,8 +30,6 @@ jobs:
         node-version: 10.x
     - name: Install diff2html
       run: npm install diff2html
-    - name: Find diff2html
-      run: find ./ -name diff2html
     - name: Restore base diff environment
       id: cache-clones
       uses: actions/cache@v2
@@ -46,5 +44,27 @@ jobs:
           ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/diffy.sh') }}-${{ hashFiles('branches.txt') }}-${{ hashFiles('betabranches.txt') }}}
           ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/diffy.sh') }}-${{ hashFiles('branches.txt') }}
           ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/diffy.sh') }}
+
+  diff:
+    runs-on: ubuntu-latest
+    name: Check for differences
+    steps:
+    - name: Check out our own code
+      uses: actions/checkout@v2
+    - name: Restore base environment
+      id: cache-clones
+      uses: actions/cache@v2
+      with:
+        path: clones
+        key: >-
+          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{
+          hashFiles('scripts/diffy.sh') }}-${{
+          hashFiles('branches.txt') }}-${{
+          hashFiles('betabranches.txt') }}
+    - name: Fail job if cache restore failed
+      if: steps.cache-clones.outputs.cache-hit != 'true'
+      run: |
+        echo "Failed to restore environment from cache"
+        exit 1
     - name: Run diffy
       run: scripts/diffy.sh
