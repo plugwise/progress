@@ -1,0 +1,48 @@
+name: Plugwise differences
+
+env:
+  CACHE_VERSION: 1
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # weekly
+  push:
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    name: Check for differences
+    steps:
+    - name: Check out our own code
+      uses: actions/checkout@v2
+    - name: Cache Node.js modules
+      uses: actions/cache@v2
+      with:
+        # npm cache files are stored in `~/.npm` on Linux/macOS
+        path: ~/.npm 
+        key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.OS }}-node-
+          ${{ runner.OS }}-
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10.x
+    - name: Install diff2html
+      run: npm install diff2html
+    - name: Restore base diff environment
+      id: cache-clones
+      uses: actions/cache@v2
+      with:
+        path: clones
+        key: >-
+          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{
+          hashFiles('scripts/diffy.sh') }}-${{
+          hashFiles('branches.txt') }}-${{
+          hashFiles('betabranches.txt') }}
+        restore-keys: |
+          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/diffy.sh') }}-${{ hashFiles('branches.txt') }-${{ hashFiles('betabranches.txt') }}}
+          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/diffy.sh') }}-${{ hashFiles('branches.txt') }}
+          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/diffy.sh') }}
+    - name: Run diffy
+      run: scripts/diffy.sh
