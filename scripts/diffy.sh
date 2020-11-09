@@ -139,3 +139,5 @@ echo "
         </body>
 </html>" >> ${pdir}/index.html
 
+git diff
+
