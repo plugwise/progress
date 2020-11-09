@@ -1,7 +1,7 @@
 name: Plugwise differences
 
 env:
-  CACHE_VERSION: 1
+  CACHE_VERSION: 2
 
 on:
   schedule:
@@ -45,6 +45,8 @@ jobs:
           ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/diffy.sh') }}-${{ hashFiles('branches.txt') }}
           ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/diffy.sh') }}
           ${{ env.CACHE_VERSION}}-${{ runner.os }}-base
+    - name: Setup clones
+      run: scripts/setup.sh
 
   diff:
     runs-on: ubuntu-latest
