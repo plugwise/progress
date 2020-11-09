@@ -16,7 +16,7 @@ jobs:
     - name: Check out our own code
       uses: actions/checkout@v2
     - name: Restore base environment
-      id: cache-clones
+      id: restore-clones
       uses: actions/cache@v2
       with:
         path: clones
@@ -24,7 +24,7 @@ jobs:
           ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/setup.sh') }}-${{ hashFiles('scripts.diffy.sh') }}
     - name: Cache base diff environment
       id: cache-clones
-      if: steps.cache-clones.outputs.cache-hit != 'true'
+      if: steps.restore-clones.outputs.cache-hit != 'true'
       uses: actions/cache@v2
       with:
         path: |
