@@ -10,6 +10,8 @@ pdir="$(pwd)"
 branches="$(cat ${pdir}/branches.txt)"
 betabranches="$(cat ${pdir}/betabranches.txt)"
 
+mkdir =p ${basedir}
+
 
 # Clone all repos (and set upstream where needed)
 cd $basedir
