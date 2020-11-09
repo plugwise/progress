@@ -1,13 +1,13 @@
 ## Proposed change
-Small fixes from testers feedback applied including climate handling and state. With autumn and winter seasons coming climate systems are started again as such we incorporated forthcoming changes from it :) 
+Move consts centrally and general code improvements.
 
 ## Type of change
 
 - [ ] Dependency upgrade
-- [x] Bugfix (non-breaking change which fixes an issue)
+- [ ] Bugfix (non-breaking change which fixes an issue)
 - [ ] New integration (thank you!)
 - [ ] New feature (which adds functionality to an existing integration)
-- [ ] Breaking change (fix/feature causing existing functionality to break)
+- [x] Breaking change (fix/feature causing existing functionality to break)
 - [ ] Code quality improvements to existing code or addition of tests
 
 ## Additional information
@@ -23,7 +23,7 @@ Small fixes from testers feedback applied including climate handling and state. 
 - [x] There is no commented out code in this PR.
 - [x] I have followed the [development checklist][dev-checklist]
 - [x] The code has been formatted using Black (`black --fast homeassistant tests`)
-- [ ] Tests have been added to verify that the new code works.
+- [x] Tests have been added to verify that the new code works.
 
 If user exposed functionality or configuration variables are added/changed:
 
