@@ -10,6 +10,9 @@ pdir="$(pwd)"
 branches="${pdir}/branches.txt"
 betabranches="${pdir}/betabranches.txt"
 
+git config --global user.name 'diff2html'
+git config --global user.email 'plugwise@users.noreply.github.com'
+
 # Clone all repos (and set upstream where needed)
 cd $clonedir
         echo "*** $coredir"
@@ -139,8 +142,6 @@ echo "
         </body>
 </html>" >> ${pdir}/index.html
 
-git config --global user.name 'diff2html'
-git config --global user.email 'plugwise@users.noreply.github.com'
 git remote set-url origin https://x-access-token:${{ secrets.PAT_CT }}@github.com/$GITHUB_REPOSITORY
 git checkout $GITHUB_HEAD_REF
 git commit -am "Update: ${GITHUB_REF##*/} - Diff report completed"
