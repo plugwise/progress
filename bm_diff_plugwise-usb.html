@@ -145,8 +145,8 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
           <path d="M6 9H3V7h3V4l5 4-5 4V9z m8-7v12c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h12c0.55 0 1 0.45 1 1z m-1 0H1v12h12V2z"></path>
       </svg>      <a href="#d2h-502062" class="d2h-file-name">/home/runner/work/progress/progress/clones/{beta-master/custom_components → pw-core/homeassistant/components}/plugwise/gateway.py</a>
       <span class="d2h-file-stats">
-          <span class="d2h-lines-added">+34</span>
-          <span class="d2h-lines-deleted">-91</span>
+          <span class="d2h-lines-added">+43</span>
+          <span class="d2h-lines-deleted">-90</span>
       </span>
     </span>
 </li>
@@ -193,8 +193,8 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
           <path d="M6 9H3V7h3V4l5 4-5 4V9z m8-7v12c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h12c0.55 0 1 0.45 1 1z m-1 0H1v12h12V2z"></path>
       </svg>      <a href="#d2h-455940" class="d2h-file-name">/home/runner/work/progress/progress/clones/{beta-master/custom_components → pw-core/homeassistant/components}/plugwise/switch.py</a>
       <span class="d2h-file-stats">
-          <span class="d2h-lines-added">+91</span>
-          <span class="d2h-lines-deleted">-64</span>
+          <span class="d2h-lines-added">+94</span>
+          <span class="d2h-lines-deleted">-100</span>
       </span>
     </span>
 </li>
@@ -17865,7 +17865,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line d2h-info">@@ -56,22 +52,9 @@</div>
+        <div class="d2h-code-line d2h-info">@@ -56,45 +52,32 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
@@ -17963,7 +17963,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <td class="d2h-del">
         <div class="d2h-code-line d2h-del">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        username = DEFAULT_USERNAME</span>
+            <span class="d2h-code-line-ctn">        data = {**entry.data}</span>
         </div>
     </td>
 </tr><tr>
@@ -17974,7 +17974,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <td class="d2h-del">
         <div class="d2h-code-line d2h-del">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        data = {**entry.data}</span>
+            <span class="d2h-code-line-ctn">        data.update({&quot;username&quot;: DEFAULT_USERNAME})</span>
         </div>
     </td>
 </tr><tr>
@@ -17985,7 +17985,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <td class="d2h-del">
         <div class="d2h-code-line d2h-del">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        data.update({&quot;username&quot;: username})</span>
+            <span class="d2h-code-line-ctn">        entry_updates[&quot;data&quot;] = data</span>
         </div>
     </td>
 </tr><tr>
@@ -17996,7 +17996,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <td class="d2h-del">
         <div class="d2h-code-line d2h-del">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        entry_updates[&quot;data&quot;] = data</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -18007,7 +18007,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <td class="d2h-del">
         <div class="d2h-code-line d2h-del">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">    if entry_updates:</span>
         </div>
     </td>
 </tr><tr>
@@ -18018,7 +18018,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <td class="d2h-del">
         <div class="d2h-code-line d2h-del">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    if entry_updates:</span>
+            <span class="d2h-code-line-ctn">        hass.config_entries.async_update_entry(entry, **entry_updates)</span>
         </div>
     </td>
 </tr><tr>
@@ -18029,23 +18029,12 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <td class="d2h-del">
         <div class="d2h-code-line d2h-del">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        hass.config_entries.async_update_entry(entry, **entry_updates)</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">71</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line d2h-del">
-            <span class="d2h-code-line-prefix">-</span>
             <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">72</div>
+      <div class="line-num1">71</div>
 <div class="line-num2">55</div>
     </td>
     <td class="d2h-cntx">
@@ -18056,7 +18045,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">73</div>
+      <div class="line-num1">72</div>
 <div class="line-num2">56</div>
     </td>
     <td class="d2h-cntx">
@@ -18067,7 +18056,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">74</div>
+      <div class="line-num1">73</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -18089,7 +18078,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">75</div>
+      <div class="line-num1">74</div>
 <div class="line-num2">58</div>
     </td>
     <td class="d2h-cntx">
@@ -18100,7 +18089,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">76</div>
+      <div class="line-num1">75</div>
 <div class="line-num2">59</div>
     </td>
     <td class="d2h-cntx">
@@ -18111,7 +18100,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">77</div>
+      <div class="line-num1">76</div>
 <div class="line-num2">60</div>
     </td>
     <td class="d2h-cntx">
@@ -18120,15 +18109,108 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <span class="d2h-code-line-ctn">        timeout=30,</span>
         </div>
     </td>
-</tr>
-<tr>
-    <td class="d2h-code-linenumber d2h-info"></td>
-    <td class="d2h-info">
-        <div class="d2h-code-line d2h-info">@@ -82,7 +65,7 @@</div>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">77</div>
+<div class="line-num2">61</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        websession=websession,</span>
+        </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">78</div>
+<div class="line-num2">62</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">    )</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">79</div>
+<div class="line-num2">63</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">80</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">    # Migrate to a valid unique_id when needed</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">81</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">    if entry.unique_id is None:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
       <div class="line-num1">82</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        if api.smile_version[0] != &quot;1.8.0&quot;:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">83</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            hass.config_entries.async_update_entry(entry, unique_id=api.smile_hostname)</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">84</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">85</div>
+<div class="line-num2">64</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">    try:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">86</div>
 <div class="line-num2">65</div>
     </td>
     <td class="d2h-cntx">
@@ -18138,19 +18220,19 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">83</div>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
 <div class="line-num2">66</div>
     </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
+    <td class="d2h-ins">
+        <div class="d2h-code-line d2h-ins">
+            <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">84</div>
+      <div class="line-num1">87</div>
 <div class="line-num2">67</div>
     </td>
     <td class="d2h-cntx">
@@ -18161,13 +18243,13 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">85</div>
+      <div class="line-num1">88</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line d2h-del d2h-change">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            _LOGGER.error(&quot;Unable to connect to Smile<del> %s</del>&quot;<del>, api.smile_name</del>)</span>
+            <span class="d2h-code-line-ctn">            _LOGGER.error(&quot;Unable to connect to <del>the </del>Smile<del>&#x2F;Stretch</del>&quot;)</span>
         </div>
     </td>
 </tr><tr>
@@ -18183,7 +18265,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">86</div>
+      <div class="line-num1">89</div>
 <div class="line-num2">69</div>
     </td>
     <td class="d2h-cntx">
@@ -18193,19 +18275,19 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">87</div>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
 <div class="line-num2">70</div>
     </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
+    <td class="d2h-ins">
+        <div class="d2h-code-line d2h-ins">
+            <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">88</div>
+      <div class="line-num1">90</div>
 <div class="line-num2">71</div>
     </td>
     <td class="d2h-cntx">
@@ -18214,15 +18296,20 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <span class="d2h-code-line-ctn">    except InvalidAuthentication:</span>
         </div>
     </td>
-</tr>
-<tr>
-    <td class="d2h-code-linenumber d2h-info"></td>
-    <td class="d2h-info">
-        <div class="d2h-code-line d2h-info">@@ -90,7 +73,7 @@</div>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">91</div>
+<div class="line-num2">72</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        _LOGGER.error(&quot;Invalid username or Smile ID&quot;)</span>
+        </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">90</div>
+      <div class="line-num1">92</div>
 <div class="line-num2">73</div>
     </td>
     <td class="d2h-cntx">
@@ -18232,19 +18319,19 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">91</div>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
 <div class="line-num2">74</div>
     </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
+    <td class="d2h-ins">
+        <div class="d2h-code-line d2h-ins">
+            <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">92</div>
+      <div class="line-num1">93</div>
 <div class="line-num2">75</div>
     </td>
     <td class="d2h-cntx">
@@ -18255,13 +18342,13 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">93</div>
+      <div class="line-num1">94</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line d2h-del d2h-change">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        _LOGGER.error(&quot;Error while communicating to <del>Smile</del> %s&quot;, api.smile_name)</span>
+            <span class="d2h-code-line-ctn">        _LOGGER.error(&quot;Error while communicating to <del>the</del> <del>Smile&#x2F;Stretch</del>&quot;)</span>
         </div>
     </td>
 </tr><tr>
@@ -18272,12 +18359,12 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line d2h-ins d2h-change">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        _LOGGER.error(&quot;Error while communicating to <ins>device</ins> %s&quot;, api.smile_name)</span>
+            <span class="d2h-code-line-ctn">        _LOGGER.error(&quot;Error while communicating to <ins>device</ins> <ins>%s</ins>&quot;<ins>, api.smile_name</ins>)</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">94</div>
+      <div class="line-num1">95</div>
 <div class="line-num2">77</div>
     </td>
     <td class="d2h-cntx">
@@ -18287,13 +18374,13 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">95</div>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
 <div class="line-num2">78</div>
     </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
+    <td class="d2h-ins">
+        <div class="d2h-code-line d2h-ins">
+            <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
@@ -18306,6 +18393,61 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <div class="d2h-code-line d2h-cntx">
             <span class="d2h-code-line-prefix">&nbsp;</span>
             <span class="d2h-code-line-ctn">    except asyncio.TimeoutError as err:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del d2h-change">
+      <div class="line-num1">97</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-line d2h-del d2h-change">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        _LOGGER.error(&quot;Timeout while connecting to <del>the</del> <del>Smile&#x2F;Stretch</del>&quot;)</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins d2h-change">
+      <div class="line-num1"></div>
+<div class="line-num2">80</div>
+    </td>
+    <td class="d2h-ins d2h-change">
+        <div class="d2h-code-line d2h-ins d2h-change">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">        _LOGGER.error(&quot;Timeout while connecting to <ins>Smile</ins> <ins>%s</ins>&quot;<ins>, api.smile_name</ins>)</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">98</div>
+<div class="line-num2">81</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        raise ConfigEntryNotReady from err</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">99</div>
+<div class="line-num2">82</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">100</div>
+<div class="line-num2">83</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">    update_interval = timedelta(</span>
         </div>
     </td>
 </tr>
@@ -18681,7 +18823,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line d2h-info">@@ -135,31 +108,21 @@</div>
+        <div class="d2h-code-line d2h-info">@@ -135,21 +108,21 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
@@ -18717,151 +18859,96 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">138</div>
-<div class="line-num2"></div>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">111</div>
     </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line d2h-del">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    _LOGGER.debug(&quot;Async update interval %s&quot;, update_interval)</span>
+    <td class="d2h-ins">
+        <div class="d2h-code-line d2h-ins">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">    api.get_all_devices()</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">139</div>
-<div class="line-num2"></div>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">112</div>
     </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line d2h-del">
-            <span class="d2h-code-line-prefix">-</span>
+    <td class="d2h-ins">
+        <div class="d2h-code-line d2h-ins">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">113</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line d2h-ins">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">    if entry.unique_id is None:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">114</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line d2h-ins">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">        if api.smile_version[0] != &quot;1.8.0&quot;:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">115</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line d2h-ins">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">            hass.config_entries.async_update_entry(entry, unique_id=api.smile_hostname)</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">116</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line d2h-ins">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">138</div>
+<div class="line-num2">117</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">    undo_listener = entry.add_update_listener(_update_listener)</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">139</div>
+<div class="line-num2">118</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
             <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">140</div>
-<div class="line-num2">111</div>
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">    api.get_all_devices()</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">141</div>
-<div class="line-num2">112</div>
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">142</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line d2h-del">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    undo_listener = entry.add_update_listener(_update_listener)</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">143</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line d2h-del">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">144</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line d2h-del">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    # Migrate to a valid unique_id when needed</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">145</div>
-<div class="line-num2">113</div>
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">    if entry.unique_id is None:</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">146</div>
-<div class="line-num2">114</div>
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">        if api.smile_version[0] != &quot;1.8.0&quot;:</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">147</div>
-<div class="line-num2">115</div>
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">            hass.config_entries.async_update_entry(entry, unique_id=api.smile_hostname)</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">148</div>
-<div class="line-num2">116</div>
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">117</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    undo_listener = entry.add_update_listener(_update_listener)</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">118</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">149</div>
 <div class="line-num2">119</div>
     </td>
     <td class="d2h-cntx">
@@ -18872,7 +18959,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">150</div>
+      <div class="line-num1">141</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -18894,7 +18981,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">151</div>
+      <div class="line-num1">142</div>
 <div class="line-num2">121</div>
     </td>
     <td class="d2h-cntx">
@@ -18905,7 +18992,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">152</div>
+      <div class="line-num1">143</div>
 <div class="line-num2">122</div>
     </td>
     <td class="d2h-cntx">
@@ -18916,7 +19003,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">153</div>
+      <div class="line-num1">144</div>
 <div class="line-num2">123</div>
     </td>
     <td class="d2h-cntx">
@@ -18927,7 +19014,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">154</div>
+      <div class="line-num1">145</div>
 <div class="line-num2">124</div>
     </td>
     <td class="d2h-cntx">
@@ -18938,7 +19025,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">155</div>
+      <div class="line-num1">146</div>
 <div class="line-num2">125</div>
     </td>
     <td class="d2h-cntx">
@@ -18949,7 +19036,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">156</div>
+      <div class="line-num1">147</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -18960,18 +19047,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">157</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line d2h-del">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">158</div>
+      <div class="line-num1">148</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -18982,7 +19058,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">159</div>
+      <div class="line-num1">149</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -18993,7 +19069,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">160</div>
+      <div class="line-num1">150</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19004,7 +19080,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">161</div>
+      <div class="line-num1">151</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19015,7 +19091,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">162</div>
+      <div class="line-num1">152</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19026,7 +19102,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">163</div>
+      <div class="line-num1">153</div>
 <div class="line-num2">126</div>
     </td>
     <td class="d2h-cntx">
@@ -19037,7 +19113,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">164</div>
+      <div class="line-num1">154</div>
 <div class="line-num2">127</div>
     </td>
     <td class="d2h-cntx">
@@ -19048,7 +19124,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">165</div>
+      <div class="line-num1">155</div>
 <div class="line-num2">128</div>
     </td>
     <td class="d2h-cntx">
@@ -19061,11 +19137,11 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line d2h-info">@@ -171,35 +134,27 @@</div>
+        <div class="d2h-code-line d2h-info">@@ -161,35 +134,27 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">171</div>
+      <div class="line-num1">161</div>
 <div class="line-num2">134</div>
     </td>
     <td class="d2h-cntx">
@@ -19076,7 +19152,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">172</div>
+      <div class="line-num1">162</div>
 <div class="line-num2">135</div>
     </td>
     <td class="d2h-cntx">
@@ -19087,7 +19163,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">173</div>
+      <div class="line-num1">163</div>
 <div class="line-num2">136</div>
     </td>
     <td class="d2h-cntx">
@@ -19098,7 +19174,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">174</div>
+      <div class="line-num1">164</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19109,7 +19185,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">175</div>
+      <div class="line-num1">165</div>
 <div class="line-num2">137</div>
     </td>
     <td class="d2h-cntx">
@@ -19120,7 +19196,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">176</div>
+      <div class="line-num1">166</div>
 <div class="line-num2">138</div>
     </td>
     <td class="d2h-cntx">
@@ -19131,7 +19207,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">177</div>
+      <div class="line-num1">167</div>
 <div class="line-num2">139</div>
     </td>
     <td class="d2h-cntx">
@@ -19142,7 +19218,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">178</div>
+      <div class="line-num1">168</div>
 <div class="line-num2">140</div>
     </td>
     <td class="d2h-cntx">
@@ -19153,7 +19229,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">179</div>
+      <div class="line-num1">169</div>
 <div class="line-num2">141</div>
     </td>
     <td class="d2h-cntx">
@@ -19164,18 +19240,18 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">180</div>
+      <div class="line-num1">170</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
         <div class="d2h-code-line d2h-del">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    async def async_delete_notification(self):</span>
+            <span class="d2h-code-line-ctn">    async def delete_notification(self):</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">181</div>
+      <div class="line-num1">171</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19186,7 +19262,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">182</div>
+      <div class="line-num1">172</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19197,7 +19273,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">183</div>
+      <div class="line-num1">173</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19208,7 +19284,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">184</div>
+      <div class="line-num1">174</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19219,7 +19295,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">185</div>
+      <div class="line-num1">175</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19230,7 +19306,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">186</div>
+      <div class="line-num1">176</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19241,7 +19317,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">187</div>
+      <div class="line-num1">177</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19252,7 +19328,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">188</div>
+      <div class="line-num1">178</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19263,7 +19339,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">189</div>
+      <div class="line-num1">179</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19274,7 +19350,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">190</div>
+      <div class="line-num1">180</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19285,7 +19361,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">191</div>
+      <div class="line-num1">181</div>
 <div class="line-num2">142</div>
     </td>
     <td class="d2h-cntx">
@@ -19296,7 +19372,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">192</div>
+      <div class="line-num1">182</div>
 <div class="line-num2">143</div>
     </td>
     <td class="d2h-cntx">
@@ -19307,7 +19383,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">193</div>
+      <div class="line-num1">183</div>
 <div class="line-num2">144</div>
     </td>
     <td class="d2h-cntx">
@@ -19318,7 +19394,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">194</div>
+      <div class="line-num1">184</div>
 <div class="line-num2">145</div>
     </td>
     <td class="d2h-cntx">
@@ -19329,7 +19405,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">195</div>
+      <div class="line-num1">185</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19340,7 +19416,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">196</div>
+      <div class="line-num1">186</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19351,18 +19427,18 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">197</div>
+      <div class="line-num1">187</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
         <div class="d2h-code-line d2h-del">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                DOMAIN, SERVICE_DELETE, async_delete_notification, schema=vol.Schema({})</span>
+            <span class="d2h-code-line-ctn">                DOMAIN, SERVICE_DELETE, delete_notification, schema=vol.Schema({})</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">198</div>
+      <div class="line-num1">188</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19373,7 +19449,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">199</div>
+      <div class="line-num1">189</div>
 <div class="line-num2">146</div>
     </td>
     <td class="d2h-cntx">
@@ -19384,7 +19460,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">200</div>
+      <div class="line-num1">190</div>
 <div class="line-num2">147</div>
     </td>
     <td class="d2h-cntx">
@@ -19395,7 +19471,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">201</div>
+      <div class="line-num1">191</div>
 <div class="line-num2">148</div>
     </td>
     <td class="d2h-cntx">
@@ -19406,7 +19482,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">202</div>
+      <div class="line-num1">192</div>
 <div class="line-num2">149</div>
     </td>
     <td class="d2h-cntx">
@@ -19505,7 +19581,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">203</div>
+      <div class="line-num1">193</div>
 <div class="line-num2">158</div>
     </td>
     <td class="d2h-cntx">
@@ -19516,7 +19592,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">204</div>
+      <div class="line-num1">194</div>
 <div class="line-num2">159</div>
     </td>
     <td class="d2h-cntx">
@@ -19527,7 +19603,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">205</div>
+      <div class="line-num1">195</div>
 <div class="line-num2">160</div>
     </td>
     <td class="d2h-cntx">
@@ -19540,11 +19616,11 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line d2h-info">@@ -219,14 +174,6 @@</div>
+        <div class="d2h-code-line d2h-info">@@ -209,14 +174,6 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">219</div>
+      <div class="line-num1">209</div>
 <div class="line-num2">174</div>
     </td>
     <td class="d2h-cntx">
@@ -19555,7 +19631,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">220</div>
+      <div class="line-num1">210</div>
 <div class="line-num2">175</div>
     </td>
     <td class="d2h-cntx">
@@ -19566,7 +19642,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">221</div>
+      <div class="line-num1">211</div>
 <div class="line-num2">176</div>
     </td>
     <td class="d2h-cntx">
@@ -19577,7 +19653,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">222</div>
+      <div class="line-num1">212</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19588,7 +19664,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">223</div>
+      <div class="line-num1">213</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19599,7 +19675,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">224</div>
+      <div class="line-num1">214</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19610,7 +19686,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">225</div>
+      <div class="line-num1">215</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19621,7 +19697,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">226</div>
+      <div class="line-num1">216</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19632,7 +19708,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">227</div>
+      <div class="line-num1">217</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19643,13 +19719,118 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">228</div>
+      <div class="line-num1">218</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
         <div class="d2h-code-line d2h-del">
             <span class="d2h-code-line-prefix">-</span>
             <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">219</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">220</div>
+<div class="line-num2">177</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">class SmileGateway(CoordinatorEntity):</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">221</div>
+<div class="line-num2">178</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">    &quot;&quot;&quot;Represent Smile Gateway.&quot;&quot;&quot;</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">222</div>
+<div class="line-num2">179</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr>
+<tr>
+    <td class="d2h-code-linenumber d2h-info"></td>
+    <td class="d2h-info">
+        <div class="d2h-code-line d2h-info">@@ -224,14 +181,14 @@</div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">224</div>
+<div class="line-num2">181</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Initialise the gateway.&quot;&quot;&quot;</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">225</div>
+<div class="line-num2">182</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        super().__init__(coordinator)</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">226</div>
+<div class="line-num2">183</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">227</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        self._coordinator = coordinator</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">228</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        self._name = name</span>
         </div>
     </td>
 </tr><tr>
@@ -19666,111 +19847,6 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">230</div>
-<div class="line-num2">177</div>
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">class SmileGateway(CoordinatorEntity):</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">231</div>
-<div class="line-num2">178</div>
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">    &quot;&quot;&quot;Represent Smile Gateway.&quot;&quot;&quot;</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">232</div>
-<div class="line-num2">179</div>
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr>
-<tr>
-    <td class="d2h-code-linenumber d2h-info"></td>
-    <td class="d2h-info">
-        <div class="d2h-code-line d2h-info">@@ -234,14 +181,14 @@</div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">234</div>
-<div class="line-num2">181</div>
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Initialise the gateway.&quot;&quot;&quot;</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">235</div>
-<div class="line-num2">182</div>
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">        super().__init__(coordinator)</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">236</div>
-<div class="line-num2">183</div>
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">237</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line d2h-del">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self._coordinator = coordinator</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">238</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line d2h-del">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self._name = name</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">239</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line d2h-del">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">240</div>
 <div class="line-num2">184</div>
     </td>
     <td class="d2h-cntx">
@@ -19792,7 +19868,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">241</div>
+      <div class="line-num1">231</div>
 <div class="line-num2">186</div>
     </td>
     <td class="d2h-cntx">
@@ -19803,7 +19879,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">242</div>
+      <div class="line-num1">232</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -19814,7 +19890,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">243</div>
+      <div class="line-num1">233</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19836,7 +19912,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">244</div>
+      <div class="line-num1">234</div>
 <div class="line-num2">188</div>
     </td>
     <td class="d2h-cntx">
@@ -19880,7 +19956,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">245</div>
+      <div class="line-num1">235</div>
 <div class="line-num2">192</div>
     </td>
     <td class="d2h-cntx">
@@ -19891,7 +19967,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">246</div>
+      <div class="line-num1">236</div>
 <div class="line-num2">193</div>
     </td>
     <td class="d2h-cntx">
@@ -19902,7 +19978,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">247</div>
+      <div class="line-num1">237</div>
 <div class="line-num2">194</div>
     </td>
     <td class="d2h-cntx">
@@ -19915,11 +19991,11 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line d2h-info">@@ -249,11 +196,6 @@</div>
+        <div class="d2h-code-line d2h-info">@@ -239,11 +196,6 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">249</div>
+      <div class="line-num1">239</div>
 <div class="line-num2">196</div>
     </td>
     <td class="d2h-cntx">
@@ -19930,7 +20006,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">250</div>
+      <div class="line-num1">240</div>
 <div class="line-num2">197</div>
     </td>
     <td class="d2h-cntx">
@@ -19941,7 +20017,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">251</div>
+      <div class="line-num1">241</div>
 <div class="line-num2">198</div>
     </td>
     <td class="d2h-cntx">
@@ -19952,7 +20028,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">252</div>
+      <div class="line-num1">242</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19963,7 +20039,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">253</div>
+      <div class="line-num1">243</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19974,7 +20050,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">254</div>
+      <div class="line-num1">244</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19985,7 +20061,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">255</div>
+      <div class="line-num1">245</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -19996,7 +20072,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">256</div>
+      <div class="line-num1">246</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -20007,7 +20083,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">257</div>
+      <div class="line-num1">247</div>
 <div class="line-num2">199</div>
     </td>
     <td class="d2h-cntx">
@@ -20018,7 +20094,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">258</div>
+      <div class="line-num1">248</div>
 <div class="line-num2">200</div>
     </td>
     <td class="d2h-cntx">
@@ -20029,7 +20105,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">259</div>
+      <div class="line-num1">249</div>
 <div class="line-num2">201</div>
     </td>
     <td class="d2h-cntx">
@@ -20042,11 +20118,11 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line d2h-info">@@ -261,6 +203,7 @@</div>
+        <div class="d2h-code-line d2h-info">@@ -251,6 +203,7 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">261</div>
+      <div class="line-num1">251</div>
 <div class="line-num2">203</div>
     </td>
     <td class="d2h-cntx">
@@ -20057,7 +20133,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">262</div>
+      <div class="line-num1">252</div>
 <div class="line-num2">204</div>
     </td>
     <td class="d2h-cntx">
@@ -20068,7 +20144,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">263</div>
+      <div class="line-num1">253</div>
 <div class="line-num2">205</div>
     </td>
     <td class="d2h-cntx">
@@ -20090,7 +20166,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">264</div>
+      <div class="line-num1">254</div>
 <div class="line-num2">207</div>
     </td>
     <td class="d2h-cntx">
@@ -20101,7 +20177,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">265</div>
+      <div class="line-num1">255</div>
 <div class="line-num2">208</div>
     </td>
     <td class="d2h-cntx">
@@ -20112,7 +20188,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">266</div>
+      <div class="line-num1">256</div>
 <div class="line-num2">209</div>
     </td>
     <td class="d2h-cntx">
@@ -20200,7 +20276,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line d2h-del d2h-change">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">  &quot;requirements&quot;: [&quot;plugwise==0.<del>9</del>.<del>0</del>&quot;],</span>
+            <span class="d2h-code-line-ctn">  &quot;requirements&quot;: [&quot;plugwise==0.<del>9</del>.<del>1</del>&quot;],</span>
         </div>
     </td>
 </tr><tr>
@@ -26642,7 +26718,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line d2h-info">@@ -4,29 +4,27 @@</div>
+        <div class="d2h-code-line d2h-info">@@ -4,30 +4,27 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
@@ -26861,12 +26937,23 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <td class="d2h-del">
         <div class="d2h-code-line d2h-del">
             <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">    PW_CLASS,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">19</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
             <span class="d2h-code-line-ctn">    PW_MODEL,</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">19</div>
+      <div class="line-num1">20</div>
 <div class="line-num2">18</div>
     </td>
     <td class="d2h-cntx">
@@ -26877,7 +26964,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">20</div>
+      <div class="line-num1">21</div>
 <div class="line-num2">19</div>
     </td>
     <td class="d2h-cntx">
@@ -26888,7 +26975,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">21</div>
+      <div class="line-num1">22</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -26899,7 +26986,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">22</div>
+      <div class="line-num1">23</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -26910,7 +26997,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">23</div>
+      <div class="line-num1">24</div>
 <div class="line-num2">20</div>
     </td>
     <td class="d2h-cntx">
@@ -26932,7 +27019,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">24</div>
+      <div class="line-num1">25</div>
 <div class="line-num2">22</div>
     </td>
     <td class="d2h-cntx">
@@ -26943,7 +27030,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">25</div>
+      <div class="line-num1">26</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -26954,7 +27041,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">26</div>
+      <div class="line-num1">27</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -26965,7 +27052,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">27</div>
+      <div class="line-num1">28</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -26976,7 +27063,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">28</div>
+      <div class="line-num1">29</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -27009,7 +27096,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">29</div>
+      <div class="line-num1">30</div>
 <div class="line-num2">25</div>
     </td>
     <td class="d2h-cntx">
@@ -27042,7 +27129,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">30</div>
+      <div class="line-num1">31</div>
 <div class="line-num2">28</div>
     </td>
     <td class="d2h-cntx">
@@ -27053,7 +27140,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">31</div>
+      <div class="line-num1">32</div>
 <div class="line-num2">29</div>
     </td>
     <td class="d2h-cntx">
@@ -27064,7 +27151,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">32</div>
+      <div class="line-num1">33</div>
 <div class="line-num2">30</div>
     </td>
     <td class="d2h-cntx">
@@ -27077,11 +27164,11 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line d2h-info">@@ -41,14 +39,16 @@</div>
+        <div class="d2h-code-line d2h-info">@@ -42,14 +39,16 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">41</div>
+      <div class="line-num1">42</div>
 <div class="line-num2">39</div>
     </td>
     <td class="d2h-cntx">
@@ -27092,7 +27179,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">42</div>
+      <div class="line-num1">43</div>
 <div class="line-num2">40</div>
     </td>
     <td class="d2h-cntx">
@@ -27103,7 +27190,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">43</div>
+      <div class="line-num1">44</div>
 <div class="line-num2">41</div>
     </td>
     <td class="d2h-cntx">
@@ -27114,7 +27201,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">44</div>
+      <div class="line-num1">45</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -27136,7 +27223,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">45</div>
+      <div class="line-num1">46</div>
 <div class="line-num2">43</div>
     </td>
     <td class="d2h-cntx">
@@ -27147,7 +27234,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">46</div>
+      <div class="line-num1">47</div>
 <div class="line-num2">44</div>
     </td>
     <td class="d2h-cntx">
@@ -27158,7 +27245,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">47</div>
+      <div class="line-num1">48</div>
 <div class="line-num2">45</div>
     </td>
     <td class="d2h-cntx">
@@ -27169,7 +27256,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">48</div>
+      <div class="line-num1">49</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -27180,7 +27267,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">49</div>
+      <div class="line-num1">50</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -27235,7 +27322,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">50</div>
+      <div class="line-num1">51</div>
 <div class="line-num2">50</div>
     </td>
     <td class="d2h-cntx">
@@ -27246,7 +27333,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">51</div>
+      <div class="line-num1">52</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -27268,7 +27355,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">52</div>
+      <div class="line-num1">53</div>
 <div class="line-num2">52</div>
     </td>
     <td class="d2h-cntx">
@@ -27279,7 +27366,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">53</div>
+      <div class="line-num1">54</div>
 <div class="line-num2">53</div>
     </td>
     <td class="d2h-cntx">
@@ -27290,7 +27377,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">54</div>
+      <div class="line-num1">55</div>
 <div class="line-num2">54</div>
     </td>
     <td class="d2h-cntx">
@@ -27303,11 +27390,11 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line d2h-info">@@ -56,68 +56,71 @@</div>
+        <div class="d2h-code-line d2h-info">@@ -57,101 +56,71 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">56</div>
+      <div class="line-num1">57</div>
 <div class="line-num2">56</div>
     </td>
     <td class="d2h-cntx">
@@ -27318,7 +27405,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">57</div>
+      <div class="line-num1">58</div>
 <div class="line-num2">57</div>
     </td>
     <td class="d2h-cntx">
@@ -27329,7 +27416,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">58</div>
+      <div class="line-num1">59</div>
 <div class="line-num2">58</div>
     </td>
     <td class="d2h-cntx">
@@ -27340,7 +27427,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">59</div>
+      <div class="line-num1">60</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -27362,7 +27449,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">60</div>
+      <div class="line-num1">61</div>
 <div class="line-num2">60</div>
     </td>
     <td class="d2h-cntx">
@@ -27373,7 +27460,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">61</div>
+      <div class="line-num1">62</div>
 <div class="line-num2">61</div>
     </td>
     <td class="d2h-cntx">
@@ -27384,7 +27471,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">62</div>
+      <div class="line-num1">63</div>
 <div class="line-num2">62</div>
     </td>
     <td class="d2h-cntx">
@@ -27395,7 +27482,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">63</div>
+      <div class="line-num1">64</div>
 <div class="line-num2">63</div>
     </td>
     <td class="d2h-cntx">
@@ -27406,7 +27493,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">64</div>
+      <div class="line-num1">65</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -27428,7 +27515,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">65</div>
+      <div class="line-num1">66</div>
 <div class="line-num2">65</div>
     </td>
     <td class="d2h-cntx">
@@ -27439,7 +27526,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">66</div>
+      <div class="line-num1">67</div>
 <div class="line-num2">66</div>
     </td>
     <td class="d2h-cntx">
@@ -27450,7 +27537,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">67</div>
+      <div class="line-num1">68</div>
 <div class="line-num2">67</div>
     </td>
     <td class="d2h-cntx">
@@ -27461,7 +27548,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">68</div>
+      <div class="line-num1">69</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -27483,7 +27570,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">69</div>
+      <div class="line-num1">70</div>
 <div class="line-num2">69</div>
     </td>
     <td class="d2h-cntx">
@@ -27494,7 +27581,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">70</div>
+      <div class="line-num1">71</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -27527,7 +27614,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">71</div>
+      <div class="line-num1">72</div>
 <div class="line-num2">72</div>
     </td>
     <td class="d2h-cntx">
@@ -27538,7 +27625,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">72</div>
+      <div class="line-num1">73</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -27549,7 +27636,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">73</div>
+      <div class="line-num1">74</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -27692,7 +27779,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">74</div>
+      <div class="line-num1">75</div>
 <div class="line-num2">85</div>
     </td>
     <td class="d2h-cntx">
@@ -27703,7 +27790,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">75</div>
+      <div class="line-num1">76</div>
 <div class="line-num2">86</div>
     </td>
     <td class="d2h-cntx">
@@ -27714,7 +27801,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">76</div>
+      <div class="line-num1">77</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -27725,7 +27812,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">77</div>
+      <div class="line-num1">78</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -27736,7 +27823,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">78</div>
+      <div class="line-num1">79</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -27747,7 +27834,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">79</div>
+      <div class="line-num1">80</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -27758,7 +27845,29 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">80</div>
+      <div class="line-num1">81</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                    True,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">82</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                    &quot;relay&quot;,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">83</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -27769,7 +27878,194 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">81</div>
+      <div class="line-num1">84</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                    devices[dev_id][PW_MODEL],</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">85</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                )</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">86</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            )</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">87</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            _LOGGER.info(&quot;Added switch.%s&quot;, &quot;{}&quot;.format(devices[dev_id][ATTR_NAME]))</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">88</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">89</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        if devices[dev_id][PW_CLASS] == &quot;heater_central&quot;:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">90</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            data = api.get_device_data(dev_id)</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">91</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            if &quot;dhw_comf_mode&quot; in data:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">92</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                entities.append(</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">93</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                    GwSwitch(</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">94</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                        api,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">95</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                        coordinator,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">96</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                        &quot;Auxiliary&quot;,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">97</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                        dev_id,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">98</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                        True,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">99</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                        &quot;dhw_cm_switch&quot;,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">100</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                        None,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">101</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -27791,7 +28087,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">82</div>
+      <div class="line-num1">102</div>
 <div class="line-num2">88</div>
     </td>
     <td class="d2h-cntx">
@@ -27802,7 +28098,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">83</div>
+      <div class="line-num1">103</div>
 <div class="line-num2">89</div>
     </td>
     <td class="d2h-cntx">
@@ -27812,19 +28108,8 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">84</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line d2h-del">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            _LOGGER.info(&quot;Added switch.%s&quot;, &quot;{}&quot;.format(devices[dev_id][ATTR_NAME]))</span>
-        </div>
-    </td>
-</tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">85</div>
+      <div class="line-num1">104</div>
 <div class="line-num2">90</div>
     </td>
     <td class="d2h-cntx">
@@ -27834,8 +28119,19 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </div>
     </td>
 </tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">105</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">86</div>
+      <div class="line-num1">106</div>
 <div class="line-num2">91</div>
     </td>
     <td class="d2h-cntx">
@@ -27846,7 +28142,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">87</div>
+      <div class="line-num1">107</div>
 <div class="line-num2">92</div>
     </td>
     <td class="d2h-cntx">
@@ -27857,7 +28153,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">88</div>
+      <div class="line-num1">108</div>
 <div class="line-num2">93</div>
     </td>
     <td class="d2h-cntx">
@@ -27868,7 +28164,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">89</div>
+      <div class="line-num1">109</div>
 <div class="line-num2">94</div>
     </td>
     <td class="d2h-cntx">
@@ -27879,7 +28175,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">90</div>
+      <div class="line-num1">110</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -27901,7 +28197,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">91</div>
+      <div class="line-num1">111</div>
 <div class="line-num2">96</div>
     </td>
     <td class="d2h-cntx">
@@ -27911,19 +28207,30 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">92</div>
+    <td class="d2h-code-linenumber d2h-del d2h-change">
+      <div class="line-num1">112</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-line d2h-del d2h-change">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">    def __init__(self, api, coordinator, name, dev_id, <del>enabled_default, switch, </del>members, model):</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins d2h-change">
+      <div class="line-num1"></div>
 <div class="line-num2">97</div>
     </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
+    <td class="d2h-ins d2h-change">
+        <div class="d2h-code-line d2h-ins d2h-change">
+            <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn">    def __init__(self, api, coordinator, name, dev_id, members, model):</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">93</div>
+      <div class="line-num1">113</div>
 <div class="line-num2">98</div>
     </td>
     <td class="d2h-cntx">
@@ -27934,18 +28241,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">94</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line d2h-del">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self._enabled_default = True</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">95</div>
+      <div class="line-num1">114</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -27956,7 +28252,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">96</div>
+      <div class="line-num1">115</div>
 <div class="line-num2">99</div>
     </td>
     <td class="d2h-cntx">
@@ -27967,7 +28263,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">97</div>
+      <div class="line-num1">116</div>
 <div class="line-num2">100</div>
     </td>
     <td class="d2h-cntx">
@@ -27978,7 +28274,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">98</div>
+      <div class="line-num1">117</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -27988,8 +28284,19 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </div>
     </td>
 </tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">118</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        self._enabled_default = enabled_default</span>
+        </div>
+    </td>
+</tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">99</div>
+      <div class="line-num1">119</div>
 <div class="line-num2">101</div>
     </td>
     <td class="d2h-cntx">
@@ -28000,7 +28307,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">100</div>
+      <div class="line-num1">120</div>
 <div class="line-num2">102</div>
     </td>
     <td class="d2h-cntx">
@@ -28011,7 +28318,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">101</div>
+      <div class="line-num1">121</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -28021,8 +28328,118 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </div>
     </td>
 </tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">122</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        self._switch = switch</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">123</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">124</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        if dev_id == self._api.heater_id:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">125</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            self._entity_name = &quot;Auxiliary&quot;</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">126</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            self._name = f&quot;{self._entity_name} DHW Comfort Mode&quot;</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">127</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">128</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        self._unique_id = f&quot;{dev_id}-{self._switch}&quot;</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">129</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        # For backwards compatibility:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">130</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        if self._switch == &quot;relay&quot;:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">131</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            self._unique_id = f&quot;{dev_id}-plug&quot;</span>
+        </div>
+    </td>
+</tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">102</div>
+      <div class="line-num1">132</div>
 <div class="line-num2">103</div>
     </td>
     <td class="d2h-cntx">
@@ -28032,25 +28449,14 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">103</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del d2h-change">
-        <div class="d2h-code-line d2h-del d2h-change">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self.<del>_unique_id</del> = <del>f&quot;{dev_id}-plug&quot;</del></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins d2h-change">
+    <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
 <div class="line-num2">104</div>
     </td>
-    <td class="d2h-ins d2h-change">
-        <div class="d2h-code-line d2h-ins d2h-change">
+    <td class="d2h-ins">
+        <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        self.<ins>_is_on</ins> = <ins>False</ins></span>
+            <span class="d2h-code-line-ctn">        self._is_on = False</span>
         </div>
     </td>
 </tr><tr>
@@ -28066,7 +28472,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">104</div>
+      <div class="line-num1">133</div>
 <div class="line-num2">106</div>
     </td>
     <td class="d2h-cntx">
@@ -28077,7 +28483,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">105</div>
+      <div class="line-num1">134</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -28088,7 +28494,62 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">106</div>
+      <div class="line-num1">135</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">    def entity_registry_enabled_default(self) -&gt; bool:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">136</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Return if the entity should be enabled when first added to the entity registry.&quot;&quot;&quot;</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">137</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        return self._enabled_default</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">138</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">139</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">    @property</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">140</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -28099,7 +28560,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">107</div>
+      <div class="line-num1">141</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -28110,7 +28571,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">108</div>
+      <div class="line-num1">142</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -28132,7 +28593,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">109</div>
+      <div class="line-num1">143</div>
 <div class="line-num2">108</div>
     </td>
     <td class="d2h-cntx">
@@ -28143,7 +28604,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">110</div>
+      <div class="line-num1">144</div>
 <div class="line-num2">109</div>
     </td>
     <td class="d2h-cntx">
@@ -28154,7 +28615,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">111</div>
+      <div class="line-num1">145</div>
 <div class="line-num2">110</div>
     </td>
     <td class="d2h-cntx">
@@ -28165,7 +28626,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">112</div>
+      <div class="line-num1">146</div>
 <div class="line-num2">111</div>
     </td>
     <td class="d2h-cntx">
@@ -28176,7 +28637,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">113</div>
+      <div class="line-num1">147</div>
 <div class="line-num2">112</div>
     </td>
     <td class="d2h-cntx">
@@ -28187,7 +28648,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">114</div>
+      <div class="line-num1">148</div>
 <div class="line-num2">113</div>
     </td>
     <td class="d2h-cntx">
@@ -28253,7 +28714,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">115</div>
+      <div class="line-num1">149</div>
 <div class="line-num2">119</div>
     </td>
     <td class="d2h-cntx">
@@ -28264,7 +28725,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">116</div>
+      <div class="line-num1">150</div>
 <div class="line-num2">120</div>
     </td>
     <td class="d2h-cntx">
@@ -28275,7 +28736,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">117</div>
+      <div class="line-num1">151</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -28286,7 +28747,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">118</div>
+      <div class="line-num1">152</div>
 <div class="line-num2">121</div>
     </td>
     <td class="d2h-cntx">
@@ -28296,25 +28757,36 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">119</div>
-<div class="line-num2">122</div>
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">            state_on = await self._api.set_relay_state(</span>
-        </div>
-    </td>
-</tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">120</div>
+      <div class="line-num1">153</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line d2h-del d2h-change">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                self._dev_id, self._members, <del>STATE_ON</del></span>
+            <span class="d2h-code-line-ctn">            state_on = await self._api.<del>set_switch_state</del>(</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del d2h-change">
+      <div class="line-num1">154</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-line d2h-del d2h-change">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                self._dev_id, self._members, <del>self._switch, STATE_ON</del></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins d2h-change">
+      <div class="line-num1"></div>
+<div class="line-num2">122</div>
+    </td>
+    <td class="d2h-ins d2h-change">
+        <div class="d2h-code-line d2h-ins d2h-change">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">            state_on = await self._api.<ins>set_relay_state</ins>(</span>
         </div>
     </td>
 </tr><tr>
@@ -28330,7 +28802,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">121</div>
+      <div class="line-num1">155</div>
 <div class="line-num2">124</div>
     </td>
     <td class="d2h-cntx">
@@ -28341,7 +28813,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">122</div>
+      <div class="line-num1">156</div>
 <div class="line-num2">125</div>
     </td>
     <td class="d2h-cntx">
@@ -28352,7 +28824,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">123</div>
+      <div class="line-num1">157</div>
 <div class="line-num2">126</div>
     </td>
     <td class="d2h-cntx">
@@ -28365,11 +28837,11 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line d2h-info">@@ -127,10 +130,9 @@</div>
+        <div class="d2h-code-line d2h-info">@@ -161,10 +130,9 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">127</div>
+      <div class="line-num1">161</div>
 <div class="line-num2">130</div>
     </td>
     <td class="d2h-cntx">
@@ -28380,7 +28852,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">128</div>
+      <div class="line-num1">162</div>
 <div class="line-num2">131</div>
     </td>
     <td class="d2h-cntx">
@@ -28391,7 +28863,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">129</div>
+      <div class="line-num1">163</div>
 <div class="line-num2">132</div>
     </td>
     <td class="d2h-cntx">
@@ -28402,7 +28874,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">130</div>
+      <div class="line-num1">164</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -28413,7 +28885,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">131</div>
+      <div class="line-num1">165</div>
 <div class="line-num2">133</div>
     </td>
     <td class="d2h-cntx">
@@ -28423,25 +28895,36 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">132</div>
-<div class="line-num2">134</div>
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">            state_off = await self._api.set_relay_state(</span>
-        </div>
-    </td>
-</tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">133</div>
+      <div class="line-num1">166</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line d2h-del d2h-change">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                self._dev_id, self._members, <del>STATE_OFF</del></span>
+            <span class="d2h-code-line-ctn">            state_off = await self._api.<del>set_switch_state</del>(</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del d2h-change">
+      <div class="line-num1">167</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-line d2h-del d2h-change">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                self._dev_id, self._members, <del>self._switch, STATE_OFF</del></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins d2h-change">
+      <div class="line-num1"></div>
+<div class="line-num2">134</div>
+    </td>
+    <td class="d2h-ins d2h-change">
+        <div class="d2h-code-line d2h-ins d2h-change">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">            state_off = await self._api.<ins>set_relay_state</ins>(</span>
         </div>
     </td>
 </tr><tr>
@@ -28457,7 +28940,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">134</div>
+      <div class="line-num1">168</div>
 <div class="line-num2">136</div>
     </td>
     <td class="d2h-cntx">
@@ -28468,7 +28951,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">135</div>
+      <div class="line-num1">169</div>
 <div class="line-num2">137</div>
     </td>
     <td class="d2h-cntx">
@@ -28479,7 +28962,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">136</div>
+      <div class="line-num1">170</div>
 <div class="line-num2">138</div>
     </td>
     <td class="d2h-cntx">
@@ -28492,11 +28975,11 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line d2h-info">@@ -141,65 +143,90 @@</div>
+        <div class="d2h-code-line d2h-info">@@ -175,64 +143,90 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">141</div>
+      <div class="line-num1">175</div>
 <div class="line-num2">143</div>
     </td>
     <td class="d2h-cntx">
@@ -28507,7 +28990,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">142</div>
+      <div class="line-num1">176</div>
 <div class="line-num2">144</div>
     </td>
     <td class="d2h-cntx">
@@ -28518,7 +29001,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">143</div>
+      <div class="line-num1">177</div>
 <div class="line-num2">145</div>
     </td>
     <td class="d2h-cntx">
@@ -28529,7 +29012,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">144</div>
+      <div class="line-num1">178</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -28539,19 +29022,8 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">145</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line d2h-del">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">146</div>
+      <div class="line-num1">179</div>
 <div class="line-num2">146</div>
     </td>
     <td class="d2h-cntx">
@@ -28562,7 +29034,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">147</div>
+      <div class="line-num1">180</div>
 <div class="line-num2">147</div>
     </td>
     <td class="d2h-cntx">
@@ -28573,13 +29045,13 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">148</div>
+      <div class="line-num1">181</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line d2h-del d2h-change">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if <del>&quot;relay&quot; </del>not <del>in </del>data:</span>
+            <span class="d2h-code-line-ctn">        if <del>self._switch </del>not <del>in </del>data:</span>
         </div>
     </td>
 </tr><tr>
@@ -28606,7 +29078,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">149</div>
+      <div class="line-num1">182</div>
 <div class="line-num2">150</div>
     </td>
     <td class="d2h-cntx">
@@ -28617,7 +29089,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">150</div>
+      <div class="line-num1">183</div>
 <div class="line-num2">151</div>
     </td>
     <td class="d2h-cntx">
@@ -28628,7 +29100,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">151</div>
+      <div class="line-num1">184</div>
 <div class="line-num2">152</div>
     </td>
     <td class="d2h-cntx">
@@ -28639,18 +29111,18 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">152</div>
+      <div class="line-num1">185</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line d2h-del d2h-change">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        <del>self._is_on</del> <del>= data[</del>&quot;relay&quot;<del>]</del></span>
+            <span class="d2h-code-line-ctn">        <del>self._is_on</del> <del>=</del> data<del>[self._switch]</del></span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">153</div>
+      <div class="line-num1">186</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -28667,7 +29139,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line d2h-ins d2h-change">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        <ins>if</ins> &quot;relay&quot;<ins> in data:</ins></span>
+            <span class="d2h-code-line-ctn">        <ins>if</ins> <ins>&quot;relay&quot;</ins> <ins>in </ins>data<ins>:</ins></span>
         </div>
     </td>
 </tr><tr>
@@ -28683,7 +29155,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">154</div>
+      <div class="line-num1">187</div>
 <div class="line-num2">155</div>
     </td>
     <td class="d2h-cntx">
@@ -28694,7 +29166,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">155</div>
+      <div class="line-num1">188</div>
 <div class="line-num2">156</div>
     </td>
     <td class="d2h-cntx">
@@ -28705,7 +29177,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">156</div>
+      <div class="line-num1">189</div>
 <div class="line-num2">157</div>
     </td>
     <td class="d2h-cntx">
@@ -28716,7 +29188,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">157</div>
+      <div class="line-num1">190</div>
 <div class="line-num2">158</div>
     </td>
     <td class="d2h-cntx">
@@ -28727,7 +29199,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">158</div>
+      <div class="line-num1">191</div>
 <div class="line-num2">159</div>
     </td>
     <td class="d2h-cntx">
@@ -28738,7 +29210,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">159</div>
+      <div class="line-num1">192</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -28760,7 +29232,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">160</div>
+      <div class="line-num1">193</div>
 <div class="line-num2">161</div>
     </td>
     <td class="d2h-cntx">
@@ -28771,7 +29243,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">161</div>
+      <div class="line-num1">194</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -28793,7 +29265,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">162</div>
+      <div class="line-num1">195</div>
 <div class="line-num2">163</div>
     </td>
     <td class="d2h-cntx">
@@ -28804,7 +29276,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">163</div>
+      <div class="line-num1">196</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -28815,7 +29287,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">164</div>
+      <div class="line-num1">197</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -28826,7 +29298,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">165</div>
+      <div class="line-num1">198</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -28837,7 +29309,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">166</div>
+      <div class="line-num1">199</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -28848,7 +29320,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">167</div>
+      <div class="line-num1">200</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -28859,7 +29331,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">168</div>
+      <div class="line-num1">201</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -28870,7 +29342,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">169</div>
+      <div class="line-num1">202</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -29035,7 +29507,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">170</div>
+      <div class="line-num1">203</div>
 <div class="line-num2">178</div>
     </td>
     <td class="d2h-cntx">
@@ -29046,7 +29518,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">171</div>
+      <div class="line-num1">204</div>
 <div class="line-num2">179</div>
     </td>
     <td class="d2h-cntx">
@@ -29057,7 +29529,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">172</div>
+      <div class="line-num1">205</div>
 <div class="line-num2">180</div>
     </td>
     <td class="d2h-cntx">
@@ -29068,7 +29540,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">173</div>
+      <div class="line-num1">206</div>
 <div class="line-num2">181</div>
     </td>
     <td class="d2h-cntx">
@@ -29079,7 +29551,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">174</div>
+      <div class="line-num1">207</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -29123,7 +29595,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">175</div>
+      <div class="line-num1">208</div>
 <div class="line-num2">185</div>
     </td>
     <td class="d2h-cntx">
@@ -29134,7 +29606,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">176</div>
+      <div class="line-num1">209</div>
 <div class="line-num2">186</div>
     </td>
     <td class="d2h-cntx">
@@ -29145,7 +29617,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">177</div>
+      <div class="line-num1">210</div>
 <div class="line-num2">187</div>
     </td>
     <td class="d2h-cntx">
@@ -29156,7 +29628,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">178</div>
+      <div class="line-num1">211</div>
 <div class="line-num2">188</div>
     </td>
     <td class="d2h-cntx">
@@ -29167,7 +29639,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">179</div>
+      <div class="line-num1">212</div>
 <div class="line-num2">189</div>
     </td>
     <td class="d2h-cntx">
@@ -29365,7 +29837,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">180</div>
+      <div class="line-num1">213</div>
 <div class="line-num2">207</div>
     </td>
     <td class="d2h-cntx">
@@ -29376,7 +29848,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">181</div>
+      <div class="line-num1">214</div>
 <div class="line-num2">208</div>
     </td>
     <td class="d2h-cntx">
@@ -29387,7 +29859,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">182</div>
+      <div class="line-num1">215</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -29409,7 +29881,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">183</div>
+      <div class="line-num1">216</div>
 <div class="line-num2">210</div>
     </td>
     <td class="d2h-cntx">
@@ -29420,7 +29892,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">184</div>
+      <div class="line-num1">217</div>
 <div class="line-num2">211</div>
     </td>
     <td class="d2h-cntx">
@@ -29431,7 +29903,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">185</div>
+      <div class="line-num1">218</div>
 <div class="line-num2">212</div>
     </td>
     <td class="d2h-cntx">
@@ -29442,7 +29914,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">186</div>
+      <div class="line-num1">219</div>
 <div class="line-num2">213</div>
     </td>
     <td class="d2h-cntx">
@@ -29453,7 +29925,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">187</div>
+      <div class="line-num1">220</div>
 <div class="line-num2">214</div>
     </td>
     <td class="d2h-cntx">
@@ -29464,7 +29936,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">188</div>
+      <div class="line-num1">221</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -29475,7 +29947,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">189</div>
+      <div class="line-num1">222</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -29508,7 +29980,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">190</div>
+      <div class="line-num1">223</div>
 <div class="line-num2">217</div>
     </td>
     <td class="d2h-cntx">
@@ -29519,7 +29991,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">191</div>
+      <div class="line-num1">224</div>
 <div class="line-num2">218</div>
     </td>
     <td class="d2h-cntx">
@@ -29530,7 +30002,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">192</div>
+      <div class="line-num1">225</div>
 <div class="line-num2">219</div>
     </td>
     <td class="d2h-cntx">
@@ -29541,7 +30013,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">193</div>
+      <div class="line-num1">226</div>
 <div class="line-num2">220</div>
     </td>
     <td class="d2h-cntx">
@@ -29552,7 +30024,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">194</div>
+      <div class="line-num1">227</div>
 <div class="line-num2">221</div>
     </td>
     <td class="d2h-cntx">
@@ -29563,7 +30035,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">195</div>
+      <div class="line-num1">228</div>
 <div class="line-num2">222</div>
     </td>
     <td class="d2h-cntx">
@@ -29574,7 +30046,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">196</div>
+      <div class="line-num1">229</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -29596,7 +30068,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">197</div>
+      <div class="line-num1">230</div>
 <div class="line-num2">224</div>
     </td>
     <td class="d2h-cntx">
@@ -29607,7 +30079,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">198</div>
+      <div class="line-num1">231</div>
 <div class="line-num2">225</div>
     </td>
     <td class="d2h-cntx">
@@ -29618,7 +30090,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">199</div>
+      <div class="line-num1">232</div>
 <div class="line-num2">226</div>
     </td>
     <td class="d2h-cntx">
@@ -29629,7 +30101,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">200</div>
+      <div class="line-num1">233</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -29651,7 +30123,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">201</div>
+      <div class="line-num1">234</div>
 <div class="line-num2">228</div>
     </td>
     <td class="d2h-cntx">
@@ -29662,7 +30134,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">202</div>
+      <div class="line-num1">235</div>
 <div class="line-num2">229</div>
     </td>
     <td class="d2h-cntx">
@@ -29673,7 +30145,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">203</div>
+      <div class="line-num1">236</div>
 <div class="line-num2">230</div>
     </td>
     <td class="d2h-cntx">
@@ -29684,7 +30156,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">204</div>
+      <div class="line-num1">237</div>
 <div class="line-num2">231</div>
     </td>
     <td class="d2h-cntx">
@@ -29695,7 +30167,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">205</div>
+      <div class="line-num1">238</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
