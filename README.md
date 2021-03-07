@@ -9,3 +9,9 @@ Manually enter things in `plugwise-beta` into `beta-branches.txt`. So if you are
 Any thing we have ready in **our** `home-assistant.core` should be put in `branches.txt`. As we self-use `plugwise-{description}` for PRs add it as such.
 
 As we don't want 'push-by-push', for now (until we make this a PR mandatory repository)  you'll have to manually trigger the workflow from https://github.com/plugwise/progress/actions/workflows/diffy.yml
+
+## Gotcha's
+
+The github actions on this repo run daily + will self-commit to the repo. As such 'auto'-triggering should be used with care.
+
+Hence the above comment to implement a PR-only trigger (besides the daily one) and not react to 'all' commits.
