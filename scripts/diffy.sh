@@ -123,7 +123,7 @@ pwd
 ls -alrt
 
 
-git remote set-url origin https://x-access-token:${PROGRESS_DEPLOYKEY}@github.com/$GITHUB_REPOSITORY
+#git remote set-url origin https://x-access-token:${PROGRESS_DEPLOYKEY}@github.com/$GITHUB_REPOSITORY
 git checkout $GITHUB_HEAD_REF
 git add -A 
 git commit -m "Update: ${GITHUB_REF##*/} - Diff report completed"

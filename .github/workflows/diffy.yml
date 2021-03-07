@@ -70,11 +70,17 @@ jobs:
         ssh-key: ${{ secrets.plugwise_deploykey }}
         path: clones/beta-master
 
+    - name: Setup SSH Keys and known_hosts
+      env:
+        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      run: |
+        ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+        ssh-add - <<< "${{ secrets.PROGRESS_DEPLOYKEY }}"
     - name: Setup clones
       run: scripts/setup.sh
     - name: Run diffy
       env:
-        PROGRESS_DEPLOYKEY: ${{ secrets.PROGRESS_DEPLOYKEY }}
+        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
       run: scripts/diffy.sh 
 
 
