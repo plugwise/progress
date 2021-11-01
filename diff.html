@@ -60,7 +60,7 @@
       </svg>      <a href="#d2h-021851" class="d2h-file-name">/home/runner/work/progress/progress/clones/{ha-core/homeassistant/components → beta/custom_components}/plugwise/binary_sensor.py</a>
       <span class="d2h-file-stats">
           <span class="d2h-lines-added">+178</span>
-          <span class="d2h-lines-deleted">-127</span>
+          <span class="d2h-lines-deleted">-125</span>
       </span>
     </span>
 </li>
@@ -132,7 +132,7 @@
       </svg>      <a href="#d2h-413729" class="d2h-file-name">/home/runner/work/progress/progress/clones/{ha-core/homeassistant/components → beta/custom_components}/plugwise/sensor.py</a>
       <span class="d2h-file-stats">
           <span class="d2h-lines-added">+111</span>
-          <span class="d2h-lines-deleted">-403</span>
+          <span class="d2h-lines-deleted">-397</span>
       </span>
     </span>
 </li>
@@ -155,8 +155,8 @@
           <path d="M6 9H3V7h3V4l5 4-5 4V9z m8-7v12c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h12c0.55 0 1 0.45 1 1z m-1 0H1v12h12V2z"></path>
       </svg>      <a href="#d2h-040729" class="d2h-file-name">/home/runner/work/progress/progress/clones/{ha-core/homeassistant/components → beta/custom_components}/plugwise/switch.py</a>
       <span class="d2h-file-stats">
-          <span class="d2h-lines-added">+145</span>
-          <span class="d2h-lines-deleted">-62</span>
+          <span class="d2h-lines-added">+146</span>
+          <span class="d2h-lines-deleted">-61</span>
       </span>
     </span>
 </li>
@@ -571,7 +571,7 @@
                 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line">@@ -1,172 +1,223 @@</div>
+        <div class="d2h-code-line">@@ -1,170 +1,223 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
@@ -3155,7 +3155,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>        data = self._api.get_device_data(self._dev_id</del>)</span>
+            <span class="d2h-code-line-ctn"><del>        if not (data := self._api.get_device_data(self._dev_id</del>)<del>):</del></span>
         </div>
     </td>
 </tr><tr>
@@ -3166,7 +3166,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">            _LOGGER.error(&quot;Received no data for device %s&quot;, self._binary_sensor)</span>
         </div>
     </td>
 </tr><tr>
@@ -3177,7 +3177,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if not data:</span>
+            <span class="d2h-code-line-ctn">            self.async_write_ha_state()</span>
         </div>
     </td>
 </tr><tr>
@@ -3188,7 +3188,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            _LOGGER.error(&quot;Received no data for device %s&quot;, self._binary_sensor)</span>
+            <span class="d2h-code-line-ctn">            return</span>
         </div>
     </td>
 </tr><tr>
@@ -3199,7 +3199,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            self.async_write_ha_state()</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -3210,7 +3210,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            return</span>
+            <span class="d2h-code-line-ctn">        if self._binary_sensor not in data:</span>
         </div>
     </td>
 </tr><tr>
@@ -3221,7 +3221,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">            self.async_write_ha_state()</span>
         </div>
     </td>
 </tr><tr>
@@ -3232,7 +3232,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if self._binary_sensor not in data:</span>
+            <span class="d2h-code-line-ctn">            return</span>
         </div>
     </td>
 </tr><tr>
@@ -3243,7 +3243,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            self.async_write_ha_state()</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -3254,7 +3254,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            return</span>
+            <span class="d2h-code-line-ctn">        self._is_on = data[self._binary_sensor]</span>
         </div>
     </td>
 </tr><tr>
@@ -3276,7 +3276,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self._is_on = data[self._binary_sensor]</span>
+            <span class="d2h-code-line-ctn">        if self._binary_sensor == &quot;dhw_state&quot;:</span>
         </div>
     </td>
 </tr><tr>
@@ -3287,7 +3287,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">            self._icon = FLOW_ON_ICON if self._is_on else FLOW_OFF_ICON</span>
         </div>
     </td>
 </tr><tr>
@@ -3298,34 +3298,12 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if self._binary_sensor == &quot;dhw_state&quot;:</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">129</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            self._icon = FLOW_ON_ICON if self._is_on else FLOW_OFF_ICON</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">130</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
             <span class="d2h-code-line-ctn">        if self._binary_sensor == &quot;slave_boiler_state&quot;:</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">131</div>
+      <div class="line-num1">129</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -3446,7 +3424,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">132</div>
+      <div class="line-num1">130</div>
 <div class="line-num2">169</div>
     </td>
     <td class="d2h-cntx">
@@ -3457,7 +3435,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">133</div>
+      <div class="line-num1">131</div>
 <div class="line-num2">170</div>
     </td>
     <td class="d2h-cntx">
@@ -3468,7 +3446,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">134</div>
+      <div class="line-num1">132</div>
 <div class="line-num2">171</div>
     </td>
     <td class="d2h-cntx">
@@ -3479,7 +3457,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">135</div>
+      <div class="line-num1">133</div>
 <div class="line-num2">172</div>
     </td>
     <td class="d2h-cntx">
@@ -3490,7 +3468,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">136</div>
+      <div class="line-num1">134</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3501,7 +3479,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">137</div>
+      <div class="line-num1">135</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3534,7 +3512,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">138</div>
+      <div class="line-num1">136</div>
 <div class="line-num2">175</div>
     </td>
     <td class="d2h-cntx">
@@ -3545,7 +3523,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">139</div>
+      <div class="line-num1">137</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3556,7 +3534,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">140</div>
+      <div class="line-num1">138</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3567,7 +3545,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">141</div>
+      <div class="line-num1">139</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3578,7 +3556,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">142</div>
+      <div class="line-num1">140</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3589,7 +3567,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">143</div>
+      <div class="line-num1">141</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3655,7 +3633,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">144</div>
+      <div class="line-num1">142</div>
 <div class="line-num2">181</div>
     </td>
     <td class="d2h-cntx">
@@ -3666,7 +3644,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">145</div>
+      <div class="line-num1">143</div>
 <div class="line-num2">182</div>
     </td>
     <td class="d2h-cntx">
@@ -3677,7 +3655,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">146</div>
+      <div class="line-num1">144</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3688,7 +3666,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">147</div>
+      <div class="line-num1">145</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3699,7 +3677,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">148</div>
+      <div class="line-num1">146</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3710,7 +3688,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">149</div>
+      <div class="line-num1">147</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3721,7 +3699,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">150</div>
+      <div class="line-num1">148</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3732,7 +3710,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">151</div>
+      <div class="line-num1">149</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3743,7 +3721,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">152</div>
+      <div class="line-num1">150</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3754,7 +3732,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">153</div>
+      <div class="line-num1">151</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3765,7 +3743,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">154</div>
+      <div class="line-num1">152</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3776,7 +3754,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">155</div>
+      <div class="line-num1">153</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3787,7 +3765,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">156</div>
+      <div class="line-num1">154</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3798,7 +3776,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">157</div>
+      <div class="line-num1">155</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3809,7 +3787,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">158</div>
+      <div class="line-num1">156</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3820,7 +3798,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">159</div>
+      <div class="line-num1">157</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3831,7 +3809,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">160</div>
+      <div class="line-num1">158</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3842,7 +3820,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">161</div>
+      <div class="line-num1">159</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3853,7 +3831,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">162</div>
+      <div class="line-num1">160</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3864,7 +3842,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">163</div>
+      <div class="line-num1">161</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3875,7 +3853,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">164</div>
+      <div class="line-num1">162</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3886,7 +3864,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">165</div>
+      <div class="line-num1">163</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3897,7 +3875,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">166</div>
+      <div class="line-num1">164</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3908,7 +3886,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">167</div>
+      <div class="line-num1">165</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -3919,13 +3897,35 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">168</div>
+      <div class="line-num1">166</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
             <span class="d2h-code-line-ctn"><del>                        msg_type</del> = <del>&quot;other&quot;</del></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del d2h-change">
+      <div class="line-num1">167</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del d2h-change">
+      <div class="line-num1">168</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><del>                    self</del>.<del>_attributes[f&quot;{msg_type.lower</del>()<del>}_msg&quot;].append(msg)</del></span>
         </div>
     </td>
 </tr><tr>
@@ -3942,28 +3942,6 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
       <div class="line-num1">170</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del d2h-change">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>                    self</del>.<del>_attributes[f&quot;{msg_type.lower</del>()<del>}_msg&quot;].append(msg)</del></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">171</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del d2h-change">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">172</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -16462,7 +16440,7 @@
                 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line">@@ -1,448 +1,156 @@</div>
+        <div class="d2h-code-line">@@ -1,442 +1,156 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
@@ -19952,6 +19930,138 @@
         </div>
     </td>
 </tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">254</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                entities.append(</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">255</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                    PwPowerSensor(</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">256</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                        api,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">257</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                        coordinator,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">258</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                        device_properties[&quot;name&quot;],</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">259</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                        dev_id,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">260</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                        sensor,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">261</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                        sensor_type,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">262</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                        model,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">263</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                    )</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">264</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                )</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">265</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            else:</span>
+        </div>
+    </td>
+</tr><tr>
     <td class="d2h-code-linenumber d2h-ins d2h-change">
       <div class="line-num1"></div>
 <div class="line-num2">89</div>
@@ -19964,7 +20074,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">254</div>
+      <div class="line-num1">266</div>
 <div class="line-num2">90</div>
     </td>
     <td class="d2h-cntx">
@@ -19975,18 +20085,18 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">255</div>
+      <div class="line-num1">267</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                    <del>PwPowerSensor</del>(</span>
+            <span class="d2h-code-line-ctn">                    <del>PwThermostatSensor</del>(</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">256</div>
+      <div class="line-num1">268</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -20008,7 +20118,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">257</div>
+      <div class="line-num1">269</div>
 <div class="line-num2">92</div>
     </td>
     <td class="d2h-cntx">
@@ -20019,7 +20129,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">258</div>
+      <div class="line-num1">270</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -20030,7 +20140,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">259</div>
+      <div class="line-num1">271</div>
 <div class="line-num2">93</div>
     </td>
     <td class="d2h-cntx">
@@ -20041,7 +20151,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">260</div>
+      <div class="line-num1">272</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -20052,24 +20162,13 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">261</div>
+      <div class="line-num1">273</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
             <span class="d2h-code-line-ctn">                        <del>sensor_type</del>,</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">262</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                        model,</span>
         </div>
     </td>
 </tr><tr>
@@ -20096,7 +20195,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">263</div>
+      <div class="line-num1">274</div>
 <div class="line-num2">96</div>
     </td>
     <td class="d2h-cntx">
@@ -20107,7 +20206,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">264</div>
+      <div class="line-num1">275</div>
 <div class="line-num2">97</div>
     </td>
     <td class="d2h-cntx">
@@ -20117,134 +20216,13 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">265</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            else:</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">266</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                entities.append(</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">267</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                    PwThermostatSensor(</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">268</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                        api,</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">269</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                        coordinator,</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">270</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                        device_properties[&quot;name&quot;],</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">271</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                        dev_id,</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">272</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                        sensor,</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">273</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                        sensor_type,</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">274</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                    )</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">275</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                )</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
+    <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">276</div>
-<div class="line-num2"></div>
+<div class="line-num2">98</div>
     </td>
-    <td class="d2h-del">
+    <td class="d2h-cntx">
         <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-prefix">&nbsp;</span>
             <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
@@ -20414,13 +20392,13 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
+    <td class="d2h-code-linenumber d2h-del">
       <div class="line-num1">292</div>
-<div class="line-num2">98</div>
+<div class="line-num2"></div>
     </td>
-    <td class="d2h-cntx">
+    <td class="d2h-del">
         <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-prefix">-</span>
             <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
@@ -21261,303 +21239,6 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">360</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">361</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    @callback</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">362</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    def _async_process_data(self):</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">363</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Update the entity.&quot;&quot;&quot;</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">364</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        data = self._api.get_device_data(self._dev_id)</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">365</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">366</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if not data:</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">367</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            _LOGGER.error(&quot;Received no data for device %s&quot;, self._entity_name)</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">368</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            self.async_write_ha_state()</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">369</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            return</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">370</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">371</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if data.get(self._sensor) is not None:</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">372</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            self._state = data[self._sensor]</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">373</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            self._icon = CUSTOM_ICONS.get(self._sensor, self._icon)</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">374</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">375</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self.async_write_ha_state()</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">376</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">377</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">378</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">class PwAuxDeviceSensor(SmileSensor):</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">379</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    &quot;&quot;&quot;Auxiliary Device Sensors.&quot;&quot;&quot;</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">380</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">381</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    def __init__(self, api, coordinator, name, dev_id, sensor):</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">382</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Set up the Plugwise API.&quot;&quot;&quot;</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">383</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        super().__init__(api, coordinator, name, dev_id, sensor)</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">384</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">385</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self._cooling_state = False</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">386</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self._heating_state = False</span>
-        </div>
-    </td>
-</tr><tr>
     <td class="d2h-code-linenumber d2h-ins d2h-change">
       <div class="line-num1"></div>
 <div class="line-num2">113</div>
@@ -21757,7 +21438,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">387</div>
+      <div class="line-num1">360</div>
 <div class="line-num2">131</div>
     </td>
     <td class="d2h-cntx">
@@ -21768,7 +21449,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">388</div>
+      <div class="line-num1">361</div>
 <div class="line-num2">132</div>
     </td>
     <td class="d2h-cntx">
@@ -21779,7 +21460,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">389</div>
+      <div class="line-num1">362</div>
 <div class="line-num2">133</div>
     </td>
     <td class="d2h-cntx">
@@ -21790,7 +21471,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">390</div>
+      <div class="line-num1">363</div>
 <div class="line-num2">134</div>
     </td>
     <td class="d2h-cntx">
@@ -21801,51 +21482,29 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">391</div>
+      <div class="line-num1">364</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        <del>data</del> = self.<del>_api</del>.<del>get_device_data</del>(<del>self._dev_id</del>)</span>
+            <span class="d2h-code-line-ctn">        <del>if</del> <del>not</del> <del>(data := </del>self.<del>_api</del>.<del>get_device_data</del>(<del>self._dev_id</del>)<del>):</del></span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">392</div>
+      <div class="line-num1">365</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn"><del>            _LOGGER</del>.<del>error(&quot;Received</del> <del>no</del> <del>data for device %s&quot;, </del>self.<del>_entity_name</del>)</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">393</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if not data:</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">394</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            _LOGGER.error(&quot;Received no data for device %s&quot;, self._entity_name)</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">395</div>
+      <div class="line-num1">366</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -21856,7 +21515,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">396</div>
+      <div class="line-num1">367</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -21867,7 +21526,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">397</div>
+      <div class="line-num1">368</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -21878,145 +21537,35 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">398</div>
+      <div class="line-num1">369</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if data.get(&quot;heating_state&quot;) is not None:</span>
+            <span class="d2h-code-line-ctn">        if data.get(self._sensor) is not None:</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">399</div>
+      <div class="line-num1">370</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            self._heating_state = data[&quot;heating_state&quot;]</span>
+            <span class="d2h-code-line-ctn">            self._state = data[self._sensor]</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">400</div>
+      <div class="line-num1">371</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if data.get(&quot;cooling_state&quot;) is not None:</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">401</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            self._cooling_state = data[&quot;cooling_state&quot;]</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">402</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">403</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self._state = &quot;idle&quot;</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">404</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self._icon = IDLE_ICON</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">405</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if self._heating_state:</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">406</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            self._state = &quot;heating&quot;</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">407</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            self._icon = FLAME_ICON</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">408</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if self._cooling_state:</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">409</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            self._state = &quot;cooling&quot;</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">410</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            self._icon = COOL_ICON</span>
+            <span class="d2h-code-line-ctn">            self._icon = CUSTOM_ICONS.get(self._sensor, self._icon)</span>
         </div>
     </td>
 </tr><tr>
@@ -22027,7 +21576,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        <ins>self._attr_icon</ins> = self.<ins>_sr_data</ins>.<ins>get</ins>(<ins>ATTR_ICON</ins>)</span>
+            <span class="d2h-code-line-ctn">        <ins>self._attr_icon</ins> <ins>=</ins> self.<ins>_sr_data</ins>.<ins>get</ins>(<ins>ATTR_ICON</ins>)</span>
         </div>
     </td>
 </tr><tr>
@@ -22038,12 +21587,12 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><ins>        self._attr_native_value = self._sr_data.get(ATTR_STATE)</ins></span>
+            <span class="d2h-code-line-ctn"><ins>        self</ins>.<ins>_attr_native_value</ins> <ins>=</ins> self.<ins>_sr_data.get(ATTR_STATE</ins>)</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">411</div>
+      <div class="line-num1">372</div>
 <div class="line-num2">137</div>
     </td>
     <td class="d2h-cntx">
@@ -22054,7 +21603,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">412</div>
+      <div class="line-num1">373</div>
 <div class="line-num2">138</div>
     </td>
     <td class="d2h-cntx">
@@ -22065,7 +21614,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">413</div>
+      <div class="line-num1">374</div>
 <div class="line-num2">139</div>
     </td>
     <td class="d2h-cntx">
@@ -22076,7 +21625,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">414</div>
+      <div class="line-num1">375</div>
 <div class="line-num2">140</div>
     </td>
     <td class="d2h-cntx">
@@ -22087,29 +21636,29 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">415</div>
+      <div class="line-num1">376</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">class <del>PwPowerSensor</del>(<del>SmileSensor</del>):</span>
+            <span class="d2h-code-line-ctn">class <del>PwAuxDeviceSensor</del>(<del>SmileSensor</del>):</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">416</div>
+      <div class="line-num1">377</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    &quot;&quot;&quot;<del>Power</del> sensor<del> entities</del>.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn">    &quot;&quot;&quot;<del>Auxiliary</del> <del>Device</del> <del>Sensors</del>.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">417</div>
+      <div class="line-num1">378</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -22120,18 +21669,18 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">418</div>
+      <div class="line-num1">379</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    def __init__(self, api, coordinator, name, dev_id, sensor, sensor_type, model):</span>
+            <span class="d2h-code-line-ctn">    def __init__(self, api, coordinator, name, dev_id, sensor):</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">419</div>
+      <div class="line-num1">380</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -22142,112 +21691,13 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">420</div>
+      <div class="line-num1">381</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
             <span class="d2h-code-line-ctn">        super().__init__(api, coordinator, name, dev_id, sensor)</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">421</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">422</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self._icon = None</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">423</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self._model = model</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">424</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if model is None:</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">425</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            self._model = sensor_type[SENSOR_MAP_MODEL]</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">426</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">427</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self._unit_of_measurement = sensor_type[SENSOR_MAP_UOM]</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">428</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self._dev_class = sensor_type[SENSOR_MAP_DEVICE_CLASS]</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">429</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self._state_class = sensor_type[SENSOR_MAP_STATE_CLASS]</span>
         </div>
     </td>
 </tr><tr>
@@ -22269,12 +21719,12 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    &quot;&quot;&quot;<ins>Representation</ins> <ins>of a Plugwise USB </ins>sensor.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn">    &quot;&quot;&quot;<ins>Representation</ins> <ins>of</ins> <ins>a Plugwise USB sensor</ins>.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">430</div>
+      <div class="line-num1">382</div>
 <div class="line-num2">143</div>
     </td>
     <td class="d2h-cntx">
@@ -22285,24 +21735,24 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">431</div>
+      <div class="line-num1">383</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>        if</del> <del>dev_id == self._api.gateway_id:</del></span>
+            <span class="d2h-code-line-ctn"><del>        self._cooling_state</del> <del>= False</del></span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">432</div>
+      <div class="line-num1">384</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>            </del>self<del>._model</del> <del>=</del> <del>&quot;P1</del> <del>DSMR&quot;</del></span>
+            <span class="d2h-code-line-ctn">        self<del>._heating_state</del> <del>=</del> <del>False</del></span>
         </div>
     </td>
 </tr><tr>
@@ -22324,7 +21774,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><ins>        </ins>self<ins>,</ins> <ins>node:</ins> <ins>PlugwiseNode,</ins> <ins>description: PlugwiseSensorEntityDescription</ins></span>
+            <span class="d2h-code-line-ctn">        self<ins>,</ins> <ins>node:</ins> <ins>PlugwiseNode, description: PlugwiseSensorEntityDescription</ins></span>
         </div>
     </td>
 </tr><tr>
@@ -22362,7 +21812,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">433</div>
+      <div class="line-num1">385</div>
 <div class="line-num2">149</div>
     </td>
     <td class="d2h-cntx">
@@ -22373,7 +21823,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">434</div>
+      <div class="line-num1">386</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -22384,7 +21834,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">435</div>
+      <div class="line-num1">387</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -22395,7 +21845,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">436</div>
+      <div class="line-num1">388</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -22406,51 +21856,513 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">437</div>
+      <div class="line-num1">389</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        <del>data</del> = self.<del>_api.get_device_data(</del>self.<del>_dev_id</del>)</span>
+            <span class="d2h-code-line-ctn">        <del>if</del> <del>not</del> (<del>data</del> <del>:= </del>self.<del>_api</del>.<del>get_device_data(self._dev_id</del>)<del>):</del></span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">438</div>
+      <div class="line-num1">390</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><del>            _LOGGER.error(&quot;Received</del> <del>no</del> <del>data</del> <del>for</del> <del>device %s&quot;, self._entity_name)</del></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del d2h-change">
+      <div class="line-num1">391</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            <del>self.async_write_ha_state</del>()</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del d2h-change">
+      <div class="line-num1">392</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><del>            </del>return</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">393</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
             <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">439</div>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">394</div>
 <div class="line-num2"></div>
     </td>
-    <td class="d2h-del d2h-change">
+    <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>        if</del> <del>not</del> <del>data:</del></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">440</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del d2h-change">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>            _LOGGER.error(&quot;Received</del> <del>no data for device %s&quot;, self._entity_name)</del></span>
+            <span class="d2h-code-line-ctn">        if data.get(&quot;heating_state&quot;) is not None:</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">441</div>
+      <div class="line-num1">395</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            self._heating_state = data[&quot;heating_state&quot;]</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">396</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        if data.get(&quot;cooling_state&quot;) is not None:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">397</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            self._cooling_state = data[&quot;cooling_state&quot;]</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">398</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">399</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        self._state = &quot;idle&quot;</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">400</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        self._icon = IDLE_ICON</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">401</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        if self._heating_state:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">402</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            self._state = &quot;heating&quot;</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">403</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            self._icon = FLAME_ICON</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">404</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        if self._cooling_state:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">405</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            self._state = &quot;cooling&quot;</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">406</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            self._icon = COOL_ICON</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">407</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">408</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        self.async_write_ha_state()</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">409</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">410</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">411</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">class PwPowerSensor(SmileSensor):</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">412</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">    &quot;&quot;&quot;Power sensor entities.&quot;&quot;&quot;</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">413</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">414</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">    def __init__(self, api, coordinator, name, dev_id, sensor, sensor_type, model):</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">415</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Set up the Plugwise API.&quot;&quot;&quot;</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">416</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        super().__init__(api, coordinator, name, dev_id, sensor)</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">417</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">418</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        self._icon = None</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">419</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        self._model = model</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">420</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        if model is None:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">421</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            self._model = sensor_type[SENSOR_MAP_MODEL]</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">422</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">423</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        self._unit_of_measurement = sensor_type[SENSOR_MAP_UOM]</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">424</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        self._dev_class = sensor_type[SENSOR_MAP_DEVICE_CLASS]</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">425</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        self._state_class = sensor_type[SENSOR_MAP_STATE_CLASS]</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">426</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">427</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        if dev_id == self._api.gateway_id:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">428</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            self._model = &quot;P1 DSMR&quot;</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">429</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">430</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">    @callback</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">431</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">    def _async_process_data(self):</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">432</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Update the entity.&quot;&quot;&quot;</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">433</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        if not (data := self._api.get_device_data(self._dev_id)):</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">434</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            _LOGGER.error(&quot;Received no data for device %s&quot;, self._entity_name)</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">435</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -22461,7 +22373,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">442</div>
+      <div class="line-num1">436</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -22472,7 +22384,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">443</div>
+      <div class="line-num1">437</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -22483,7 +22395,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">444</div>
+      <div class="line-num1">438</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -22494,7 +22406,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">445</div>
+      <div class="line-num1">439</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -22505,7 +22417,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">446</div>
+      <div class="line-num1">440</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -22516,7 +22428,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">447</div>
+      <div class="line-num1">441</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -22527,7 +22439,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">448</div>
+      <div class="line-num1">442</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -22577,7 +22489,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        <ins>state_value</ins> = <ins>getattr(</ins>self.<ins>_node, </ins>self.<ins>entity_description.state_request_method</ins>)</span>
+            <span class="d2h-code-line-ctn">        <ins>state_value</ins> <ins>=</ins> <ins>getattr</ins>(<ins>self._node,</ins> self.<ins>entity_description</ins>.<ins>state_request_method</ins>)</span>
         </div>
     </td>
 </tr><tr>
@@ -22588,7 +22500,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><ins>        if state_value is not None:</ins></span>
+            <span class="d2h-code-line-ctn"><ins>        if</ins> <ins>state_value</ins> <ins>is</ins> <ins>not</ins> <ins>None:</ins></span>
         </div>
     </td>
 </tr><tr>
@@ -22599,7 +22511,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><ins>            return</ins> <ins>float(round(state_value,</ins> <ins>3))</ins></span>
+            <span class="d2h-code-line-ctn">            <ins>return float</ins>(<ins>round(state_value, 3</ins>)<ins>)</ins></span>
         </div>
     </td>
 </tr><tr>
@@ -22610,7 +22522,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><ins>        return</ins> <ins>None</ins></span>
+            <span class="d2h-code-line-ctn"><ins>        </ins>return<ins> None</ins></span>
         </div>
     </td>
 </tr>
@@ -25922,7 +25834,7 @@
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line">@@ -103,14 +170,30 @@</div>
+        <div class="d2h-code-line">@@ -103,12 +170,30 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
@@ -25965,67 +25877,23 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        <del>data</del> = self.<del>_api</del>.<del>get_device_data</del>(<del>self._dev_id</del>)</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins d2h-change">
-      <div class="line-num1"></div>
-<div class="line-num2">173</div>
-    </td>
-    <td class="d2h-ins d2h-change">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        <ins>self._attr_icon</ins> = self.<ins>_sw_data</ins>.<ins>get</ins>(<ins>ATTR_ICON</ins>)</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">174</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        self._attr_is_on = self._sw_data.get(ATTR_STATE)</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">107</div>
-<div class="line-num2">175</div>
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">        <del>if</del> <del>not</del> <del>(data := </del>self.<del>_api</del>.<del>get_device_data</del>(<del>self._dev_id</del>)<del>):</del></span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">108</div>
+      <div class="line-num1">107</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        <del>if not data:</del></span>
+            <span class="d2h-code-line-ctn"><del>            _LOGGER</del>.<del>error(&quot;Received</del> <del>no</del> <del>data for device %s&quot;, </del>self.<del>_name</del>)</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">109</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            _LOGGER.error(&quot;Received no data for device %s&quot;, self._name)</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">110</div>
+      <div class="line-num1">108</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -26036,7 +25904,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">111</div>
+      <div class="line-num1">109</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -26046,30 +25914,19 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins d2h-change">
-      <div class="line-num1"></div>
-<div class="line-num2">176</div>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">110</div>
+<div class="line-num2"></div>
     </td>
-    <td class="d2h-ins d2h-change">
+    <td class="d2h-del">
         <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        <ins>self.async_write_ha_state()</ins></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">112</div>
-<div class="line-num2">177</div>
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-prefix">-</span>
             <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">113</div>
+      <div class="line-num1">111</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -26080,7 +25937,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">114</div>
+      <div class="line-num1">112</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -26090,9 +25947,31 @@
         </div>
     </td>
 </tr><tr>
+    <td class="d2h-code-linenumber d2h-ins d2h-change">
+      <div class="line-num1"></div>
+<div class="line-num2">173</div>
+    </td>
+    <td class="d2h-ins d2h-change">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">        <ins>self._attr_icon</ins> <ins>=</ins> self.<ins>_sw_data</ins>.<ins>get</ins>(<ins>ATTR_ICON</ins>)</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins d2h-change">
+      <div class="line-num1"></div>
+<div class="line-num2">174</div>
+    </td>
+    <td class="d2h-ins d2h-change">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn"><ins>        self</ins>.<ins>_attr_is_on</ins> <ins>=</ins> self.<ins>_sw_data.get(ATTR_STATE</ins>)</span>
+        </div>
+    </td>
+</tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">115</div>
-<div class="line-num2">178</div>
+      <div class="line-num1">113</div>
+<div class="line-num2">175</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -26101,25 +25980,47 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">116</div>
-<div class="line-num2"></div>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">114</div>
+<div class="line-num2">176</div>
     </td>
-    <td class="d2h-del d2h-change">
+    <td class="d2h-cntx">
         <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>        self.async_write_ha_state</del>()</span>
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        self.async_write_ha_state()</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins d2h-change">
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">177</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">178</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
 <div class="line-num2">179</div>
     </td>
-    <td class="d2h-ins d2h-change">
+    <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><ins>class USBSwitch</ins>(<ins>PlugwiseUSBEntity, SwitchEntity</ins>)<ins>:</ins></span>
+            <span class="d2h-code-line-ctn">class USBSwitch(PlugwiseUSBEntity, SwitchEntity):</span>
         </div>
     </td>
 </tr><tr>
