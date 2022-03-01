@@ -71,8 +71,8 @@
           <path d="M6 9H3V7h3V4l5 4-5 4V9z m8-7v12c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h12c0.55 0 1 0.45 1 1z m-1 0H1v12h12V2z"></path>
       </svg>      <a href="#d2h-498638" class="d2h-file-name">/home/runner/work/progress/progress/clones/{ha-core/homeassistant/components → beta/custom_components}/plugwise/climate.py</a>
       <span class="d2h-file-stats">
-          <span class="d2h-lines-added">+28</span>
-          <span class="d2h-lines-deleted">-13</span>
+          <span class="d2h-lines-added">+29</span>
+          <span class="d2h-lines-deleted">-12</span>
       </span>
     </span>
 </li>
@@ -83,7 +83,7 @@
           <path d="M6 9H3V7h3V4l5 4-5 4V9z m8-7v12c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h12c0.55 0 1 0.45 1 1z m-1 0H1v12h12V2z"></path>
       </svg>      <a href="#d2h-155800" class="d2h-file-name">/home/runner/work/progress/progress/clones/{ha-core/homeassistant/components → beta/custom_components}/plugwise/config_flow.py</a>
       <span class="d2h-file-stats">
-          <span class="d2h-lines-added">+188</span>
+          <span class="d2h-lines-added">+195</span>
           <span class="d2h-lines-deleted">-5</span>
       </span>
     </span>
@@ -95,7 +95,7 @@
           <path d="M6 9H3V7h3V4l5 4-5 4V9z m8-7v12c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h12c0.55 0 1 0.45 1 1z m-1 0H1v12h12V2z"></path>
       </svg>      <a href="#d2h-978896" class="d2h-file-name">/home/runner/work/progress/progress/clones/{ha-core/homeassistant/components → beta/custom_components}/plugwise/const.py</a>
       <span class="d2h-file-stats">
-          <span class="d2h-lines-added">+184</span>
+          <span class="d2h-lines-added">+185</span>
           <span class="d2h-lines-deleted">-16</span>
       </span>
     </span>
@@ -3786,7 +3786,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    PRESET_AWAY,  # pw-beta</span>
+            <span class="d2h-code-line-ctn">    PRESET_AWAY,  # pw-beta homekit emulation</span>
         </div>
     </td>
 </tr><tr>
@@ -3797,7 +3797,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    PRESET_HOME,  # pw-beta</span>
+            <span class="d2h-code-line-ctn">    PRESET_HOME,  # pw-beta homekit emulation</span>
         </div>
     </td>
 </tr><tr>
@@ -3837,7 +3837,7 @@
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line">@@ -20,19 +22,17 @@</div>
+        <div class="d2h-code-line">@@ -20,19 +22,18 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
@@ -3891,7 +3891,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>from .const import DEFAULT_MAX_TEMP</del>,<del> DEFAULT_MIN_TEMP, DOMAIN</del></span>
+            <span class="d2h-code-line-ctn"><del>from</del> <del>.const</del> <del>import</del> <del>DEFAULT_MAX_TEMP, DEFAULT_MIN_TEMP, DOMAIN</del></span>
         </div>
     </td>
 </tr><tr>
@@ -3913,7 +3913,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><ins>    COORDINATOR</ins>,</span>
+            <span class="d2h-code-line-ctn"><ins>    CONF_HOMEKIT_EMULATION,  #</ins> <ins>pw-beta</ins> <ins>homekit</ins> <ins>emulation</ins></span>
         </div>
     </td>
 </tr><tr>
@@ -3924,7 +3924,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    DEFAULT_MAX_TEMP,</span>
+            <span class="d2h-code-line-ctn">    COORDINATOR,</span>
         </div>
     </td>
 </tr><tr>
@@ -3935,7 +3935,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    DEFAULT_MIN_TEMP,</span>
+            <span class="d2h-code-line-ctn">    DEFAULT_MAX_TEMP,</span>
         </div>
     </td>
 </tr><tr>
@@ -3946,7 +3946,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    DOMAIN,</span>
+            <span class="d2h-code-line-ctn">    DEFAULT_MIN_TEMP,</span>
         </div>
     </td>
 </tr><tr>
@@ -3957,7 +3957,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    MASTER_THERMOSTATS,</span>
+            <span class="d2h-code-line-ctn">    DOMAIN,</span>
         </div>
     </td>
 </tr><tr>
@@ -3968,13 +3968,24 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">    MASTER_THERMOSTATS,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">32</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn">)</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">25</div>
-<div class="line-num2">32</div>
+<div class="line-num2">33</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -3985,7 +3996,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">26</div>
-<div class="line-num2">33</div>
+<div class="line-num2">34</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -3996,7 +4007,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">27</div>
-<div class="line-num2">34</div>
+<div class="line-num2">35</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4007,7 +4018,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">28</div>
-<div class="line-num2">35</div>
+<div class="line-num2">36</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4095,7 +4106,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">36</div>
-<div class="line-num2">36</div>
+<div class="line-num2">37</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4106,7 +4117,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">37</div>
-<div class="line-num2">37</div>
+<div class="line-num2">38</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4117,7 +4128,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">38</div>
-<div class="line-num2">38</div>
+<div class="line-num2">39</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4129,12 +4140,12 @@
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line">@@ -40,11 +40,11 @@</div>
+        <div class="d2h-code-line">@@ -40,11 +41,11 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">40</div>
-<div class="line-num2">40</div>
+<div class="line-num2">41</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4145,7 +4156,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">41</div>
-<div class="line-num2">41</div>
+<div class="line-num2">42</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4156,7 +4167,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">42</div>
-<div class="line-num2">42</div>
+<div class="line-num2">43</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4178,7 +4189,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins d2h-change">
       <div class="line-num1"></div>
-<div class="line-num2">43</div>
+<div class="line-num2">44</div>
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
@@ -4189,7 +4200,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">44</div>
-<div class="line-num2">44</div>
+<div class="line-num2">45</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4200,7 +4211,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">45</div>
-<div class="line-num2">45</div>
+<div class="line-num2">46</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4211,7 +4222,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">46</div>
-<div class="line-num2">46</div>
+<div class="line-num2">47</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4233,7 +4244,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins d2h-change">
       <div class="line-num1"></div>
-<div class="line-num2">47</div>
+<div class="line-num2">48</div>
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
@@ -4244,7 +4255,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">48</div>
-<div class="line-num2">48</div>
+<div class="line-num2">49</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4255,7 +4266,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">49</div>
-<div class="line-num2">49</div>
+<div class="line-num2">50</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4266,7 +4277,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">50</div>
-<div class="line-num2">50</div>
+<div class="line-num2">51</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4278,12 +4289,12 @@
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line">@@ -60,6 +60,7 @@</div>
+        <div class="d2h-code-line">@@ -60,6 +61,7 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">60</div>
-<div class="line-num2">60</div>
+<div class="line-num2">61</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4294,7 +4305,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">61</div>
-<div class="line-num2">61</div>
+<div class="line-num2">62</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4305,7 +4316,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">62</div>
-<div class="line-num2">62</div>
+<div class="line-num2">63</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4316,18 +4327,18 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
-<div class="line-num2">63</div>
+<div class="line-num2">64</div>
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        self._mode: str | None = None  # pw-beta</span>
+            <span class="d2h-code-line-ctn">        self._homekit_mode: str | None = None  # pw-beta homekit emulation</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">63</div>
-<div class="line-num2">64</div>
+<div class="line-num2">65</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4338,7 +4349,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">64</div>
-<div class="line-num2">65</div>
+<div class="line-num2">66</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4349,7 +4360,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">65</div>
-<div class="line-num2">66</div>
+<div class="line-num2">67</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4361,12 +4372,12 @@
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line">@@ -96,7 +97,11 @@</div>
+        <div class="d2h-code-line">@@ -96,6 +98,10 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">96</div>
-<div class="line-num2">97</div>
+<div class="line-num2">98</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4377,7 +4388,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">97</div>
-<div class="line-num2">98</div>
+<div class="line-num2">99</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4388,34 +4399,12 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">98</div>
-<div class="line-num2">99</div>
+<div class="line-num2">100</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
             <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Return HVAC operation ie. heat, cool mode.&quot;&quot;&quot;</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">99</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del d2h-change">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if (<del>mode := self.device.get(&quot;mode&quot;)) is None or mode not in self.hvac_modes:</del></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins d2h-change">
-      <div class="line-num1"></div>
-<div class="line-num2">100</div>
-    </td>
-    <td class="d2h-ins d2h-change">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        if (</span>
         </div>
     </td>
 </tr><tr>
@@ -4426,7 +4415,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            (mode := self.device.get(&quot;mode&quot;)) is None</span>
+            <span class="d2h-code-line-ctn">        if (</span>
         </div>
     </td>
 </tr><tr>
@@ -4437,7 +4426,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            or mode not in self.hvac_modes</span>
+            <span class="d2h-code-line-ctn">            self._homekit_mode == HVAC_MODE_OFF and CONF_HOMEKIT_EMULATION</span>
         </div>
     </td>
 </tr><tr>
@@ -4448,7 +4437,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            or self._mode == HVAC_MODE_OFF  # pw-beta</span>
+            <span class="d2h-code-line-ctn">        ):  # pw-beta homekit emulation</span>
         </div>
     </td>
 </tr><tr>
@@ -4459,13 +4448,24 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        ):</span>
+            <span class="d2h-code-line-ctn">            return HVAC_MODE_OFF</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">99</div>
+<div class="line-num2">105</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        if (mode := self.device.get(&quot;mode&quot;)) is None or mode not in self.hvac_modes:</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">100</div>
-<div class="line-num2">105</div>
+<div class="line-num2">106</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4476,7 +4476,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">101</div>
-<div class="line-num2">106</div>
+<div class="line-num2">107</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4484,27 +4484,16 @@
             <span class="d2h-code-line-ctn">        return mode</span>
         </div>
     </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">102</div>
-<div class="line-num2">107</div>
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
 </tr>
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line">@@ -145,6 +150,7 @@</div>
+        <div class="d2h-code-line">@@ -145,6 +151,7 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">145</div>
-<div class="line-num2">150</div>
+<div class="line-num2">151</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4515,7 +4504,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">146</div>
-<div class="line-num2">151</div>
+<div class="line-num2">152</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4526,7 +4515,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">147</div>
-<div class="line-num2">152</div>
+<div class="line-num2">153</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4537,18 +4526,18 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
-<div class="line-num2">153</div>
+<div class="line-num2">154</div>
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        self._mode = hvac_mode  # pw-beta</span>
+            <span class="d2h-code-line-ctn">        self._homekit_mode = hvac_mode  # pw-beta homekit emulation</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">148</div>
-<div class="line-num2">154</div>
+<div class="line-num2">155</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4559,7 +4548,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">149</div>
-<div class="line-num2">155</div>
+<div class="line-num2">156</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4570,7 +4559,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">150</div>
-<div class="line-num2">156</div>
+<div class="line-num2">157</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4582,12 +4571,12 @@
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line">@@ -154,6 +160,15 @@</div>
+        <div class="d2h-code-line">@@ -154,6 +161,16 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">154</div>
-<div class="line-num2">160</div>
+<div class="line-num2">161</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4598,7 +4587,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">155</div>
-<div class="line-num2">161</div>
+<div class="line-num2">162</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4609,23 +4598,12 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">156</div>
-<div class="line-num2">162</div>
+<div class="line-num2">163</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
             <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">163</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        # pw-beta: feature request - mimic HomeKit behavior</span>
         </div>
     </td>
 </tr><tr>
@@ -4636,7 +4614,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        if hvac_mode == HVAC_MODE_OFF:</span>
+            <span class="d2h-code-line-ctn">        # pw-beta: feature request - mimic HomeKit behavior</span>
         </div>
     </td>
 </tr><tr>
@@ -4647,7 +4625,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            await self.async_set_preset_mode(PRESET_AWAY)</span>
+            <span class="d2h-code-line-ctn">        if CONF_HOMEKIT_EMULATION:</span>
         </div>
     </td>
 </tr><tr>
@@ -4658,7 +4636,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        if (</span>
+            <span class="d2h-code-line-ctn">            if self._homekit_mode == HVAC_MODE_OFF:</span>
         </div>
     </td>
 </tr><tr>
@@ -4669,7 +4647,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            hvac_mode in [HVAC_MODE_HEAT, HVAC_MODE_COOL]</span>
+            <span class="d2h-code-line-ctn">                await self.async_set_preset_mode(PRESET_AWAY)</span>
         </div>
     </td>
 </tr><tr>
@@ -4680,7 +4658,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            and self.device[&quot;active_preset&quot;] == PRESET_AWAY</span>
+            <span class="d2h-code-line-ctn">            if (</span>
         </div>
     </td>
 </tr><tr>
@@ -4691,7 +4669,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        ):</span>
+            <span class="d2h-code-line-ctn">                self._homekit_mode in [HVAC_MODE_HEAT, HVAC_MODE_COOL]</span>
         </div>
     </td>
 </tr><tr>
@@ -4702,7 +4680,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            await self.async_set_preset_mode(PRESET_HOME)</span>
+            <span class="d2h-code-line-ctn">                and self.device[&quot;active_preset&quot;] == PRESET_AWAY</span>
         </div>
     </td>
 </tr><tr>
@@ -4713,13 +4691,35 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">            ):</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">172</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">                await self.async_set_preset_mode(PRESET_HOME)</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">173</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">157</div>
-<div class="line-num2">172</div>
+<div class="line-num2">174</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4730,7 +4730,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">158</div>
-<div class="line-num2">173</div>
+<div class="line-num2">175</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -4741,7 +4741,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">159</div>
-<div class="line-num2">174</div>
+<div class="line-num2">176</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -5022,7 +5022,7 @@
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line">@@ -15,28 +26,78 @@</div>
+        <div class="d2h-code-line">@@ -15,28 +26,80 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
@@ -5124,9 +5124,20 @@
         </div>
     </td>
 </tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">34</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">from homeassistant.helpers import config_validation as cv</span>
+        </div>
+    </td>
+</tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">22</div>
-<div class="line-num2">34</div>
+<div class="line-num2">35</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -5137,7 +5148,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">23</div>
-<div class="line-num2">35</div>
+<div class="line-num2">36</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -5148,7 +5159,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">24</div>
-<div class="line-num2">36</div>
+<div class="line-num2">37</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -5159,7 +5170,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">25</div>
-<div class="line-num2">37</div>
+<div class="line-num2">38</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -5170,7 +5181,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
-<div class="line-num2">38</div>
+<div class="line-num2">39</div>
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-line">
@@ -5181,23 +5192,12 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
-<div class="line-num2">39</div>
+<div class="line-num2">40</div>
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    CONF_USB_PATH,</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">26</div>
-<div class="line-num2">40</div>
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">    DEFAULT_PORT,</span>
+            <span class="d2h-code-line-ctn">    CONF_HOMEKIT_EMULATION,</span>
         </div>
     </td>
 </tr><tr>
@@ -5208,13 +5208,35 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">    CONF_USB_PATH,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">26</div>
+<div class="line-num2">42</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">    DEFAULT_PORT,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">43</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn">    DEFAULT_SCAN_INTERVAL,</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">27</div>
-<div class="line-num2">42</div>
+<div class="line-num2">44</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -5225,7 +5247,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">28</div>
-<div class="line-num2">43</div>
+<div class="line-num2">45</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -5236,7 +5258,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
-<div class="line-num2">44</div>
+<div class="line-num2">46</div>
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-line">
@@ -5247,7 +5269,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">29</div>
-<div class="line-num2">45</div>
+<div class="line-num2">47</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -5258,7 +5280,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">30</div>
-<div class="line-num2">46</div>
+<div class="line-num2">48</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -5269,7 +5291,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
-<div class="line-num2">47</div>
+<div class="line-num2">49</div>
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-line">
@@ -5280,7 +5302,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
-<div class="line-num2">48</div>
+<div class="line-num2">50</div>
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-line">
@@ -5291,7 +5313,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">31</div>
-<div class="line-num2">49</div>
+<div class="line-num2">51</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -5302,7 +5324,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">32</div>
-<div class="line-num2">50</div>
+<div class="line-num2">52</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -5313,7 +5335,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">33</div>
-<div class="line-num2">51</div>
+<div class="line-num2">53</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -5324,7 +5346,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
-<div class="line-num2">52</div>
+<div class="line-num2">54</div>
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-line">
@@ -5335,7 +5357,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">34</div>
-<div class="line-num2">53</div>
+<div class="line-num2">55</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -5346,7 +5368,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">35</div>
-<div class="line-num2">54</div>
+<div class="line-num2">56</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -5357,7 +5379,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">36</div>
-<div class="line-num2">55</div>
+<div class="line-num2">57</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -5368,7 +5390,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">37</div>
-<div class="line-num2">56</div>
+<div class="line-num2">58</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -5379,7 +5401,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">38</div>
-<div class="line-num2">57</div>
+<div class="line-num2">59</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -5390,33 +5412,11 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">39</div>
-<div class="line-num2">58</div>
+<div class="line-num2">60</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">59</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">CONF_MANUAL_PATH = &quot;Enter Manually&quot;</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">60</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
@@ -5428,7 +5428,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">CONNECTION_SCHEMA = vol.Schema(</span>
+            <span class="d2h-code-line-ctn">CONF_MANUAL_PATH = &quot;Enter Manually&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -5439,7 +5439,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    {vol.Required(FLOW_TYPE, default=FLOW_NET): vol.In([FLOW_NET, FLOW_USB])}</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -5450,7 +5450,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">)</span>
+            <span class="d2h-code-line-ctn">CONNECTION_SCHEMA = vol.Schema(</span>
         </div>
     </td>
 </tr><tr>
@@ -5461,7 +5461,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">    {vol.Required(FLOW_TYPE, default=FLOW_NET): vol.In([FLOW_NET, FLOW_USB])}</span>
         </div>
     </td>
 </tr><tr>
@@ -5472,7 +5472,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">)</span>
         </div>
     </td>
 </tr><tr>
@@ -5483,7 +5483,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">@callback</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -5494,7 +5494,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">def plugwise_stick_entries(hass):</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -5505,7 +5505,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    &quot;&quot;&quot;Return existing connections for Plugwise USB-stick domain.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn">@callback</span>
         </div>
     </td>
 </tr><tr>
@@ -5516,7 +5516,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    sticks = []</span>
+            <span class="d2h-code-line-ctn">def plugwise_stick_entries(hass):</span>
         </div>
     </td>
 </tr><tr>
@@ -5527,7 +5527,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    for entry in hass.config_entries.async_entries(DOMAIN):</span>
+            <span class="d2h-code-line-ctn">    &quot;&quot;&quot;Return existing connections for Plugwise USB-stick domain.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -5538,7 +5538,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        if entry.data.get(PW_TYPE) == STICK:</span>
+            <span class="d2h-code-line-ctn">    sticks = []</span>
         </div>
     </td>
 </tr><tr>
@@ -5549,7 +5549,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            sticks.append(entry.data.get(CONF_USB_PATH))</span>
+            <span class="d2h-code-line-ctn">    for entry in hass.config_entries.async_entries(DOMAIN):</span>
         </div>
     </td>
 </tr><tr>
@@ -5560,7 +5560,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    return sticks</span>
+            <span class="d2h-code-line-ctn">        if entry.data.get(PW_TYPE) == STICK:</span>
         </div>
     </td>
 </tr><tr>
@@ -5571,7 +5571,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">            sticks.append(entry.data.get(CONF_USB_PATH))</span>
         </div>
     </td>
 </tr><tr>
@@ -5582,7 +5582,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">    return sticks</span>
         </div>
     </td>
 </tr><tr>
@@ -5593,7 +5593,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">async def validate_usb_connection(self, device_path=None) -&gt; dict[str, str]:</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -5604,7 +5604,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    &quot;&quot;&quot;Test if device_path is a real Plugwise USB-Stick.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -5615,7 +5615,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    errors = {}</span>
+            <span class="d2h-code-line-ctn">async def validate_usb_connection(self, device_path=None) -&gt; dict[str, str]:</span>
         </div>
     </td>
 </tr><tr>
@@ -5626,7 +5626,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">    &quot;&quot;&quot;Test if device_path is a real Plugwise USB-Stick.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -5637,7 +5637,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    # Avoid creating a 2nd connection to an already configured stick</span>
+            <span class="d2h-code-line-ctn">    errors = {}</span>
         </div>
     </td>
 </tr><tr>
@@ -5648,7 +5648,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    if device_path in plugwise_stick_entries(self):</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -5659,7 +5659,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        errors[CONF_BASE] = &quot;already_configured&quot;</span>
+            <span class="d2h-code-line-ctn">    # Avoid creating a 2nd connection to an already configured stick</span>
         </div>
     </td>
 </tr><tr>
@@ -5670,7 +5670,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        return errors, None</span>
+            <span class="d2h-code-line-ctn">    if device_path in plugwise_stick_entries(self):</span>
         </div>
     </td>
 </tr><tr>
@@ -5681,7 +5681,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">        errors[CONF_BASE] = &quot;already_configured&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -5692,7 +5692,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    api_stick = await self.async_add_executor_job(Stick, device_path)</span>
+            <span class="d2h-code-line-ctn">        return errors, None</span>
         </div>
     </td>
 </tr><tr>
@@ -5703,7 +5703,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    try:</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -5714,7 +5714,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        await self.async_add_executor_job(api_stick.connect)</span>
+            <span class="d2h-code-line-ctn">    api_stick = await self.async_add_executor_job(Stick, device_path)</span>
         </div>
     </td>
 </tr><tr>
@@ -5725,7 +5725,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        await self.async_add_executor_job(api_stick.initialize_stick)</span>
+            <span class="d2h-code-line-ctn">    try:</span>
         </div>
     </td>
 </tr><tr>
@@ -5736,7 +5736,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        await self.async_add_executor_job(api_stick.disconnect)</span>
+            <span class="d2h-code-line-ctn">        await self.async_add_executor_job(api_stick.connect)</span>
         </div>
     </td>
 </tr><tr>
@@ -5747,7 +5747,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    except PortError:</span>
+            <span class="d2h-code-line-ctn">        await self.async_add_executor_job(api_stick.initialize_stick)</span>
         </div>
     </td>
 </tr><tr>
@@ -5758,7 +5758,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        errors[CONF_BASE] = &quot;cannot_connect&quot;</span>
+            <span class="d2h-code-line-ctn">        await self.async_add_executor_job(api_stick.disconnect)</span>
         </div>
     </td>
 </tr><tr>
@@ -5769,7 +5769,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    except StickInitError:</span>
+            <span class="d2h-code-line-ctn">    except PortError:</span>
         </div>
     </td>
 </tr><tr>
@@ -5780,7 +5780,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        errors[CONF_BASE] = &quot;stick_init&quot;</span>
+            <span class="d2h-code-line-ctn">        errors[CONF_BASE] = &quot;cannot_connect&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -5791,7 +5791,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    except NetworkDown:</span>
+            <span class="d2h-code-line-ctn">    except StickInitError:</span>
         </div>
     </td>
 </tr><tr>
@@ -5802,7 +5802,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        errors[CONF_BASE] = &quot;network_down&quot;</span>
+            <span class="d2h-code-line-ctn">        errors[CONF_BASE] = &quot;stick_init&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -5813,7 +5813,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    except TimeoutException:</span>
+            <span class="d2h-code-line-ctn">    except NetworkDown:</span>
         </div>
     </td>
 </tr><tr>
@@ -5824,7 +5824,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        errors[CONF_BASE] = &quot;network_timeout&quot;</span>
+            <span class="d2h-code-line-ctn">        errors[CONF_BASE] = &quot;network_down&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -5835,7 +5835,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    return errors, api_stick</span>
+            <span class="d2h-code-line-ctn">    except TimeoutException:</span>
         </div>
     </td>
 </tr><tr>
@@ -5846,7 +5846,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">        errors[CONF_BASE] = &quot;network_timeout&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -5857,13 +5857,35 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">    return errors, api_stick</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">101</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">102</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">40</div>
-<div class="line-num2">101</div>
+<div class="line-num2">103</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -5874,7 +5896,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">41</div>
-<div class="line-num2">102</div>
+<div class="line-num2">104</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -5885,7 +5907,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">42</div>
-<div class="line-num2">103</div>
+<div class="line-num2">105</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -5897,12 +5919,12 @@
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line">@@ -108,9 +169,71 @@</div>
+        <div class="d2h-code-line">@@ -108,9 +171,71 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">108</div>
-<div class="line-num2">169</div>
+<div class="line-num2">171</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -5913,7 +5935,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">109</div>
-<div class="line-num2">170</div>
+<div class="line-num2">172</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -5924,7 +5946,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">110</div>
-<div class="line-num2">171</div>
+<div class="line-num2">173</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -5946,7 +5968,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins d2h-change">
       <div class="line-num1"></div>
-<div class="line-num2">172</div>
+<div class="line-num2">174</div>
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
@@ -5957,34 +5979,12 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
-<div class="line-num2">173</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">174</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    async def async_step_user_usb(self, user_input=None):</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
 <div class="line-num2">175</div>
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Step when user initializes a integration.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -5995,7 +5995,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        errors = {}</span>
+            <span class="d2h-code-line-ctn">    async def async_step_user_usb(self, user_input=None):</span>
         </div>
     </td>
 </tr><tr>
@@ -6006,7 +6006,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        ports = await self.hass.async_add_executor_job(serial.tools.list_ports.comports)</span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Step when user initializes a integration.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -6017,7 +6017,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        list_of_ports = [</span>
+            <span class="d2h-code-line-ctn">        errors = {}</span>
         </div>
     </td>
 </tr><tr>
@@ -6028,7 +6028,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            f&quot;{p}, s&#x2F;n: {p.serial_number or &#x27;n&#x2F;a&#x27;}&quot;</span>
+            <span class="d2h-code-line-ctn">        ports = await self.hass.async_add_executor_job(serial.tools.list_ports.comports)</span>
         </div>
     </td>
 </tr><tr>
@@ -6039,7 +6039,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            + (f&quot; - {p.manufacturer}&quot; if p.manufacturer else &quot;&quot;)</span>
+            <span class="d2h-code-line-ctn">        list_of_ports = [</span>
         </div>
     </td>
 </tr><tr>
@@ -6050,7 +6050,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            for p in ports</span>
+            <span class="d2h-code-line-ctn">            f&quot;{p}, s&#x2F;n: {p.serial_number or &#x27;n&#x2F;a&#x27;}&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -6061,7 +6061,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        ]</span>
+            <span class="d2h-code-line-ctn">            + (f&quot; - {p.manufacturer}&quot; if p.manufacturer else &quot;&quot;)</span>
         </div>
     </td>
 </tr><tr>
@@ -6072,7 +6072,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        list_of_ports.append(CONF_MANUAL_PATH)</span>
+            <span class="d2h-code-line-ctn">            for p in ports</span>
         </div>
     </td>
 </tr><tr>
@@ -6083,7 +6083,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">        ]</span>
         </div>
     </td>
 </tr><tr>
@@ -6094,7 +6094,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        if user_input is not None:</span>
+            <span class="d2h-code-line-ctn">        list_of_ports.append(CONF_MANUAL_PATH)</span>
         </div>
     </td>
 </tr><tr>
@@ -6105,7 +6105,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            user_input.pop(FLOW_TYPE, None)</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -6116,7 +6116,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            user_selection = user_input[CONF_USB_PATH]</span>
+            <span class="d2h-code-line-ctn">        if user_input is not None:</span>
         </div>
     </td>
 </tr><tr>
@@ -6127,7 +6127,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">            user_input.pop(FLOW_TYPE, None)</span>
         </div>
     </td>
 </tr><tr>
@@ -6138,7 +6138,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            if user_selection == CONF_MANUAL_PATH:</span>
+            <span class="d2h-code-line-ctn">            user_selection = user_input[CONF_USB_PATH]</span>
         </div>
     </td>
 </tr><tr>
@@ -6149,13 +6149,35 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">191</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">            if user_selection == CONF_MANUAL_PATH:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">192</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn">                return await self.async_step_manual_path()</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">112</div>
-<div class="line-num2">191</div>
+<div class="line-num2">193</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -6177,7 +6199,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins d2h-change">
       <div class="line-num1"></div>
-<div class="line-num2">192</div>
+<div class="line-num2">194</div>
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
@@ -6188,34 +6210,12 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
-<div class="line-num2">193</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            device_path = await self.hass.async_add_executor_job(</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">194</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                usb.get_serial_by_id, port.device</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
 <div class="line-num2">195</div>
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            )</span>
+            <span class="d2h-code-line-ctn">            device_path = await self.hass.async_add_executor_job(</span>
         </div>
     </td>
 </tr><tr>
@@ -6226,7 +6226,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            errors, api_stick = await validate_usb_connection(self.hass, device_path)</span>
+            <span class="d2h-code-line-ctn">                usb.get_serial_by_id, port.device</span>
         </div>
     </td>
 </tr><tr>
@@ -6237,7 +6237,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            if not errors:</span>
+            <span class="d2h-code-line-ctn">            )</span>
         </div>
     </td>
 </tr><tr>
@@ -6248,7 +6248,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                await self.async_set_unique_id(api_stick.mac)</span>
+            <span class="d2h-code-line-ctn">            errors, api_stick = await validate_usb_connection(self.hass, device_path)</span>
         </div>
     </td>
 </tr><tr>
@@ -6259,7 +6259,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                return self.async_create_entry(</span>
+            <span class="d2h-code-line-ctn">            if not errors:</span>
         </div>
     </td>
 </tr><tr>
@@ -6270,7 +6270,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                    title=&quot;Stick&quot;, data={CONF_USB_PATH: device_path, PW_TYPE: STICK}</span>
+            <span class="d2h-code-line-ctn">                await self.async_set_unique_id(api_stick.mac)</span>
         </div>
     </td>
 </tr><tr>
@@ -6281,7 +6281,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                )</span>
+            <span class="d2h-code-line-ctn">                return self.async_create_entry(</span>
         </div>
     </td>
 </tr><tr>
@@ -6292,7 +6292,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        return self.async_show_form(</span>
+            <span class="d2h-code-line-ctn">                    title=&quot;Stick&quot;, data={CONF_USB_PATH: device_path, PW_TYPE: STICK}</span>
         </div>
     </td>
 </tr><tr>
@@ -6303,7 +6303,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            step_id=&quot;user_usb&quot;,</span>
+            <span class="d2h-code-line-ctn">                )</span>
         </div>
     </td>
 </tr><tr>
@@ -6314,7 +6314,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            data_schema=vol.Schema(</span>
+            <span class="d2h-code-line-ctn">        return self.async_show_form(</span>
         </div>
     </td>
 </tr><tr>
@@ -6325,7 +6325,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                {vol.Required(CONF_USB_PATH): vol.In(list_of_ports)}</span>
+            <span class="d2h-code-line-ctn">            step_id=&quot;user_usb&quot;,</span>
         </div>
     </td>
 </tr><tr>
@@ -6336,7 +6336,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            ),</span>
+            <span class="d2h-code-line-ctn">            data_schema=vol.Schema(</span>
         </div>
     </td>
 </tr><tr>
@@ -6347,7 +6347,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            errors=errors,</span>
+            <span class="d2h-code-line-ctn">                {vol.Required(CONF_USB_PATH): vol.In(list_of_ports)}</span>
         </div>
     </td>
 </tr><tr>
@@ -6358,7 +6358,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        )</span>
+            <span class="d2h-code-line-ctn">            ),</span>
         </div>
     </td>
 </tr><tr>
@@ -6369,7 +6369,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">            errors=errors,</span>
         </div>
     </td>
 </tr><tr>
@@ -6380,7 +6380,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    async def async_step_manual_path(self, user_input=None):</span>
+            <span class="d2h-code-line-ctn">        )</span>
         </div>
     </td>
 </tr><tr>
@@ -6391,7 +6391,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Step when manual path to device.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -6402,7 +6402,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        errors = {}</span>
+            <span class="d2h-code-line-ctn">    async def async_step_manual_path(self, user_input=None):</span>
         </div>
     </td>
 </tr><tr>
@@ -6413,7 +6413,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        if user_input is not None:</span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Step when manual path to device.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -6424,7 +6424,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            user_input.pop(FLOW_TYPE, None)</span>
+            <span class="d2h-code-line-ctn">        errors = {}</span>
         </div>
     </td>
 </tr><tr>
@@ -6435,7 +6435,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            device_path = await self.hass.async_add_executor_job(</span>
+            <span class="d2h-code-line-ctn">        if user_input is not None:</span>
         </div>
     </td>
 </tr><tr>
@@ -6446,7 +6446,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                usb.get_serial_by_id, user_input.get(CONF_USB_PATH)</span>
+            <span class="d2h-code-line-ctn">            user_input.pop(FLOW_TYPE, None)</span>
         </div>
     </td>
 </tr><tr>
@@ -6457,7 +6457,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            )</span>
+            <span class="d2h-code-line-ctn">            device_path = await self.hass.async_add_executor_job(</span>
         </div>
     </td>
 </tr><tr>
@@ -6468,7 +6468,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            errors, api_stick = await validate_usb_connection(self.hass, device_path)</span>
+            <span class="d2h-code-line-ctn">                usb.get_serial_by_id, user_input.get(CONF_USB_PATH)</span>
         </div>
     </td>
 </tr><tr>
@@ -6479,7 +6479,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            if not errors:</span>
+            <span class="d2h-code-line-ctn">            )</span>
         </div>
     </td>
 </tr><tr>
@@ -6490,7 +6490,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                await self.async_set_unique_id(api_stick.mac)</span>
+            <span class="d2h-code-line-ctn">            errors, api_stick = await validate_usb_connection(self.hass, device_path)</span>
         </div>
     </td>
 </tr><tr>
@@ -6501,7 +6501,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                return self.async_create_entry(</span>
+            <span class="d2h-code-line-ctn">            if not errors:</span>
         </div>
     </td>
 </tr><tr>
@@ -6512,7 +6512,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                    title=&quot;Stick&quot;, data={CONF_USB_PATH: device_path}</span>
+            <span class="d2h-code-line-ctn">                await self.async_set_unique_id(api_stick.mac)</span>
         </div>
     </td>
 </tr><tr>
@@ -6523,7 +6523,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                )</span>
+            <span class="d2h-code-line-ctn">                return self.async_create_entry(</span>
         </div>
     </td>
 </tr><tr>
@@ -6534,7 +6534,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        return self.async_show_form(</span>
+            <span class="d2h-code-line-ctn">                    title=&quot;Stick&quot;, data={CONF_USB_PATH: device_path}</span>
         </div>
     </td>
 </tr><tr>
@@ -6545,7 +6545,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            step_id=&quot;manual_path&quot;,</span>
+            <span class="d2h-code-line-ctn">                )</span>
         </div>
     </td>
 </tr><tr>
@@ -6556,7 +6556,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            data_schema=vol.Schema(</span>
+            <span class="d2h-code-line-ctn">        return self.async_show_form(</span>
         </div>
     </td>
 </tr><tr>
@@ -6567,7 +6567,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                {</span>
+            <span class="d2h-code-line-ctn">            step_id=&quot;manual_path&quot;,</span>
         </div>
     </td>
 </tr><tr>
@@ -6578,7 +6578,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                    vol.Required(</span>
+            <span class="d2h-code-line-ctn">            data_schema=vol.Schema(</span>
         </div>
     </td>
 </tr><tr>
@@ -6589,7 +6589,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                        CONF_USB_PATH, default=&quot;&#x2F;dev&#x2F;ttyUSB0&quot; or vol.UNDEFINED</span>
+            <span class="d2h-code-line-ctn">                {</span>
         </div>
     </td>
 </tr><tr>
@@ -6600,7 +6600,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                    ): str</span>
+            <span class="d2h-code-line-ctn">                    vol.Required(</span>
         </div>
     </td>
 </tr><tr>
@@ -6611,7 +6611,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                }</span>
+            <span class="d2h-code-line-ctn">                        CONF_USB_PATH, default=&quot;&#x2F;dev&#x2F;ttyUSB0&quot; or vol.UNDEFINED</span>
         </div>
     </td>
 </tr><tr>
@@ -6622,7 +6622,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            ),</span>
+            <span class="d2h-code-line-ctn">                    ): str</span>
         </div>
     </td>
 </tr><tr>
@@ -6633,7 +6633,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            errors=errors,</span>
+            <span class="d2h-code-line-ctn">                }</span>
         </div>
     </td>
 </tr><tr>
@@ -6644,7 +6644,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        )</span>
+            <span class="d2h-code-line-ctn">            ),</span>
         </div>
     </td>
 </tr><tr>
@@ -6655,7 +6655,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">            errors=errors,</span>
         </div>
     </td>
 </tr><tr>
@@ -6666,13 +6666,35 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">        )</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">237</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">238</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn">    async def async_step_user_gateway(</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">114</div>
-<div class="line-num2">237</div>
+<div class="line-num2">239</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -6683,7 +6705,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">115</div>
-<div class="line-num2">238</div>
+<div class="line-num2">240</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -6694,7 +6716,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">116</div>
-<div class="line-num2">239</div>
+<div class="line-num2">241</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -6706,12 +6728,12 @@
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line">@@ -141,7 +264,67 @@</div>
+        <div class="d2h-code-line">@@ -141,7 +266,72 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">141</div>
-<div class="line-num2">264</div>
+<div class="line-num2">266</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -6722,7 +6744,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">142</div>
-<div class="line-num2">265</div>
+<div class="line-num2">267</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -6733,7 +6755,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">143</div>
-<div class="line-num2">266</div>
+<div class="line-num2">268</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -6755,7 +6777,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins d2h-change">
       <div class="line-num1"></div>
-<div class="line-num2">267</div>
+<div class="line-num2">269</div>
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
@@ -6766,7 +6788,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">145</div>
-<div class="line-num2">268</div>
+<div class="line-num2">270</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -6777,7 +6799,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">146</div>
-<div class="line-num2">269</div>
+<div class="line-num2">271</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -6788,7 +6810,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">147</div>
-<div class="line-num2">270</div>
+<div class="line-num2">272</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -6799,34 +6821,12 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
-<div class="line-num2">271</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">272</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    async def async_step_user(self, user_input=None):</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
 <div class="line-num2">273</div>
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Handle the initial step when using network&#x2F;gateway setups.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -6837,7 +6837,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        errors = {}</span>
+            <span class="d2h-code-line-ctn">    async def async_step_user(self, user_input=None):</span>
         </div>
     </td>
 </tr><tr>
@@ -6848,7 +6848,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        if user_input is not None:</span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Handle the initial step when using network&#x2F;gateway setups.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -6859,7 +6859,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            if user_input[FLOW_TYPE] == FLOW_NET:</span>
+            <span class="d2h-code-line-ctn">        errors = {}</span>
         </div>
     </td>
 </tr><tr>
@@ -6870,7 +6870,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                return await self.async_step_user_gateway()</span>
+            <span class="d2h-code-line-ctn">        if user_input is not None:</span>
         </div>
     </td>
 </tr><tr>
@@ -6881,7 +6881,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">            if user_input[FLOW_TYPE] == FLOW_NET:</span>
         </div>
     </td>
 </tr><tr>
@@ -6892,7 +6892,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            if user_input[FLOW_TYPE] == FLOW_USB:</span>
+            <span class="d2h-code-line-ctn">                return await self.async_step_user_gateway()</span>
         </div>
     </td>
 </tr><tr>
@@ -6903,7 +6903,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                return await self.async_step_user_usb()</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -6914,7 +6914,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">            if user_input[FLOW_TYPE] == FLOW_USB:</span>
         </div>
     </td>
 </tr><tr>
@@ -6925,7 +6925,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        return self.async_show_form(</span>
+            <span class="d2h-code-line-ctn">                return await self.async_step_user_usb()</span>
         </div>
     </td>
 </tr><tr>
@@ -6936,7 +6936,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            step_id=&quot;user&quot;,</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -6947,7 +6947,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            data_schema=CONNECTION_SCHEMA,</span>
+            <span class="d2h-code-line-ctn">        return self.async_show_form(</span>
         </div>
     </td>
 </tr><tr>
@@ -6958,7 +6958,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            errors=errors,</span>
+            <span class="d2h-code-line-ctn">            step_id=&quot;user&quot;,</span>
         </div>
     </td>
 </tr><tr>
@@ -6969,7 +6969,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        )</span>
+            <span class="d2h-code-line-ctn">            data_schema=CONNECTION_SCHEMA,</span>
         </div>
     </td>
 </tr><tr>
@@ -6980,7 +6980,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">            errors=errors,</span>
         </div>
     </td>
 </tr><tr>
@@ -6991,7 +6991,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    # pw-beta</span>
+            <span class="d2h-code-line-ctn">        )</span>
         </div>
     </td>
 </tr><tr>
@@ -7002,7 +7002,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    @staticmethod</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -7013,7 +7013,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    @callback</span>
+            <span class="d2h-code-line-ctn">    # pw-beta</span>
         </div>
     </td>
 </tr><tr>
@@ -7024,7 +7024,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    def async_get_options_flow(config_entry):</span>
+            <span class="d2h-code-line-ctn">    @staticmethod</span>
         </div>
     </td>
 </tr><tr>
@@ -7035,7 +7035,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Get the options flow for this handler.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn">    @callback</span>
         </div>
     </td>
 </tr><tr>
@@ -7046,7 +7046,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        return PlugwiseOptionsFlowHandler(config_entry)</span>
+            <span class="d2h-code-line-ctn">    def async_get_options_flow(config_entry):</span>
         </div>
     </td>
 </tr><tr>
@@ -7057,7 +7057,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Get the options flow for this handler.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -7068,7 +7068,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">        return PlugwiseOptionsFlowHandler(config_entry)</span>
         </div>
     </td>
 </tr><tr>
@@ -7079,7 +7079,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"># pw-beta - change the refresh-interval via CONFIGURATION</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -7090,7 +7090,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">class PlugwiseOptionsFlowHandler(config_entries.OptionsFlow):</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -7101,7 +7101,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    &quot;&quot;&quot;Plugwise option flow.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn"># pw-beta - change the refresh-interval via CONFIGURATION</span>
         </div>
     </td>
 </tr><tr>
@@ -7112,7 +7112,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn"># pw-beta - add homekit compatible &#x27;away&#x27; via CONFIGURATION</span>
         </div>
     </td>
 </tr><tr>
@@ -7123,7 +7123,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    def __init__(self, config_entry):</span>
+            <span class="d2h-code-line-ctn">class PlugwiseOptionsFlowHandler(config_entries.OptionsFlow):</span>
         </div>
     </td>
 </tr><tr>
@@ -7134,7 +7134,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Initialize options flow.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn">    &quot;&quot;&quot;Plugwise option flow.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -7145,7 +7145,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        self.config_entry = config_entry</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -7156,7 +7156,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">    def __init__(self, config_entry):</span>
         </div>
     </td>
 </tr><tr>
@@ -7167,7 +7167,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    async def async_step_none(self, user_input=None):</span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Initialize options flow.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -7178,7 +7178,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;No options available.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn">        self.config_entry = config_entry</span>
         </div>
     </td>
 </tr><tr>
@@ -7189,7 +7189,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        if user_input is not None:</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -7200,7 +7200,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            # Apparently not possible to abort an options flow at the moment</span>
+            <span class="d2h-code-line-ctn">    async def async_step_none(self, user_input=None):</span>
         </div>
     </td>
 </tr><tr>
@@ -7211,7 +7211,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            return self.async_create_entry(title=&quot;&quot;, data=self.config_entry.options)</span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;No options available.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -7222,7 +7222,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">        if user_input is not None:</span>
         </div>
     </td>
 </tr><tr>
@@ -7233,7 +7233,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        return self.async_show_form(step_id=&quot;none&quot;)</span>
+            <span class="d2h-code-line-ctn">            # Apparently not possible to abort an options flow at the moment</span>
         </div>
     </td>
 </tr><tr>
@@ -7244,7 +7244,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">            return self.async_create_entry(title=&quot;&quot;, data=self.config_entry.options)</span>
         </div>
     </td>
 </tr><tr>
@@ -7255,7 +7255,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    async def async_step_init(self, user_input=None):</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -7266,7 +7266,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Manage the Plugwise options.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn">        return self.async_show_form(step_id=&quot;none&quot;)</span>
         </div>
     </td>
 </tr><tr>
@@ -7277,7 +7277,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        if not self.config_entry.data.get(CONF_HOST):</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -7288,7 +7288,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            return await self.async_step_none(user_input)</span>
+            <span class="d2h-code-line-ctn">    async def async_step_init(self, user_input=None):</span>
         </div>
     </td>
 </tr><tr>
@@ -7299,7 +7299,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Manage the Plugwise options.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -7310,7 +7310,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        if user_input is not None:</span>
+            <span class="d2h-code-line-ctn">        if not self.config_entry.data.get(CONF_HOST):</span>
         </div>
     </td>
 </tr><tr>
@@ -7321,7 +7321,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            return self.async_create_entry(title=&quot;&quot;, data=user_input)</span>
+            <span class="d2h-code-line-ctn">            return await self.async_step_none(user_input)</span>
         </div>
     </td>
 </tr><tr>
@@ -7343,7 +7343,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        coordinator = self.hass.data[DOMAIN][self.config_entry.entry_id][COORDINATOR]</span>
+            <span class="d2h-code-line-ctn">        if user_input is not None:</span>
         </div>
     </td>
 </tr><tr>
@@ -7354,7 +7354,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        interval = DEFAULT_SCAN_INTERVAL[coordinator.api.smile_type]</span>
+            <span class="d2h-code-line-ctn">            return self.async_create_entry(title=&quot;&quot;, data=user_input)</span>
         </div>
     </td>
 </tr><tr>
@@ -7376,7 +7376,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        data = {</span>
+            <span class="d2h-code-line-ctn">        coordinator = self.hass.data[DOMAIN][self.config_entry.entry_id][COORDINATOR]</span>
         </div>
     </td>
 </tr><tr>
@@ -7387,7 +7387,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            vol.Optional(</span>
+            <span class="d2h-code-line-ctn">        interval = DEFAULT_SCAN_INTERVAL[coordinator.api.smile_type]</span>
         </div>
     </td>
 </tr><tr>
@@ -7398,7 +7398,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                CONF_SCAN_INTERVAL,</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -7409,7 +7409,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                default=self.config_entry.options.get(CONF_SCAN_INTERVAL, interval),</span>
+            <span class="d2h-code-line-ctn">        data = {</span>
         </div>
     </td>
 </tr><tr>
@@ -7420,7 +7420,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            ): int</span>
+            <span class="d2h-code-line-ctn">            vol.Optional(</span>
         </div>
     </td>
 </tr><tr>
@@ -7431,7 +7431,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        }</span>
+            <span class="d2h-code-line-ctn">                CONF_SCAN_INTERVAL,</span>
         </div>
     </td>
 </tr><tr>
@@ -7442,13 +7442,90 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">                default=self.config_entry.options.get(CONF_SCAN_INTERVAL, interval),</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
 <div class="line-num2">330</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">            ): int,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">331</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">            vol.Optional(</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">332</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">                CONF_HOMEKIT_EMULATION,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">333</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">                default=self.config_entry.options.get(CONF_HOMEKIT_EMULATION, False),</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">334</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">            ): cv.boolean,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">335</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">        }</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">336</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">337</div>
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-line">
@@ -7481,7 +7558,7 @@
                 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line">@@ -1,30 +1,74 @@</div>
+        <div class="d2h-code-line">@@ -1,30 +1,75 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
@@ -8228,7 +8305,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">CONF_HOMEKIT_EMULATION = &quot;homekit_emulation&quot;  # pw-beta</span>
         </div>
     </td>
 </tr><tr>
@@ -8239,7 +8316,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"># Climate const:</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -8250,7 +8327,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">MASTER_THERMOSTATS = [</span>
+            <span class="d2h-code-line-ctn"># Climate const:</span>
         </div>
     </td>
 </tr><tr>
@@ -8261,7 +8338,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    &quot;thermostat&quot;,</span>
+            <span class="d2h-code-line-ctn">MASTER_THERMOSTATS = [</span>
         </div>
     </td>
 </tr><tr>
@@ -8272,7 +8349,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    &quot;zone_thermometer&quot;,</span>
+            <span class="d2h-code-line-ctn">    &quot;thermostat&quot;,</span>
         </div>
     </td>
 </tr><tr>
@@ -8283,7 +8360,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    &quot;zone_thermostat&quot;,</span>
+            <span class="d2h-code-line-ctn">    &quot;zone_thermometer&quot;,</span>
         </div>
     </td>
 </tr><tr>
@@ -8294,7 +8371,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    &quot;thermostatic_radiator_valve&quot;,</span>
+            <span class="d2h-code-line-ctn">    &quot;zone_thermostat&quot;,</span>
         </div>
     </td>
 </tr><tr>
@@ -8305,7 +8382,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">]</span>
+            <span class="d2h-code-line-ctn">    &quot;thermostatic_radiator_valve&quot;,</span>
         </div>
     </td>
 </tr><tr>
@@ -8316,7 +8393,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">]</span>
         </div>
     </td>
 </tr><tr>
@@ -8327,13 +8404,24 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">72</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn"># Config_flow const:</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">28</div>
-<div class="line-num2">72</div>
+<div class="line-num2">73</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -8344,7 +8432,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">29</div>
-<div class="line-num2">73</div>
+<div class="line-num2">74</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -8355,7 +8443,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">30</div>
-<div class="line-num2">74</div>
+<div class="line-num2">75</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -8367,12 +8455,12 @@
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line">@@ -32,14 +76,138 @@</div>
+        <div class="d2h-code-line">@@ -32,14 +77,138 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">32</div>
-<div class="line-num2">76</div>
+<div class="line-num2">77</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -8383,7 +8471,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">33</div>
-<div class="line-num2">77</div>
+<div class="line-num2">78</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -8394,7 +8482,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">34</div>
-<div class="line-num2">78</div>
+<div class="line-num2">79</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -8504,7 +8592,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins d2h-change">
       <div class="line-num1"></div>
-<div class="line-num2">79</div>
+<div class="line-num2">80</div>
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
@@ -8515,7 +8603,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins d2h-change">
       <div class="line-num1"></div>
-<div class="line-num2">80</div>
+<div class="line-num2">81</div>
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
@@ -8526,7 +8614,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins d2h-change">
       <div class="line-num1"></div>
-<div class="line-num2">81</div>
+<div class="line-num2">82</div>
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
@@ -8537,7 +8625,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins d2h-change">
       <div class="line-num1"></div>
-<div class="line-num2">82</div>
+<div class="line-num2">83</div>
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
@@ -8548,7 +8636,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins d2h-change">
       <div class="line-num1"></div>
-<div class="line-num2">83</div>
+<div class="line-num2">84</div>
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
@@ -8559,7 +8647,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins d2h-change">
       <div class="line-num1"></div>
-<div class="line-num2">84</div>
+<div class="line-num2">85</div>
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
@@ -8570,7 +8658,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins d2h-change">
       <div class="line-num1"></div>
-<div class="line-num2">85</div>
+<div class="line-num2">86</div>
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
@@ -8581,7 +8669,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins d2h-change">
       <div class="line-num1"></div>
-<div class="line-num2">86</div>
+<div class="line-num2">87</div>
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
@@ -8592,7 +8680,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins d2h-change">
       <div class="line-num1"></div>
-<div class="line-num2">87</div>
+<div class="line-num2">88</div>
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
@@ -8603,7 +8691,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
-<div class="line-num2">88</div>
+<div class="line-num2">89</div>
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-line">
@@ -8614,23 +8702,12 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
-<div class="line-num2">89</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
 <div class="line-num2">90</div>
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"># Binary Sensors:</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -8641,7 +8718,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">DHW_STATE = &quot;dhw_state&quot;</span>
+            <span class="d2h-code-line-ctn"># Binary Sensors:</span>
         </div>
     </td>
 </tr><tr>
@@ -8652,7 +8729,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">FLAME_STATE = &quot;flame_state&quot;</span>
+            <span class="d2h-code-line-ctn">DHW_STATE = &quot;dhw_state&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8663,7 +8740,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">PW_NOTIFICATION = &quot;plugwise_notification&quot;</span>
+            <span class="d2h-code-line-ctn">FLAME_STATE = &quot;flame_state&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8674,7 +8751,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">SLAVE_BOILER_STATE = &quot;slave_boiler_state&quot;</span>
+            <span class="d2h-code-line-ctn">PW_NOTIFICATION = &quot;plugwise_notification&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8685,7 +8762,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">SLAVE_BOILER_STATE = &quot;slave_boiler_state&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8696,7 +8773,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"># Sensors:</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -8707,7 +8784,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">BATTERY = &quot;battery&quot;</span>
+            <span class="d2h-code-line-ctn"># Sensors:</span>
         </div>
     </td>
 </tr><tr>
@@ -8718,7 +8795,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">CURRENT_TEMP = &quot;temperature&quot;</span>
+            <span class="d2h-code-line-ctn">BATTERY = &quot;battery&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8729,7 +8806,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">DEVICE_STATE = &quot;device_state&quot;</span>
+            <span class="d2h-code-line-ctn">CURRENT_TEMP = &quot;temperature&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8740,7 +8817,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">EL_CONSUMED = &quot;electricity_consumed&quot;</span>
+            <span class="d2h-code-line-ctn">DEVICE_STATE = &quot;device_state&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8751,7 +8828,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">EL_CONSUMED_INTERVAL = &quot;electricity_consumed_interval&quot;</span>
+            <span class="d2h-code-line-ctn">EL_CONSUMED = &quot;electricity_consumed&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8762,7 +8839,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">EL_CONSUMED_OFF_PEAK_CUMULATIVE = &quot;electricity_consumed_off_peak_cumulative&quot;</span>
+            <span class="d2h-code-line-ctn">EL_CONSUMED_INTERVAL = &quot;electricity_consumed_interval&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8773,7 +8850,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">EL_CONSUMED_OFF_PEAK_INTERVAL = &quot;electricity_consumed_off_peak_interval&quot;</span>
+            <span class="d2h-code-line-ctn">EL_CONSUMED_OFF_PEAK_CUMULATIVE = &quot;electricity_consumed_off_peak_cumulative&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8784,7 +8861,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">EL_CONSUMED_OFF_PEAK_POINT = &quot;electricity_consumed_off_peak_point&quot;</span>
+            <span class="d2h-code-line-ctn">EL_CONSUMED_OFF_PEAK_INTERVAL = &quot;electricity_consumed_off_peak_interval&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8795,7 +8872,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">EL_CONSUMED_PEAK_CUMULATIVE = &quot;electricity_consumed_peak_cumulative&quot;</span>
+            <span class="d2h-code-line-ctn">EL_CONSUMED_OFF_PEAK_POINT = &quot;electricity_consumed_off_peak_point&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8806,7 +8883,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">EL_CONSUMED_PEAK_INTERVAL = &quot;electricity_consumed_peak_interval&quot;</span>
+            <span class="d2h-code-line-ctn">EL_CONSUMED_PEAK_CUMULATIVE = &quot;electricity_consumed_peak_cumulative&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8817,7 +8894,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">EL_CONSUMED_PEAK_POINT = &quot;electricity_consumed_peak_point&quot;</span>
+            <span class="d2h-code-line-ctn">EL_CONSUMED_PEAK_INTERVAL = &quot;electricity_consumed_peak_interval&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8828,7 +8905,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">EL_CONSUMED_POINT = &quot;electricity_consumed_point&quot;</span>
+            <span class="d2h-code-line-ctn">EL_CONSUMED_PEAK_POINT = &quot;electricity_consumed_peak_point&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8839,7 +8916,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">EL_PRODUCED = &quot;electricity_produced&quot;</span>
+            <span class="d2h-code-line-ctn">EL_CONSUMED_POINT = &quot;electricity_consumed_point&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8850,7 +8927,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">EL_PRODUCED_INTERVAL = &quot;electricity_produced_interval&quot;</span>
+            <span class="d2h-code-line-ctn">EL_PRODUCED = &quot;electricity_produced&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8861,7 +8938,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">EL_PRODUCED_OFF_PEAK_CUMULATIVE = &quot;electricity_produced_off_peak_cumulative&quot;</span>
+            <span class="d2h-code-line-ctn">EL_PRODUCED_INTERVAL = &quot;electricity_produced_interval&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8872,7 +8949,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">EL_PRODUCED_OFF_PEAK_INTERVAL = &quot;electricity_produced_off_peak_interval&quot;</span>
+            <span class="d2h-code-line-ctn">EL_PRODUCED_OFF_PEAK_CUMULATIVE = &quot;electricity_produced_off_peak_cumulative&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8883,7 +8960,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">EL_PRODUCED_OFF_PEAK_POINT = &quot;electricity_produced_off_peak_point&quot;</span>
+            <span class="d2h-code-line-ctn">EL_PRODUCED_OFF_PEAK_INTERVAL = &quot;electricity_produced_off_peak_interval&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8894,7 +8971,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">EL_PRODUCED_PEAK_CUMULATIVE = &quot;electricity_produced_peak_cumulative&quot;</span>
+            <span class="d2h-code-line-ctn">EL_PRODUCED_OFF_PEAK_POINT = &quot;electricity_produced_off_peak_point&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8905,7 +8982,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">EL_PRODUCED_PEAK_INTERVAL = &quot;electricity_produced_peak_interval&quot;</span>
+            <span class="d2h-code-line-ctn">EL_PRODUCED_PEAK_CUMULATIVE = &quot;electricity_produced_peak_cumulative&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8916,7 +8993,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">EL_PRODUCED_PEAK_POINT = &quot;electricity_produced_peak_point&quot;</span>
+            <span class="d2h-code-line-ctn">EL_PRODUCED_PEAK_INTERVAL = &quot;electricity_produced_peak_interval&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8927,7 +9004,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">EL_PRODUCED_POINT = &quot;electricity_produced_point&quot;</span>
+            <span class="d2h-code-line-ctn">EL_PRODUCED_PEAK_POINT = &quot;electricity_produced_peak_point&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8938,7 +9015,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">GAS_CONSUMED_CUMULATIVE = &quot;gas_consumed_cumulative&quot;</span>
+            <span class="d2h-code-line-ctn">EL_PRODUCED_POINT = &quot;electricity_produced_point&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8949,7 +9026,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">GAS_CONSUMED_INTERVAL = &quot;gas_consumed_interval&quot;</span>
+            <span class="d2h-code-line-ctn">GAS_CONSUMED_CUMULATIVE = &quot;gas_consumed_cumulative&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8960,7 +9037,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">HUMIDITY = &quot;humidity&quot;</span>
+            <span class="d2h-code-line-ctn">GAS_CONSUMED_INTERVAL = &quot;gas_consumed_interval&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8971,7 +9048,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">INTENDED_BOILER_TEMP = &quot;intended_boiler_temperature&quot;</span>
+            <span class="d2h-code-line-ctn">HUMIDITY = &quot;humidity&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8982,7 +9059,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">MOD_LEVEL = &quot;modulation_level&quot;</span>
+            <span class="d2h-code-line-ctn">INTENDED_BOILER_TEMP = &quot;intended_boiler_temperature&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -8993,7 +9070,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">NET_EL_CUMULATIVE = &quot;net_electricity_cumulative&quot;</span>
+            <span class="d2h-code-line-ctn">MOD_LEVEL = &quot;modulation_level&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9004,7 +9081,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">NET_EL_POINT = &quot;net_electricity_point&quot;</span>
+            <span class="d2h-code-line-ctn">NET_EL_CUMULATIVE = &quot;net_electricity_cumulative&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9015,7 +9092,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">OUTDOOR_TEMP = &quot;outdoor_temperature&quot;</span>
+            <span class="d2h-code-line-ctn">NET_EL_POINT = &quot;net_electricity_point&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9026,7 +9103,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">RETURN_TEMP = &quot;return_temperature&quot;</span>
+            <span class="d2h-code-line-ctn">OUTDOOR_TEMP = &quot;outdoor_temperature&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9037,7 +9114,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">TARGET_TEMP = &quot;setpoint&quot;</span>
+            <span class="d2h-code-line-ctn">RETURN_TEMP = &quot;return_temperature&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9048,7 +9125,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">TEMP_DIFF = &quot;temperature_difference&quot;</span>
+            <span class="d2h-code-line-ctn">TARGET_TEMP = &quot;setpoint&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9059,7 +9136,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">VALVE_POS = &quot;valve_position&quot;</span>
+            <span class="d2h-code-line-ctn">TEMP_DIFF = &quot;temperature_difference&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9070,7 +9147,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">WATER_PRESSURE = &quot;water_pressure&quot;</span>
+            <span class="d2h-code-line-ctn">VALVE_POS = &quot;valve_position&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9081,7 +9158,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">WATER_TEMP = &quot;water_temperature&quot;</span>
+            <span class="d2h-code-line-ctn">WATER_PRESSURE = &quot;water_pressure&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9092,7 +9169,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">WATER_TEMP = &quot;water_temperature&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9103,7 +9180,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"># Switches</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -9114,7 +9191,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">DHW_COMF_MODE = &quot;dhw_cm_switch&quot;</span>
+            <span class="d2h-code-line-ctn"># Switches</span>
         </div>
     </td>
 </tr><tr>
@@ -9125,7 +9202,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">LOCK = &quot;lock&quot;</span>
+            <span class="d2h-code-line-ctn">DHW_COMF_MODE = &quot;dhw_cm_switch&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9136,7 +9213,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">RELAY = &quot;relay&quot;</span>
+            <span class="d2h-code-line-ctn">LOCK = &quot;lock&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9147,7 +9224,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">RELAY = &quot;relay&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9169,7 +9246,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"># --- Const for Plugwise USB-stick.</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -9180,7 +9257,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn"># --- Const for Plugwise USB-stick.</span>
         </div>
     </td>
 </tr><tr>
@@ -9191,7 +9268,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">PLATFORMS_USB = [Platform.BINARY_SENSOR, Platform.SENSOR, Platform.SWITCH]</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -9202,7 +9279,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">CONF_USB_PATH = &quot;usb_path&quot;</span>
+            <span class="d2h-code-line-ctn">PLATFORMS_USB = [Platform.BINARY_SENSOR, Platform.SENSOR, Platform.SWITCH]</span>
         </div>
     </td>
 </tr><tr>
@@ -9213,7 +9290,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">CONF_USB_PATH = &quot;usb_path&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9224,7 +9301,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"># Callback types</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -9235,7 +9312,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">CB_NEW_NODE = &quot;NEW_NODE&quot;</span>
+            <span class="d2h-code-line-ctn"># Callback types</span>
         </div>
     </td>
 </tr><tr>
@@ -9246,7 +9323,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">CB_JOIN_REQUEST = &quot;JOIN_REQUEST&quot;</span>
+            <span class="d2h-code-line-ctn">CB_NEW_NODE = &quot;NEW_NODE&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9257,7 +9334,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">CB_JOIN_REQUEST = &quot;JOIN_REQUEST&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9279,7 +9356,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"># USB generic device constants</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -9290,7 +9367,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">USB_AVAILABLE_ID = &quot;available&quot;</span>
+            <span class="d2h-code-line-ctn"># USB generic device constants</span>
         </div>
     </td>
 </tr><tr>
@@ -9301,7 +9378,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">USB_AVAILABLE_ID = &quot;available&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9312,7 +9389,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">ATTR_MAC_ADDRESS = &quot;mac&quot;</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -9323,7 +9400,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">ATTR_MAC_ADDRESS = &quot;mac&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9334,7 +9411,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">SERVICE_USB_DEVICE_ADD = &quot;device_add&quot;</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -9345,7 +9422,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">SERVICE_USB_DEVICE_REMOVE = &quot;device_remove&quot;</span>
+            <span class="d2h-code-line-ctn">SERVICE_USB_DEVICE_ADD = &quot;device_add&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9356,7 +9433,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">SERVICE_USB_DEVICE_SCHEMA = vol.Schema({vol.Required(ATTR_MAC_ADDRESS): cv.string})</span>
+            <span class="d2h-code-line-ctn">SERVICE_USB_DEVICE_REMOVE = &quot;device_remove&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9367,7 +9444,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">SERVICE_USB_DEVICE_SCHEMA = vol.Schema({vol.Required(ATTR_MAC_ADDRESS): cv.string})</span>
         </div>
     </td>
 </tr><tr>
@@ -9389,7 +9466,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"># USB Relay device constants</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -9400,7 +9477,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">USB_RELAY_ID = &quot;relay&quot;</span>
+            <span class="d2h-code-line-ctn"># USB Relay device constants</span>
         </div>
     </td>
 </tr><tr>
@@ -9411,7 +9488,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">USB_RELAY_ID = &quot;relay&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9433,7 +9510,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"># USB SED (battery powered) device constants</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -9444,7 +9521,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">ATTR_SED_STAY_ACTIVE = &quot;stay_active&quot;</span>
+            <span class="d2h-code-line-ctn"># USB SED (battery powered) device constants</span>
         </div>
     </td>
 </tr><tr>
@@ -9455,7 +9532,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">ATTR_SED_SLEEP_FOR = &quot;sleep_for&quot;</span>
+            <span class="d2h-code-line-ctn">ATTR_SED_STAY_ACTIVE = &quot;stay_active&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9466,7 +9543,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">ATTR_SED_MAINTENANCE_INTERVAL = &quot;maintenance_interval&quot;</span>
+            <span class="d2h-code-line-ctn">ATTR_SED_SLEEP_FOR = &quot;sleep_for&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9477,7 +9554,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">ATTR_SED_CLOCK_SYNC = &quot;clock_sync&quot;</span>
+            <span class="d2h-code-line-ctn">ATTR_SED_MAINTENANCE_INTERVAL = &quot;maintenance_interval&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9488,7 +9565,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">ATTR_SED_CLOCK_INTERVAL = &quot;clock_interval&quot;</span>
+            <span class="d2h-code-line-ctn">ATTR_SED_CLOCK_SYNC = &quot;clock_sync&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9499,7 +9576,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">ATTR_SED_CLOCK_INTERVAL = &quot;clock_interval&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9510,7 +9587,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">SERVICE_USB_SED_BATTERY_CONFIG = &quot;configure_battery_savings&quot;</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -9521,7 +9598,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">SERVICE_USB_SED_BATTERY_CONFIG_SCHEMA = {</span>
+            <span class="d2h-code-line-ctn">SERVICE_USB_SED_BATTERY_CONFIG = &quot;configure_battery_savings&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9532,7 +9609,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    vol.Required(ATTR_SED_STAY_ACTIVE): vol.All(</span>
+            <span class="d2h-code-line-ctn">SERVICE_USB_SED_BATTERY_CONFIG_SCHEMA = {</span>
         </div>
     </td>
 </tr><tr>
@@ -9543,7 +9620,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        vol.Coerce(int), vol.Range(min=1, max=120)</span>
+            <span class="d2h-code-line-ctn">    vol.Required(ATTR_SED_STAY_ACTIVE): vol.All(</span>
         </div>
     </td>
 </tr><tr>
@@ -9554,7 +9631,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    ),</span>
+            <span class="d2h-code-line-ctn">        vol.Coerce(int), vol.Range(min=1, max=120)</span>
         </div>
     </td>
 </tr><tr>
@@ -9565,7 +9642,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    vol.Required(ATTR_SED_SLEEP_FOR): vol.All(</span>
+            <span class="d2h-code-line-ctn">    ),</span>
         </div>
     </td>
 </tr><tr>
@@ -9576,7 +9653,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        vol.Coerce(int), vol.Range(min=10, max=60)</span>
+            <span class="d2h-code-line-ctn">    vol.Required(ATTR_SED_SLEEP_FOR): vol.All(</span>
         </div>
     </td>
 </tr><tr>
@@ -9587,7 +9664,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    ),</span>
+            <span class="d2h-code-line-ctn">        vol.Coerce(int), vol.Range(min=10, max=60)</span>
         </div>
     </td>
 </tr><tr>
@@ -9598,7 +9675,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    vol.Required(ATTR_SED_MAINTENANCE_INTERVAL): vol.All(</span>
+            <span class="d2h-code-line-ctn">    ),</span>
         </div>
     </td>
 </tr><tr>
@@ -9609,7 +9686,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        vol.Coerce(int), vol.Range(min=5, max=1440)</span>
+            <span class="d2h-code-line-ctn">    vol.Required(ATTR_SED_MAINTENANCE_INTERVAL): vol.All(</span>
         </div>
     </td>
 </tr><tr>
@@ -9620,7 +9697,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    ),</span>
+            <span class="d2h-code-line-ctn">        vol.Coerce(int), vol.Range(min=5, max=1440)</span>
         </div>
     </td>
 </tr><tr>
@@ -9631,7 +9708,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    vol.Required(ATTR_SED_CLOCK_SYNC): cv.boolean,</span>
+            <span class="d2h-code-line-ctn">    ),</span>
         </div>
     </td>
 </tr><tr>
@@ -9642,7 +9719,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    vol.Required(ATTR_SED_CLOCK_INTERVAL): vol.All(</span>
+            <span class="d2h-code-line-ctn">    vol.Required(ATTR_SED_CLOCK_SYNC): cv.boolean,</span>
         </div>
     </td>
 </tr><tr>
@@ -9653,7 +9730,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        vol.Coerce(int), vol.Range(min=60, max=10080)</span>
+            <span class="d2h-code-line-ctn">    vol.Required(ATTR_SED_CLOCK_INTERVAL): vol.All(</span>
         </div>
     </td>
 </tr><tr>
@@ -9664,13 +9741,24 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">        vol.Coerce(int), vol.Range(min=60, max=10080)</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">185</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn">    ),</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">44</div>
-<div class="line-num2">185</div>
+<div class="line-num2">186</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
@@ -9692,20 +9780,9 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins d2h-change">
       <div class="line-num1"></div>
-<div class="line-num2">186</div>
-    </td>
-    <td class="d2h-ins d2h-change">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
 <div class="line-num2">187</div>
     </td>
-    <td class="d2h-ins">
+    <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn"><br></span>
@@ -9719,7 +9796,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"># USB Scan device constants</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -9730,7 +9807,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">USB_MOTION_ID = &quot;motion&quot;</span>
+            <span class="d2h-code-line-ctn"># USB Scan device constants</span>
         </div>
     </td>
 </tr><tr>
@@ -9741,7 +9818,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">USB_MOTION_ID = &quot;motion&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9752,7 +9829,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">ATTR_SCAN_DAYLIGHT_MODE = &quot;day_light&quot;</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -9763,7 +9840,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">ATTR_SCAN_SENSITIVITY_MODE = &quot;sensitivity_mode&quot;</span>
+            <span class="d2h-code-line-ctn">ATTR_SCAN_DAYLIGHT_MODE = &quot;day_light&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9774,7 +9851,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">ATTR_SCAN_RESET_TIMER = &quot;reset_timer&quot;</span>
+            <span class="d2h-code-line-ctn">ATTR_SCAN_SENSITIVITY_MODE = &quot;sensitivity_mode&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9785,7 +9862,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">ATTR_SCAN_RESET_TIMER = &quot;reset_timer&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9796,7 +9873,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">SCAN_SENSITIVITY_HIGH = &quot;high&quot;</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -9807,7 +9884,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">SCAN_SENSITIVITY_MEDIUM = &quot;medium&quot;</span>
+            <span class="d2h-code-line-ctn">SCAN_SENSITIVITY_HIGH = &quot;high&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9818,7 +9895,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">SCAN_SENSITIVITY_OFF = &quot;off&quot;</span>
+            <span class="d2h-code-line-ctn">SCAN_SENSITIVITY_MEDIUM = &quot;medium&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9829,7 +9906,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">SCAN_SENSITIVITY_MODES = [</span>
+            <span class="d2h-code-line-ctn">SCAN_SENSITIVITY_OFF = &quot;off&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9840,7 +9917,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    SCAN_SENSITIVITY_HIGH,</span>
+            <span class="d2h-code-line-ctn">SCAN_SENSITIVITY_MODES = [</span>
         </div>
     </td>
 </tr><tr>
@@ -9851,7 +9928,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    SCAN_SENSITIVITY_MEDIUM,</span>
+            <span class="d2h-code-line-ctn">    SCAN_SENSITIVITY_HIGH,</span>
         </div>
     </td>
 </tr><tr>
@@ -9862,7 +9939,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    SCAN_SENSITIVITY_OFF,</span>
+            <span class="d2h-code-line-ctn">    SCAN_SENSITIVITY_MEDIUM,</span>
         </div>
     </td>
 </tr><tr>
@@ -9873,7 +9950,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">]</span>
+            <span class="d2h-code-line-ctn">    SCAN_SENSITIVITY_OFF,</span>
         </div>
     </td>
 </tr><tr>
@@ -9884,7 +9961,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">]</span>
         </div>
     </td>
 </tr><tr>
@@ -9895,7 +9972,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">SERVICE_USB_SCAN_CONFIG = &quot;configure_scan&quot;</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -9906,7 +9983,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">SERVICE_USB_SCAN_CONFIG_SCHEMA = (</span>
+            <span class="d2h-code-line-ctn">SERVICE_USB_SCAN_CONFIG = &quot;configure_scan&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -9917,7 +9994,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    {</span>
+            <span class="d2h-code-line-ctn">SERVICE_USB_SCAN_CONFIG_SCHEMA = (</span>
         </div>
     </td>
 </tr><tr>
@@ -9928,7 +10005,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        vol.Required(ATTR_SCAN_SENSITIVITY_MODE): vol.In(SCAN_SENSITIVITY_MODES),</span>
+            <span class="d2h-code-line-ctn">    {</span>
         </div>
     </td>
 </tr><tr>
@@ -9939,7 +10016,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        vol.Required(ATTR_SCAN_RESET_TIMER): vol.All(</span>
+            <span class="d2h-code-line-ctn">        vol.Required(ATTR_SCAN_SENSITIVITY_MODE): vol.In(SCAN_SENSITIVITY_MODES),</span>
         </div>
     </td>
 </tr><tr>
@@ -9950,7 +10027,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            vol.Coerce(int), vol.Range(min=1, max=240)</span>
+            <span class="d2h-code-line-ctn">        vol.Required(ATTR_SCAN_RESET_TIMER): vol.All(</span>
         </div>
     </td>
 </tr><tr>
@@ -9961,7 +10038,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        ),</span>
+            <span class="d2h-code-line-ctn">            vol.Coerce(int), vol.Range(min=1, max=240)</span>
         </div>
     </td>
 </tr><tr>
@@ -9972,7 +10049,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        vol.Required(ATTR_SCAN_DAYLIGHT_MODE): cv.boolean,</span>
+            <span class="d2h-code-line-ctn">        ),</span>
         </div>
     </td>
 </tr><tr>
@@ -9983,13 +10060,24 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    },</span>
+            <span class="d2h-code-line-ctn">        vol.Required(ATTR_SCAN_DAYLIGHT_MODE): cv.boolean,</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
 <div class="line-num2">213</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">    },</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">214</div>
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-line">
@@ -11315,7 +11403,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    <del>coordinator</del> <del>= PlugwiseDataUpdateCoordinator(hass, api)</del></span>
+            <span class="d2h-code-line-ctn">    <del>coordinator</del> <del>=</del> <del>PlugwiseDataUpdateCoordinator(hass, api)</del></span>
         </div>
     </td>
 </tr><tr>
@@ -11326,7 +11414,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    <ins>#</ins> <ins>pw-beta</ins></span>
+            <span class="d2h-code-line-ctn">    <ins>#</ins> <ins>pw-beta</ins> <ins>refresh-interval</ins></span>
         </div>
     </td>
 </tr><tr>
@@ -12074,7 +12162,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">  &quot;<ins>version</ins>&quot;: &quot;<ins>0</ins>.<ins>21</ins>.<ins>1</ins>&quot;,</span>
+            <span class="d2h-code-line-ctn">  &quot;<ins>version</ins>&quot;: &quot;<ins>0</ins>.<ins>21</ins>.<ins>2a0</ins>&quot;,</span>
         </div>
     </td>
 </tr><tr>
