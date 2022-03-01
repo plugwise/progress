@@ -33,13 +33,11 @@ echo "
                 <p>Branch differences (still in beta)</p>
                 <ul>" >> ${pdir}/index.html
 
-cd ${betadir}; git branch 
-git remote -v
-git pull
-git branch
-git branch -r
 cd ${betadir}; git branch -r | while read betabranch
 do
+	# Strip origin/
+	betabranchname=$(echo ${betabranch} | sed 's/origin\///g')
+
         cd ${betadir}
         git checkout ${betabranch}
 
@@ -47,10 +45,10 @@ do
         echo "" >  ${difffile}
         diff -X ${pdir}/ignorelist.txt -ur ${betadir}/ ${coredir}/ >> ${difffile}
 
-        diff2html -F ${pdir}/diff_${betabranch}.html -i file -- ${difffile}
+        diff2html -F ${pdir}/diff_${betabranchname}.html -i file -- ${difffile}
 
         echo "
-                        <li><a href='diff_${betabranch}.html'>Unified diff core:dev vs beta:${betabranch}</a></li>" >> ${pdir}/index.html
+                        <li><a href='diff_${betabranchname}.html'>Unified diff core:dev vs beta:${betabranch}</a></li>" >> ${pdir}/index.html
 
         cd ${betadir}
         git checkout main
