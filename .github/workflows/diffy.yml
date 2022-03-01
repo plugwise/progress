@@ -60,13 +60,14 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: plugwise/plugwise-beta
-        ssh-key: ${{ secrets.hacore_deploykey }}
+        ssh-key: ${{ secrets.plugwise_deploykey }}
         path: clones/beta
         fetch-depth: 0
-    - name: Checkout beta component (branch-switch)
+    - name: Checkout beta component (main-branch)
       uses: actions/checkout@v2
       with:
         repository: plugwise/plugwise-beta
+        ref: main
         ssh-key: ${{ secrets.plugwise_deploykey }}
         path: clones/beta-main
 
