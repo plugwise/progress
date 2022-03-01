@@ -3,12 +3,11 @@ clonedir="$(pwd)/clones"
 coredir="${clonedir}/ha-core/homeassistant/components/plugwise/"
 prdir="${clonedir}/pw-core/homeassistant/components/plugwise/"
 betadir="${clonedir}/beta/custom_components/plugwise/"
-bmdir="${clonedir}/beta-master/custom_components/plugwise/"
+bmdir="${clonedir}/beta-main/custom_components/plugwise/"
 difffile="${clonedir}/plugwise.diff"
 pdir="$(pwd)"
 
 branches="${pdir}/branches.txt"
-betabranches="${pdir}/betabranches.txt"
 
 git config --global user.name 'diff2html'
 git config --global user.email 'plugwise@users.noreply.github.com'
@@ -27,14 +26,14 @@ echo "<html>
 
                 <p>Active beta-branch vs active HA-core differences</p>
                 <ul>
-                        <li><a href='diff.html'>Unified diff core:dev vs beta:master</a></li>" > ${pdir}/index.html
+                        <li><a href='diff.html'>Unified diff core:dev vs beta:main</a></li>" > ${pdir}/index.html
 
 echo "
                 </ul>
                 <p>Branch differences (still in beta)</p>
                 <ul>" >> ${pdir}/index.html
 
-cat ${betabranches}| while read betabranch
+cd ${betadir}; git branch | while read betabranch
 do
         cd ${betadir}
         git checkout ${betabranch}
@@ -49,7 +48,7 @@ do
                         <li><a href='diff_${betabranch}.html'>Unified diff core:dev vs beta:${betabranch}</a></li>" >> ${pdir}/index.html
 
         cd ${betadir}
-        git checkout master
+        git checkout main
 done
 
 echo "
@@ -76,7 +75,7 @@ do
 busercontent.com/plugwise/progress/main/${justprbranch}.md'>raw</a>) - <a href='https://github.com/home-assistant/core/compare/dev...plugwise:${prbranch}?expand=1'>Create PR@Core</a></li>" >> ${pdir}/index.html
 
         cd ${betadir}
-        git checkout master
+        git checkout main
 done
 
 
@@ -88,7 +87,7 @@ echo "
 
 echo "
                 </ul>
-                <p>Various PR branch differences against -beta master (downstreaming/verify)</p>
+                <p>Various PR branch differences against -beta main (downstreaming/verify)</p>
                 <ul>" >> ${pdir}/index.html
 
 cat ${branches}| while read prbranch
@@ -104,10 +103,10 @@ do
 
         justprbranch=`echo ${prbranch} | sed 's/^plugwise-//g'`
         echo "
-                        <li><a href='bm_diff_${prbranch}.html'>Unified diff beta:master vs pw-core:${prbranch}</a></li>" >> ${pdir}/index.html
+                        <li><a href='bm_diff_${prbranch}.html'>Unified diff beta:main vs pw-core:${prbranch}</a></li>" >> ${pdir}/index.html
 
         cd ${betadir}
-        git checkout master
+        git checkout main
 done
 
 
