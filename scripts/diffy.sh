@@ -37,7 +37,8 @@ cd ${betadir}; git branch
 git remote -v
 git pull
 git branch
-cd ${betadir}; git branch | while read betabranch
+git branch -r
+cd ${betadir}; git branch -r | while read betabranch
 do
         cd ${betadir}
         git checkout ${betabranch}
