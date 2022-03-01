@@ -34,6 +34,9 @@ echo "
                 <ul>" >> ${pdir}/index.html
 
 cd ${betadir}; git branch 
+git remote -v
+git pull
+git branch
 cd ${betadir}; git branch | while read betabranch
 do
         cd ${betadir}
