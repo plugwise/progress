@@ -60,7 +60,7 @@
       </svg>      <a href="#d2h-830913" class="d2h-file-name">/home/runner/work/progress/progress/clones/{beta/custom_components → ha-core/homeassistant/components}/plugwise/binary_sensor.py</a>
       <span class="d2h-file-stats">
           <span class="d2h-lines-added">+68</span>
-          <span class="d2h-lines-deleted">-157</span>
+          <span class="d2h-lines-deleted">-158</span>
       </span>
     </span>
 </li>
@@ -167,8 +167,8 @@
           <path d="M6 9H3V7h3V4l5 4-5 4V9z m8-7v12c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h12c0.55 0 1 0.45 1 1z m-1 0H1v12h12V2z"></path>
       </svg>      <a href="#d2h-340423" class="d2h-file-name">/home/runner/work/progress/progress/clones/{beta/custom_components → ha-core/homeassistant/components}/plugwise/select.py</a>
       <span class="d2h-file-stats">
-          <span class="d2h-lines-added">+24</span>
-          <span class="d2h-lines-deleted">-81</span>
+          <span class="d2h-lines-added">+22</span>
+          <span class="d2h-lines-deleted">-79</span>
       </span>
     </span>
 </li>
@@ -2926,7 +2926,7 @@
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line">@@ -174,68 +141,12 @@</div>
+        <div class="d2h-code-line">@@ -174,69 +141,12 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
@@ -2969,7 +2969,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if notify := self.coordinator.data.gateway<del>.get(</del>&quot;notifications&quot;<del>)</del>:</span>
+            <span class="d2h-code-line-ctn">        <del>self._notification</del> <del>=</del> <del>{}  #</del> <del>pw-beta</del></span>
         </div>
     </td>
 </tr><tr>
@@ -2980,7 +2980,18 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            for <del>notify_id, </del>details in notify.<del>items</del>():</span>
+            <span class="d2h-code-line-ctn"><del>        if</del> <del>notify</del> <del>:=</del> <del>self</del>.<del>coordinator.data.gateway.get</del>(<del>&quot;notifications&quot;</del>):</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">179</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            for notify_id, details in notify.items():</span>
         </div>
     </td>
 </tr><tr>
@@ -2991,7 +3002,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        if notify := self.coordinator.data.gateway<ins>[</ins>&quot;notifications&quot;<ins>]</ins>:</span>
+            <span class="d2h-code-line-ctn">        <ins>if</ins> <ins>notify</ins> <ins>:=</ins> <ins>self.coordinator.data.gateway[&quot;notifications&quot;]:</ins></span>
         </div>
     </td>
 </tr><tr>
@@ -3002,12 +3013,12 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            for details in notify.<ins>values</ins>():</span>
+            <span class="d2h-code-line-ctn"><ins>            for</ins> <ins>details</ins> <ins>in</ins> <ins>notify</ins>.<ins>values</ins>():</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">179</div>
+      <div class="line-num1">180</div>
 <div class="line-num2">146</div>
     </td>
     <td class="d2h-cntx">
@@ -3018,7 +3029,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">180</div>
+      <div class="line-num1">181</div>
 <div class="line-num2">147</div>
     </td>
     <td class="d2h-cntx">
@@ -3029,7 +3040,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">181</div>
+      <div class="line-num1">182</div>
 <div class="line-num2">148</div>
     </td>
     <td class="d2h-cntx">
@@ -3040,7 +3051,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">182</div>
+      <div class="line-num1">183</div>
 <div class="line-num2">149</div>
     </td>
     <td class="d2h-cntx">
@@ -3051,7 +3062,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">183</div>
+      <div class="line-num1">184</div>
 <div class="line-num2">150</div>
     </td>
     <td class="d2h-cntx">
@@ -3062,7 +3073,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">184</div>
+      <div class="line-num1">185</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -3073,7 +3084,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">185</div>
+      <div class="line-num1">186</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -3084,7 +3095,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">186</div>
+      <div class="line-num1">187</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -3095,7 +3106,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">187</div>
+      <div class="line-num1">188</div>
 <div class="line-num2">151</div>
     </td>
     <td class="d2h-cntx">
@@ -3106,24 +3117,13 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">188</div>
+      <div class="line-num1">189</div>
 <div class="line-num2">152</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
             <span class="d2h-code-line-ctn">        return attrs</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">189</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -3145,7 +3145,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">class USBBinarySensor(PlugwiseUSBEntity, BinarySensorEntity):</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -3156,7 +3156,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    &quot;&quot;&quot;Representation of a Plugwise USB Binary Sensor.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn">class USBBinarySensor(PlugwiseUSBEntity, BinarySensorEntity):</span>
         </div>
     </td>
 </tr><tr>
@@ -3167,7 +3167,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">    &quot;&quot;&quot;Representation of a Plugwise USB Binary Sensor.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -3178,7 +3178,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    def __init__(</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -3189,7 +3189,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self, node: PlugwiseNode, description: PlugwiseBinarySensorEntityDescription</span>
+            <span class="d2h-code-line-ctn">    def __init__(</span>
         </div>
     </td>
 </tr><tr>
@@ -3200,7 +3200,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    ) -&gt; None:</span>
+            <span class="d2h-code-line-ctn">        self, node: PlugwiseNode, description: PlugwiseBinarySensorEntityDescription</span>
         </div>
     </td>
 </tr><tr>
@@ -3211,7 +3211,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Initialize a binary sensor entity.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn">    ) -&gt; None:</span>
         </div>
     </td>
 </tr><tr>
@@ -3222,7 +3222,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        super().__init__(node, description)</span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Initialize a binary sensor entity.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -3233,7 +3233,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">        super().__init__(node, description)</span>
         </div>
     </td>
 </tr><tr>
@@ -3244,7 +3244,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    @property</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -3255,7 +3255,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    def is_on(self) -&gt; bool:</span>
+            <span class="d2h-code-line-ctn">    @property</span>
         </div>
     </td>
 </tr><tr>
@@ -3266,7 +3266,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Return true if the binary_sensor is on.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn">    def is_on(self) -&gt; bool:</span>
         </div>
     </td>
 </tr><tr>
@@ -3277,7 +3277,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        return getattr(self._node, self.entity_description.state_request_method)</span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Return true if the binary_sensor is on.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -3288,7 +3288,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">        return getattr(self._node, self.entity_description.state_request_method)</span>
         </div>
     </td>
 </tr><tr>
@@ -3299,7 +3299,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    def _service_scan_config(self, **kwargs):</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -3310,7 +3310,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Service call to configure motion sensor of Scan device.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn">    def _service_scan_config(self, **kwargs):</span>
         </div>
     </td>
 </tr><tr>
@@ -3321,7 +3321,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        sensitivity_mode = kwargs.get(ATTR_SCAN_SENSITIVITY_MODE)</span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Service call to configure motion sensor of Scan device.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -3332,7 +3332,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        reset_timer = kwargs.get(ATTR_SCAN_RESET_TIMER)</span>
+            <span class="d2h-code-line-ctn">        sensitivity_mode = kwargs.get(ATTR_SCAN_SENSITIVITY_MODE)</span>
         </div>
     </td>
 </tr><tr>
@@ -3343,7 +3343,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        daylight_mode = kwargs.get(ATTR_SCAN_DAYLIGHT_MODE)</span>
+            <span class="d2h-code-line-ctn">        reset_timer = kwargs.get(ATTR_SCAN_RESET_TIMER)</span>
         </div>
     </td>
 </tr><tr>
@@ -3354,7 +3354,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        LOGGER.debug(</span>
+            <span class="d2h-code-line-ctn">        daylight_mode = kwargs.get(ATTR_SCAN_DAYLIGHT_MODE)</span>
         </div>
     </td>
 </tr><tr>
@@ -3365,7 +3365,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            &quot;Configure Scan device &#x27;%s&#x27;: sensitivity=&#x27;%s&#x27;, reset timer=&#x27;%s&#x27;, daylight mode=&#x27;%s&#x27;&quot;,</span>
+            <span class="d2h-code-line-ctn">        LOGGER.debug(</span>
         </div>
     </td>
 </tr><tr>
@@ -3376,7 +3376,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            self.name,</span>
+            <span class="d2h-code-line-ctn">            &quot;Configure Scan device &#x27;%s&#x27;: sensitivity=&#x27;%s&#x27;, reset timer=&#x27;%s&#x27;, daylight mode=&#x27;%s&#x27;&quot;,</span>
         </div>
     </td>
 </tr><tr>
@@ -3387,7 +3387,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            sensitivity_mode,</span>
+            <span class="d2h-code-line-ctn">            self.name,</span>
         </div>
     </td>
 </tr><tr>
@@ -3398,7 +3398,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            str(reset_timer),</span>
+            <span class="d2h-code-line-ctn">            sensitivity_mode,</span>
         </div>
     </td>
 </tr><tr>
@@ -3409,7 +3409,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            str(daylight_mode),</span>
+            <span class="d2h-code-line-ctn">            str(reset_timer),</span>
         </div>
     </td>
 </tr><tr>
@@ -3420,7 +3420,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        )</span>
+            <span class="d2h-code-line-ctn">            str(daylight_mode),</span>
         </div>
     </td>
 </tr><tr>
@@ -3431,7 +3431,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self._node.Configure_scan(reset_timer, sensitivity_mode, daylight_mode)</span>
+            <span class="d2h-code-line-ctn">        )</span>
         </div>
     </td>
 </tr><tr>
@@ -3442,7 +3442,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">        self._node.Configure_scan(reset_timer, sensitivity_mode, daylight_mode)</span>
         </div>
     </td>
 </tr><tr>
@@ -3453,7 +3453,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    def _service_sed_battery_config(self, **kwargs):</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -3464,7 +3464,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Configure battery powered (sed) device service call.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn">    def _service_sed_battery_config(self, **kwargs):</span>
         </div>
     </td>
 </tr><tr>
@@ -3475,7 +3475,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        stay_active = kwargs.get(ATTR_SED_STAY_ACTIVE)</span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Configure battery powered (sed) device service call.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -3486,7 +3486,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        sleep_for = kwargs.get(ATTR_SED_SLEEP_FOR)</span>
+            <span class="d2h-code-line-ctn">        stay_active = kwargs.get(ATTR_SED_STAY_ACTIVE)</span>
         </div>
     </td>
 </tr><tr>
@@ -3497,7 +3497,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        maintenance_interval = kwargs.get(ATTR_SED_MAINTENANCE_INTERVAL)</span>
+            <span class="d2h-code-line-ctn">        sleep_for = kwargs.get(ATTR_SED_SLEEP_FOR)</span>
         </div>
     </td>
 </tr><tr>
@@ -3508,7 +3508,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        clock_sync = kwargs.get(ATTR_SED_CLOCK_SYNC)</span>
+            <span class="d2h-code-line-ctn">        maintenance_interval = kwargs.get(ATTR_SED_MAINTENANCE_INTERVAL)</span>
         </div>
     </td>
 </tr><tr>
@@ -3519,7 +3519,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        clock_interval = kwargs.get(ATTR_SED_CLOCK_INTERVAL)</span>
+            <span class="d2h-code-line-ctn">        clock_sync = kwargs.get(ATTR_SED_CLOCK_SYNC)</span>
         </div>
     </td>
 </tr><tr>
@@ -3530,7 +3530,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        LOGGER.debug(</span>
+            <span class="d2h-code-line-ctn">        clock_interval = kwargs.get(ATTR_SED_CLOCK_INTERVAL)</span>
         </div>
     </td>
 </tr><tr>
@@ -3541,7 +3541,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            &quot;Configure SED device &#x27;%s&#x27;: stay active=&#x27;%s&#x27;, sleep for=&#x27;%s&#x27;, maintenance interval=&#x27;%s&#x27;, clock sync=&#x27;%s&#x27;, clock interval=&#x27;%s&#x27;&quot;,</span>
+            <span class="d2h-code-line-ctn">        LOGGER.debug(</span>
         </div>
     </td>
 </tr><tr>
@@ -3552,7 +3552,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            self.name,</span>
+            <span class="d2h-code-line-ctn">            &quot;Configure SED device &#x27;%s&#x27;: stay active=&#x27;%s&#x27;, sleep for=&#x27;%s&#x27;, maintenance interval=&#x27;%s&#x27;, clock sync=&#x27;%s&#x27;, clock interval=&#x27;%s&#x27;&quot;,</span>
         </div>
     </td>
 </tr><tr>
@@ -3563,7 +3563,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            str(stay_active),</span>
+            <span class="d2h-code-line-ctn">            self.name,</span>
         </div>
     </td>
 </tr><tr>
@@ -3574,7 +3574,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            str(sleep_for),</span>
+            <span class="d2h-code-line-ctn">            str(stay_active),</span>
         </div>
     </td>
 </tr><tr>
@@ -3585,7 +3585,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            str(maintenance_interval),</span>
+            <span class="d2h-code-line-ctn">            str(sleep_for),</span>
         </div>
     </td>
 </tr><tr>
@@ -3596,7 +3596,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            str(clock_sync),</span>
+            <span class="d2h-code-line-ctn">            str(maintenance_interval),</span>
         </div>
     </td>
 </tr><tr>
@@ -3607,7 +3607,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            str(clock_interval),</span>
+            <span class="d2h-code-line-ctn">            str(clock_sync),</span>
         </div>
     </td>
 </tr><tr>
@@ -3618,7 +3618,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        )</span>
+            <span class="d2h-code-line-ctn">            str(clock_interval),</span>
         </div>
     </td>
 </tr><tr>
@@ -3629,7 +3629,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self._node.Configure_SED(</span>
+            <span class="d2h-code-line-ctn">        )</span>
         </div>
     </td>
 </tr><tr>
@@ -3640,7 +3640,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            stay_active,</span>
+            <span class="d2h-code-line-ctn">        self._node.Configure_SED(</span>
         </div>
     </td>
 </tr><tr>
@@ -3651,7 +3651,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            maintenance_interval,</span>
+            <span class="d2h-code-line-ctn">            stay_active,</span>
         </div>
     </td>
 </tr><tr>
@@ -3662,7 +3662,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            sleep_for,</span>
+            <span class="d2h-code-line-ctn">            maintenance_interval,</span>
         </div>
     </td>
 </tr><tr>
@@ -3673,7 +3673,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            clock_sync,</span>
+            <span class="d2h-code-line-ctn">            sleep_for,</span>
         </div>
     </td>
 </tr><tr>
@@ -3684,12 +3684,23 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            clock_interval,</span>
+            <span class="d2h-code-line-ctn">            clock_sync,</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
       <div class="line-num1">241</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            clock_interval,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">242</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -13364,7 +13375,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">  &quot;<del>requirements</del>&quot;: [&quot;<del>plugwise==0</del>.<del>17</del>.<del>0</del>&quot;],</span>
+            <span class="d2h-code-line-ctn">  &quot;<del>requirements</del>&quot;: [&quot;<del>plugwise==0</del>.<del>17</del>.<del>1</del>&quot;],</span>
         </div>
     </td>
 </tr><tr>
@@ -14892,50 +14903,6 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">114</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del d2h-change">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        <del>result</del> <del>=</del> <del>await self.async_send_api_call</del>(<del>option, self.entity_description.command)</del></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">115</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del d2h-change">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>        if</del> <del>result:</del></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">116</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del d2h-change">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>            LOGGER</del>.<del>debug</del>(</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">117</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del d2h-change">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                <del>&quot;Set %s to %s was successful&quot;</del>,<del> self.entity_description.name, option</del></span>
-        </div>
-    </td>
-</tr><tr>
     <td class="d2h-code-linenumber d2h-ins d2h-change">
       <div class="line-num1"></div>
 <div class="line-num2">55</div>
@@ -14947,14 +14914,25 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins d2h-change">
-      <div class="line-num1"></div>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">114</div>
 <div class="line-num2">56</div>
     </td>
-    <td class="d2h-ins d2h-change">
+    <td class="d2h-cntx">
         <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        <ins>if</ins> <ins>not</ins> (</span>
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        if not (</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del d2h-change">
+      <div class="line-num1">115</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            await self.<del>async_send_api_call(option, self</del>.<del>entity_description</del>.<del>command)</del></span>
         </div>
     </td>
 </tr><tr>
@@ -14965,29 +14943,29 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><ins>            await</ins> <ins>self.coordinator.api.set_schedule_state(</ins></span>
+            <span class="d2h-code-line-ctn">            await self.<ins>coordinator</ins>.<ins>api</ins>.<ins>set_schedule_state(</ins></span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins d2h-change">
+    <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
 <div class="line-num2">58</div>
     </td>
-    <td class="d2h-ins d2h-change">
+    <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><ins>                self</ins>.<ins>device.get</ins>(<ins>&quot;location&quot;),</ins></span>
+            <span class="d2h-code-line-ctn">                self.device.get(&quot;location&quot;),</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins d2h-change">
+    <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
 <div class="line-num2">59</div>
     </td>
-    <td class="d2h-ins d2h-change">
+    <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                <ins>option</ins>,</span>
+            <span class="d2h-code-line-ctn">                option,</span>
         </div>
     </td>
 </tr><tr>
@@ -15002,58 +14980,69 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">118</div>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
 <div class="line-num2">61</div>
     </td>
-    <td class="d2h-cntx">
+    <td class="d2h-ins">
         <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn">            )</span>
         </div>
     </td>
 </tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">116</div>
+<div class="line-num2">62</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        ):</span>
+        </div>
+    </td>
+</tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
+      <div class="line-num1">117</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            raise HomeAssistantError(f&quot;Failed to <del>set</del> {<del>self.entity_description.name</del>}&quot;)</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">118</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        LOGGER.debug(</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
       <div class="line-num1">119</div>
 <div class="line-num2"></div>
     </td>
-    <td class="d2h-del d2h-change">
+    <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>            await self.coordinator.async_request_refresh(</del>)</span>
+            <span class="d2h-code-line-ctn">            &quot;Set %s to %s was successful&quot;, self.entity_description.name, option</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-del d2h-change">
+    <td class="d2h-code-linenumber d2h-del">
       <div class="line-num1">120</div>
 <div class="line-num2"></div>
     </td>
-    <td class="d2h-del d2h-change">
+    <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>        else:</del></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">121</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del d2h-change">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>            raise</del> <del>HomeAssistantError(f&quot;Failed to set {</del>self.<del>entity_description</del>.<del>name}&quot;</del>)</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins d2h-change">
-      <div class="line-num1"></div>
-<div class="line-num2">62</div>
-    </td>
-    <td class="d2h-ins d2h-change">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><ins>        </ins>)<ins>:</ins></span>
+            <span class="d2h-code-line-ctn">        )</span>
         </div>
     </td>
 </tr><tr>
@@ -15064,18 +15053,18 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><ins>            raise HomeAssistantError(f&quot;Failed to change to schedule {option}&quot;)</ins></span>
+            <span class="d2h-code-line-ctn">            raise HomeAssistantError(f&quot;Failed to <ins>change</ins> <ins>to schedule </ins>{<ins>option</ins>}&quot;)</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins d2h-change">
-      <div class="line-num1"></div>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">121</div>
 <div class="line-num2">64</div>
     </td>
-    <td class="d2h-ins d2h-change">
+    <td class="d2h-cntx">
         <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><ins>        await</ins> self.<ins>coordinator</ins>.<ins>async_request_refresh(</ins>)</span>
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        await self.coordinator.async_request_refresh()</span>
         </div>
     </td>
 </tr>
