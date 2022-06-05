@@ -85,7 +85,7 @@
       </svg>      <a href="#d2h-097486" class="d2h-file-name">/home/runner/work/progress/progress/clones/{beta/custom_components → ha-core/homeassistant/components}/plugwise/config_flow.py</a>
       <span class="d2h-file-stats">
           <span class="d2h-lines-added">+5</span>
-          <span class="d2h-lines-deleted">-239</span>
+          <span class="d2h-lines-deleted">-236</span>
       </span>
     </span>
 </li>
@@ -9093,7 +9093,7 @@
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line">@@ -296,110 +165,7 @@</div>
+        <div class="d2h-code-line">@@ -296,107 +165,7 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
@@ -10170,7 +10170,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if (</span>
+            <span class="d2h-code-line-ctn">        if coordinator.api.anna_no_cooling_enabled:</span>
         </div>
     </td>
 </tr><tr>
@@ -10181,7 +10181,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            coordinator.gateway[&quot;smile_name&quot;] == &quot;Anna&quot;</span>
+            <span class="d2h-code-line-ctn">            data.update(</span>
         </div>
     </td>
 </tr><tr>
@@ -10192,7 +10192,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            and coordinator.gateway[&quot;cooling_present&quot;]</span>
+            <span class="d2h-code-line-ctn">                {</span>
         </div>
     </td>
 </tr><tr>
@@ -10203,7 +10203,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        ):</span>
+            <span class="d2h-code-line-ctn">                    vol.Optional(</span>
         </div>
     </td>
 </tr><tr>
@@ -10214,7 +10214,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            data.update(</span>
+            <span class="d2h-code-line-ctn">                        CONF_COOLING_ON,</span>
         </div>
     </td>
 </tr><tr>
@@ -10225,7 +10225,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                {</span>
+            <span class="d2h-code-line-ctn">                        default=self.config_entry.options.get(CONF_COOLING_ON, False),</span>
         </div>
     </td>
 </tr><tr>
@@ -10236,7 +10236,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                    vol.Optional(</span>
+            <span class="d2h-code-line-ctn">                    ): cv.boolean,</span>
         </div>
     </td>
 </tr><tr>
@@ -10247,7 +10247,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                        CONF_COOLING_ON,</span>
+            <span class="d2h-code-line-ctn">                }</span>
         </div>
     </td>
 </tr><tr>
@@ -10258,7 +10258,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                        default=self.config_entry.options.get(CONF_COOLING_ON, False),</span>
+            <span class="d2h-code-line-ctn">            )</span>
         </div>
     </td>
 </tr><tr>
@@ -10269,45 +10269,12 @@
     <td class="d2h-del">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                    ): cv.boolean,</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">402</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                }</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">403</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            )</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">404</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
             <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">405</div>
+      <div class="line-num1">402</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -16128,7 +16095,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">  &quot;<del>version</del>&quot;: &quot;<del>0</del>.<del>23</del>.<del>3a1</del>&quot;,</span>
+            <span class="d2h-code-line-ctn">  &quot;<del>version</del>&quot;: &quot;<del>0</del>.<del>23</del>.<del>3a4</del>&quot;,</span>
         </div>
     </td>
 </tr><tr>
@@ -16161,7 +16128,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">  &quot;<del>requirements</del>&quot;: [&quot;<del>https:&#x2F;&#x2F;test-files</del>.<del>pythonhosted</del>.<del>org&#x2F;packages&#x2F;85&#x2F;22&#x2F;efd16c98c1422391596a47b1e9d6fa3d0b0899f187879b9cc7fc16af3279&#x2F;plugwise-0</del>.<del>19.0a4.tar.gz#plugwise==0.19.0a4</del>&quot;],</span>
+            <span class="d2h-code-line-ctn">  &quot;<del>requirements</del>&quot;: [&quot;<del>https:&#x2F;&#x2F;test-files</del>.<del>pythonhosted</del>.<del>org&#x2F;packages&#x2F;85&#x2F;68&#x2F;b45e251e082ec83e60fb05c3ed3a7c74a0348d6ed852f4ea14683583b81b&#x2F;plugwise-0</del>.<del>19.0a7.tar.gz#plugwise==0.19.0a7</del>&quot;],</span>
         </div>
     </td>
 </tr><tr>
