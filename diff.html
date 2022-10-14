@@ -133,7 +133,7 @@
       </svg>      <a href="#d2h-985688" class="d2h-file-name">/home/runner/work/progress/progress/clones/{ha-core/homeassistant/components → beta/custom_components}/plugwise/entity.py</a>
       <span class="d2h-file-stats">
           <span class="d2h-lines-added">+12</span>
-          <span class="d2h-lines-deleted">-9</span>
+          <span class="d2h-lines-deleted">-13</span>
       </span>
     </span>
 </li>
@@ -13684,7 +13684,7 @@
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line">@@ -65,7 +65,10 @@</div>
+        <div class="d2h-code-line">@@ -65,11 +65,10 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
@@ -13727,7 +13727,51 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        <del>return</del> <del>super().</del>available <del>and self._dev_id </del>in self.<del>coordinator.</del>data<del>.devices</del></span>
+            <span class="d2h-code-line-ctn">        <del>return</del> <del>(</del></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del d2h-change">
+      <div class="line-num1">69</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            <del>self</del>.<del>_dev_id</del> <del>in</del> self.<del>coordinator.</del>data<del>.devices</del></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del d2h-change">
+      <div class="line-num1">70</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><del>            and (&quot;available&quot; not in self.device or self.device[&quot;available&quot;])</del></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del d2h-change">
+      <div class="line-num1">71</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><del>            and</del> super().available</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">72</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        )</span>
         </div>
     </td>
 </tr><tr>
@@ -13738,45 +13782,45 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        <ins>if</ins> <ins>&quot;</ins>available<ins>&quot;</ins> in self.data<ins>:</ins></span>
+            <span class="d2h-code-line-ctn">        <ins>if</ins> <ins>&quot;available&quot; in self.data:</ins></span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
+    <td class="d2h-code-linenumber d2h-ins d2h-change">
       <div class="line-num1"></div>
 <div class="line-num2">69</div>
     </td>
-    <td class="d2h-ins">
+    <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            return super().available and self.data[&quot;available&quot;]</span>
+            <span class="d2h-code-line-ctn">            <ins>return super()</ins>.<ins>available</ins> <ins>and</ins> self.data<ins>[&quot;available&quot;]</ins></span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
+    <td class="d2h-code-linenumber d2h-ins d2h-change">
       <div class="line-num1"></div>
 <div class="line-num2">70</div>
     </td>
-    <td class="d2h-ins">
+    <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
+    <td class="d2h-code-linenumber d2h-ins d2h-change">
       <div class="line-num1"></div>
 <div class="line-num2">71</div>
     </td>
-    <td class="d2h-ins">
+    <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        return super().available</span>
+            <span class="d2h-code-line-ctn"><ins>        return</ins> super().available</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">69</div>
+      <div class="line-num1">73</div>
 <div class="line-num2">72</div>
     </td>
     <td class="d2h-cntx">
@@ -13787,7 +13831,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">70</div>
+      <div class="line-num1">74</div>
 <div class="line-num2">73</div>
     </td>
     <td class="d2h-cntx">
@@ -13798,7 +13842,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">71</div>
+      <div class="line-num1">75</div>
 <div class="line-num2">74</div>
     </td>
     <td class="d2h-cntx">
