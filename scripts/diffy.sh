@@ -16,7 +16,7 @@ cd "${clonedir}" || exit
 echo "" >  "${difffile}"
 diff -X "${pdir}/ignorelist.txt" -ur "${coredir}/" "${betadir}/" >> "${difffile}"
 
-diff2html -F "${pdir}/diff.html" -i file -- "${difffile}"
+diff2html -F "${pdir}/diff.html" -i file -- "${difffile}" || exit 1
 
 echo "<html>
         <head>
