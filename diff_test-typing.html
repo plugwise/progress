@@ -73,7 +73,7 @@
       </svg>      <a href="#d2h-093772" class="d2h-file-name">/home/runner/work/progress/progress/clones/{beta/custom_components → ha-core/homeassistant/components}/plugwise/climate.py</a>
       <span class="d2h-file-stats">
           <span class="d2h-lines-added">+32</span>
-          <span class="d2h-lines-deleted">-59</span>
+          <span class="d2h-lines-deleted">-57</span>
       </span>
     </span>
 </li>
@@ -5185,7 +5185,7 @@
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line">@@ -148,28 +128,32 @@</div>
+        <div class="d2h-code-line">@@ -148,26 +128,32 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
@@ -5228,7 +5228,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        <del>if</del> self.coordinator.data.<del>gateway</del>[<del>&quot;heater_id&quot;] is not None:</del></span>
+            <span class="d2h-code-line-ctn">        <del>if</del> <del>(heater</del> <del>:= </del>self.coordinator.data.<del>gateway</del>[<del>&quot;heater_id&quot;] is not None):</del></span>
         </div>
     </td>
 </tr><tr>
@@ -5239,7 +5239,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            <del>hc_data = </del>self.coordinator.data.<del>devices</del>[</span>
+            <span class="d2h-code-line-ctn">            <del>heater_data = </del>self.coordinator.data.<del>devices</del>[<del>heater</del>]</span>
         </div>
     </td>
 </tr><tr>
@@ -5250,7 +5250,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>                self.coordinator.data.gateway[&quot;heater_id&quot;</del>]</span>
+            <span class="d2h-code-line-ctn"><del>            if heater_data[&quot;binary_sensors&quot;</del>]<del>[&quot;heating_state&quot;]:</del></span>
         </div>
     </td>
 </tr><tr>
@@ -5261,7 +5261,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>            </del>]</span>
+            <span class="d2h-code-line-ctn"><del>                return</del> <del>HVACAction.HEATING</del></span>
         </div>
     </td>
 </tr><tr>
@@ -5272,7 +5272,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            <del>if</del> <del>hc_data[&quot;binary_sensors&quot;][&quot;heating_state&quot;]:</del></span>
+            <span class="d2h-code-line-ctn">            <del>if</del> <del>heater_data[&quot;binary_sensors&quot;]</del>.<del>get(&quot;cooling_state&quot;, False):</del></span>
         </div>
     </td>
 </tr><tr>
@@ -5283,29 +5283,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>                return</del> <del>HVACAction</del>.<del>HEATING</del></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">157</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del d2h-change">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            <del>if</del> <del>hc_data[&quot;binary_sensors&quot;]</del>.<del>get(&quot;cooling_state&quot;, False):</del></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">158</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                return HVACAction.COOLING</span>
+            <span class="d2h-code-line-ctn"><del>                return</del> <del>HVACAction</del>.<del>COOLING</del></span>
         </div>
     </td>
 </tr><tr>
@@ -5316,7 +5294,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        <ins>hc_data</ins> <ins>= </ins>self.coordinator.data.<ins>devices</ins>[</span>
+            <span class="d2h-code-line-ctn">        <ins>hc_data</ins> <ins>=</ins> self.coordinator.data.<ins>devices</ins>[</span>
         </div>
     </td>
 </tr><tr>
@@ -5327,7 +5305,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            self.coordinator.data.<ins>gateway</ins>[<ins>&quot;heater_id&quot;]</ins></span>
+            <span class="d2h-code-line-ctn">            self.coordinator.data.<ins>gateway</ins>[<ins>&quot;heater_id&quot;</ins>]</span>
         </div>
     </td>
 </tr><tr>
@@ -5349,7 +5327,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><ins>        if hc_data[&quot;binary_sensors&quot;</ins>]<ins>[&quot;heating_state&quot;]:</ins></span>
+            <span class="d2h-code-line-ctn"><ins>        if</ins> <ins>hc_data[&quot;binary_sensors&quot;][&quot;heating_state&quot;]:</ins></span>
         </div>
     </td>
 </tr><tr>
@@ -5360,7 +5338,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            <ins>return</ins> <ins>HVACAction.HEATING</ins></span>
+            <span class="d2h-code-line-ctn">            <ins>return</ins> <ins>HVACAction</ins>.<ins>HEATING</ins></span>
         </div>
     </td>
 </tr><tr>
@@ -5375,19 +5353,19 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins d2h-change">
+    <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
 <div class="line-num2">137</div>
     </td>
-    <td class="d2h-ins d2h-change">
+    <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            <ins>return</ins> <ins>HVACAction</ins>.<ins>COOLING</ins></span>
+            <span class="d2h-code-line-ctn">            return HVACAction.COOLING</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">159</div>
+      <div class="line-num1">157</div>
 <div class="line-num2">138</div>
     </td>
     <td class="d2h-cntx">
@@ -5398,7 +5376,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">160</div>
+      <div class="line-num1">158</div>
 <div class="line-num2">139</div>
     </td>
     <td class="d2h-cntx">
@@ -5409,7 +5387,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">161</div>
+      <div class="line-num1">159</div>
 <div class="line-num2">140</div>
     </td>
     <td class="d2h-cntx">
@@ -5420,7 +5398,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">162</div>
+      <div class="line-num1">160</div>
 <div class="line-num2">141</div>
     </td>
     <td class="d2h-cntx">
@@ -5431,7 +5409,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">163</div>
+      <div class="line-num1">161</div>
 <div class="line-num2">142</div>
     </td>
     <td class="d2h-cntx">
@@ -5442,7 +5420,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">164</div>
+      <div class="line-num1">162</div>
 <div class="line-num2">143</div>
     </td>
     <td class="d2h-cntx">
@@ -5453,7 +5431,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">165</div>
+      <div class="line-num1">163</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -5563,7 +5541,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">166</div>
+      <div class="line-num1">164</div>
 <div class="line-num2">153</div>
     </td>
     <td class="d2h-cntx">
@@ -5574,7 +5552,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">167</div>
+      <div class="line-num1">165</div>
 <div class="line-num2">154</div>
     </td>
     <td class="d2h-cntx">
@@ -5585,7 +5563,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">168</div>
+      <div class="line-num1">166</div>
 <div class="line-num2">155</div>
     </td>
     <td class="d2h-cntx">
@@ -5596,7 +5574,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">169</div>
+      <div class="line-num1">167</div>
 <div class="line-num2">156</div>
     </td>
     <td class="d2h-cntx">
@@ -5607,7 +5585,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">170</div>
+      <div class="line-num1">168</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -5618,7 +5596,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">171</div>
+      <div class="line-num1">169</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -5629,7 +5607,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">172</div>
+      <div class="line-num1">170</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -5640,7 +5618,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">173</div>
+      <div class="line-num1">171</div>
 <div class="line-num2">157</div>
     </td>
     <td class="d2h-cntx">
@@ -5651,7 +5629,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">174</div>
+      <div class="line-num1">172</div>
 <div class="line-num2">158</div>
     </td>
     <td class="d2h-cntx">
@@ -5662,7 +5640,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">175</div>
+      <div class="line-num1">173</div>
 <div class="line-num2">159</div>
     </td>
     <td class="d2h-cntx">
@@ -5675,11 +5653,11 @@
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line">@@ -187,7 +171,7 @@</div>
+        <div class="d2h-code-line">@@ -185,7 +171,7 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">187</div>
+      <div class="line-num1">185</div>
 <div class="line-num2">171</div>
     </td>
     <td class="d2h-cntx">
@@ -5690,7 +5668,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">188</div>
+      <div class="line-num1">186</div>
 <div class="line-num2">172</div>
     </td>
     <td class="d2h-cntx">
@@ -5701,7 +5679,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">189</div>
+      <div class="line-num1">187</div>
 <div class="line-num2">173</div>
     </td>
     <td class="d2h-cntx">
@@ -5712,7 +5690,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">190</div>
+      <div class="line-num1">188</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del d2h-change">
@@ -5734,7 +5712,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">191</div>
+      <div class="line-num1">189</div>
 <div class="line-num2">175</div>
     </td>
     <td class="d2h-cntx">
@@ -5745,7 +5723,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">192</div>
+      <div class="line-num1">190</div>
 <div class="line-num2">176</div>
     </td>
     <td class="d2h-cntx">
@@ -5756,7 +5734,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">193</div>
+      <div class="line-num1">191</div>
 <div class="line-num2">177</div>
     </td>
     <td class="d2h-cntx">
@@ -5769,11 +5747,11 @@
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line">@@ -198,17 +182,6 @@</div>
+        <div class="d2h-code-line">@@ -196,17 +182,6 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">198</div>
+      <div class="line-num1">196</div>
 <div class="line-num2">182</div>
     </td>
     <td class="d2h-cntx">
@@ -5784,7 +5762,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">199</div>
+      <div class="line-num1">197</div>
 <div class="line-num2">183</div>
     </td>
     <td class="d2h-cntx">
@@ -5795,7 +5773,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">200</div>
+      <div class="line-num1">198</div>
 <div class="line-num2">184</div>
     </td>
     <td class="d2h-cntx">
@@ -5806,7 +5784,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">201</div>
+      <div class="line-num1">199</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -5817,7 +5795,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">202</div>
+      <div class="line-num1">200</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -5828,7 +5806,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">203</div>
+      <div class="line-num1">201</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -5839,7 +5817,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">204</div>
+      <div class="line-num1">202</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -5850,7 +5828,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">205</div>
+      <div class="line-num1">203</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -5861,7 +5839,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">206</div>
+      <div class="line-num1">204</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -5872,7 +5850,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">207</div>
+      <div class="line-num1">205</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -5883,7 +5861,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">208</div>
+      <div class="line-num1">206</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -5894,7 +5872,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">209</div>
+      <div class="line-num1">207</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -5905,7 +5883,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">210</div>
+      <div class="line-num1">208</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -5916,7 +5894,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">211</div>
+      <div class="line-num1">209</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
@@ -5927,7 +5905,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">212</div>
+      <div class="line-num1">210</div>
 <div class="line-num2">185</div>
     </td>
     <td class="d2h-cntx">
@@ -5938,7 +5916,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">213</div>
+      <div class="line-num1">211</div>
 <div class="line-num2">186</div>
     </td>
     <td class="d2h-cntx">
@@ -5949,7 +5927,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">214</div>
+      <div class="line-num1">212</div>
 <div class="line-num2">187</div>
     </td>
     <td class="d2h-cntx">
@@ -16293,7 +16271,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">  &quot;<del>requirements</del>&quot;: [&quot;<del>https:&#x2F;&#x2F;test-files</del>.<del>pythonhosted</del>.<del>org&#x2F;packages&#x2F;c4&#x2F;ef&#x2F;3e2057f8abbd77ba605f07d47ac8d7b68ec99da47cc072516f425f5ba39e&#x2F;plugwise-0</del>.<del>27.2a0.tar.gz#plugwise==0.27.2a0</del>&quot;],</span>
+            <span class="d2h-code-line-ctn">  &quot;<del>requirements</del>&quot;: [&quot;<del>plugwise==0</del>.<del>27</del>.<del>2</del>&quot;],</span>
         </div>
     </td>
 </tr><tr>
@@ -16381,7 +16359,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">  &quot;<ins>zeroconf</ins>&quot;: [&quot;<ins>_plugwise</ins>.<ins>_tcp</ins>.<ins>local</ins>.&quot;],</span>
+            <span class="d2h-code-line-ctn">  &quot;<ins>zeroconf</ins>&quot;: [&quot;<ins>_plugwise</ins>.<ins>_tcp</ins>.<ins>local.</ins>&quot;],</span>
         </div>
     </td>
 </tr><tr>
