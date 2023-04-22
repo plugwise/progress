@@ -161,6 +161,8 @@ jobs:
     needs: checkout-usb
     steps:
 
+    - name: debug
+      run: pwd
     - name: Setup SSH Keys and known_hosts
       env:
         SSH_AUTH_SOCK: /tmp/ssh_agent.sock
