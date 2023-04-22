@@ -61,13 +61,13 @@ jobs:
 #        key: >-
 #          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/setup.sh') }}-${{ hashFiles('scripts.diffy.sh') }}
     - name: Checkout HA core
-      if: steps.smile-clones.outputs.cache-hit != 'true'
+#      if: steps.smile-clones.outputs.cache-hit != 'true'
       uses: actions/checkout@v3
       with:
         repository: home-assistant/core
         path: clones/beta/ha-core
     - name: Checkout Plugwise fork of HA core
-      if: steps.smile-clones.outputs.cache-hit != 'true'
+#      if: steps.smile-clones.outputs.cache-hit != 'true'
       uses: actions/checkout@v3
       with:
         repository: plugwise/home-assistant.core
@@ -75,7 +75,7 @@ jobs:
         path: clones/beta/pw-core
         fetch-depth: 0
     - name: Checkout beta component (branch-switch)
-      if: steps.smile-clones.outputs.cache-hit != 'true'
+#      if: steps.smile-clones.outputs.cache-hit != 'true'
       uses: actions/checkout@v3
       with:
         repository: plugwise/plugwise-beta
@@ -97,13 +97,13 @@ jobs:
 #        key: >-
 #          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/setup.sh') }}-${{ hashFiles('scripts.diffy.sh') }}
     - name: Checkout HA core for usb-beta
-      if: steps.usb-clones.outputs.cache-hit != 'true'
+#      if: steps.usb-clones.outputs.cache-hit != 'true'
       uses: actions/checkout@v3
       with:
         repository: home-assistant/core
         path: clones/usb-beta/ha-core
     - name: Checkout Plugwise fork of HA core for usb-beta
-      if: steps.usb-clones.outputs.cache-hit != 'true'
+#      if: steps.usb-clones.outputs.cache-hit != 'true'
       uses: actions/checkout@v3
       with:
         repository: plugwise/home-assistant.core
@@ -111,7 +111,7 @@ jobs:
         path: clones/usb-beta/pw-core
         fetch-depth: 0
     - name: Checkout usb-beta component (branch-switch)
-      if: steps.usb-clones.outputs.cache-hit != 'true'
+#      if: steps.usb-clones.outputs.cache-hit != 'true'
       uses: actions/checkout@v3
       with:
         repository: plugwise/plugwise-beta
