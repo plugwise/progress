@@ -53,11 +53,12 @@ jobs:
         node-version: 18
     - name: Install diff2html
       run: npm -g install diff2html-cli diff2html
+
     - name: Checkout HA core
       uses: actions/checkout@v3
       with:
         repository: home-assistant/core
-        path: clones/ha-core
+        path: clones/beta/ha-core
     - name: Checkout Plugwise fork of HA core
       uses: actions/checkout@v3
       with:
@@ -72,6 +73,27 @@ jobs:
         ssh-key: ${{ secrets.plugwise_deploykey }}
         path: clones/beta
         fetch-depth: 0
+
+    - name: Checkout HA core for usb-beta
+      uses: actions/checkout@v3
+      with:
+        repository: home-assistant/core
+        path: clones/usb-beta/ha-core
+    - name: Checkout Plugwise fork of HA core for usb-beta
+      uses: actions/checkout@v3
+      with:
+        repository: plugwise/home-assistant.core
+        ssh-key: ${{ secrets.hacore_deploykey }}
+        path: clones/usb-beta/pw-core
+        fetch-depth: 0
+    - name: Checkout usb-beta component (branch-switch)
+      uses: actions/checkout@v3
+      with:
+        repository: plugwise/plugwise-beta
+        ssh-key: ${{ secrets.plugwise_deploykey }}
+        path: clones/usb-beta
+        fetch-depth: 0
+
     - name: Checkout beta component (main-branch)
       uses: actions/checkout@v3
       with:
@@ -79,6 +101,15 @@ jobs:
         ref: main
         ssh-key: ${{ secrets.plugwise_deploykey }}
         path: clones/beta-main
+
+    - name: Checkout usb-beta component (main-branch)
+      uses: actions/checkout@v3
+      with:
+        repository: plugwise/plugwise_usb-beta
+        ref: main
+        ssh-key: ${{ secrets.plugwise_deploykey }}
+        path: clones/beta-main
+
 
     - name: Setup SSH Keys and known_hosts
       env:
