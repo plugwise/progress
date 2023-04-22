@@ -9,7 +9,6 @@ betadir="${clonedir}/${1}/custom_components/plugwise/"
 bmdir="${clonedir}/${1}-main/custom_components/plugwise/"
 difffile="${clonedir}/plugwise.diff"
 pdir="$(pwd)/${1}"
-rdir="$(pwd)"
 
 branches="${pdir}/branches.txt"
 

@@ -12,11 +12,6 @@ echo "<html>
 	</body>
 </html>" >> "${rdir}/index.html"
 
-cd "${pdir}" || exit
-pwd
-ls -alrt
-
-
 #git remote set-url origin https://x-access-token:${PROGRESS_DEPLOYKEY}@github.com/$GITHUB_REPOSITORY
 git checkout "${GITHUB_HEAD_REF}"
 git add -A 
