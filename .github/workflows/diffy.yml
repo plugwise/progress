@@ -25,16 +25,8 @@ jobs:
     steps:
     - name: Check out our own code
       uses: actions/checkout@v3
-    - name: Restore base environment
-      id: restore-clones
-      uses: actions/cache@v3
-      with:
-        path: clones
-        key: >-
-          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/setup.sh') }}-${{ hashFiles('scripts.diffy.sh') }}
     - name: Cache base diff environment
-      id: cache-clones
-      if: steps.restore-clones.outputs.cache-hit != 'true'
+      id: base-diff
       uses: actions/cache@v3
       with:
         path: |
@@ -45,28 +37,37 @@ jobs:
           ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/setup.sh') }}-${{ hashFiles('scripts.diffy.sh') }}
         restore-keys: |
           ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/setup.sh') }}-${{ hashFiles('scripts.diffy.sh') }}
-          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/setup.sh') }}
-          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base
     - name: Use Node.js
+      if: steps.base-diff.outputs.cache-hit != 'true'
       uses: actions/setup-node@v3
       with:
         node-version: 18
     - name: Install diff2html
+      if: steps.base-diff.outputs.cache-hit != 'true'
       run: npm -g install diff2html-cli diff2html
 
 
-  prepare-smile:
-    runs-on: ubuntu-latest
-    name: Smile Prepare environment
-    needs: prepare
-    steps:
-
+#  prepare-smile:
+#    runs-on: ubuntu-latest
+#    name: Smile Prepare environment
+#    needs: prepare
+#    steps:
+#
+#    - name: Smile clone environment
+#      id: smile-clones
+#      uses: actions/cache@v3
+#      with:
+#        path: clones/beta
+#        key: >-
+#          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/setup.sh') }}-${{ hashFiles('scripts.diffy.sh') }}
     - name: Checkout HA core
+      if: steps.smile-clones.outputs.cache-hit != 'true'
       uses: actions/checkout@v3
       with:
         repository: home-assistant/core
         path: clones/beta/ha-core
     - name: Checkout Plugwise fork of HA core
+      if: steps.smile-clones.outputs.cache-hit != 'true'
       uses: actions/checkout@v3
       with:
         repository: plugwise/home-assistant.core
@@ -74,6 +75,7 @@ jobs:
         path: clones/beta/pw-core
         fetch-depth: 0
     - name: Checkout beta component (branch-switch)
+      if: steps.smile-clones.outputs.cache-hit != 'true'
       uses: actions/checkout@v3
       with:
         repository: plugwise/plugwise-beta
@@ -81,18 +83,27 @@ jobs:
         path: clones/beta
         fetch-depth: 0
 
-  prepare-usb:
-    runs-on: ubuntu-latest
-    name: USB Prepare environment
-    needs: prepare
-    steps:
-
+#  prepare-usb:
+#    runs-on: ubuntu-latest
+#    name: USB Prepare environment
+#    needs: prepare
+#    steps:
+#
+#    - name: USB clone environment
+#      id: usb-clones
+#      uses: actions/cache@v3
+#      with:
+#        path: clones/usb-beta
+#        key: >-
+#          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/setup.sh') }}-${{ hashFiles('scripts.diffy.sh') }}
     - name: Checkout HA core for usb-beta
+      if: steps.usb-clones.outputs.cache-hit != 'true'
       uses: actions/checkout@v3
       with:
         repository: home-assistant/core
         path: clones/usb-beta/ha-core
     - name: Checkout Plugwise fork of HA core for usb-beta
+      if: steps.usb-clones.outputs.cache-hit != 'true'
       uses: actions/checkout@v3
       with:
         repository: plugwise/home-assistant.core
@@ -100,6 +111,7 @@ jobs:
         path: clones/usb-beta/pw-core
         fetch-depth: 0
     - name: Checkout usb-beta component (branch-switch)
+      if: steps.usb-clones.outputs.cache-hit != 'true'
       uses: actions/checkout@v3
       with:
         repository: plugwise/plugwise-beta
@@ -107,11 +119,11 @@ jobs:
         path: clones/usb-beta
         fetch-depth: 0
 
-  checkout-smile:
-    runs-on: ubuntu-latest
-    name: Smile Prepare environment
-    needs: prepare-smile
-    steps:
+#  checkout-smile:
+#    runs-on: ubuntu-latest
+#    name: Smile Prepare environment
+#    needs: prepare-smile
+#    steps:
 
     - name: Checkout beta component (main-branch)
       uses: actions/checkout@v3
@@ -121,11 +133,11 @@ jobs:
         ssh-key: ${{ secrets.plugwise_deploykey }}
         path: clones/beta-main
 
-  checkout-usb:
-    runs-on: ubuntu-latest
-    name: USB Prepare environment
-    needs: prepare-usb
-    steps:
+#  checkout-usb:
+#    runs-on: ubuntu-latest
+#    name: USB Prepare environment
+#    needs: prepare-usb
+#    steps:
 
     - name: Checkout usb-beta component (main-branch)
       uses: actions/checkout@v3
@@ -136,11 +148,11 @@ jobs:
         path: clones/usb-beta-main
 
 
-  diffy-smile:
-    runs-on: ubuntu-latest
-    name: Smile run diff
-    needs: checkout-usb
-    steps:
+#  diffy-smile:
+#    runs-on: ubuntu-latest
+#    name: Smile run diff
+#    needs: checkout-usb
+#    steps:
 
     - name: Setup SSH Keys and known_hosts
       env:
@@ -155,14 +167,12 @@ jobs:
         SSH_AUTH_SOCK: /tmp/ssh_agent.sock
       run: scripts/diffy.sh beta
 
-  diffy-usb:
-    runs-on: ubuntu-latest
-    name: USB run diff
-    needs: checkout-usb
-    steps:
+#  diffy-usb:
+#    runs-on: ubuntu-latest
+#    name: USB run diff
+#    needs: checkout-usb
+#    steps:
 
-    - name: debug
-      run: pwd
     - name: Setup SSH Keys and known_hosts
       env:
         SSH_AUTH_SOCK: /tmp/ssh_agent.sock
