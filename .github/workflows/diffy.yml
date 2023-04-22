@@ -54,11 +54,18 @@ jobs:
     - name: Install diff2html
       run: npm -g install diff2html-cli diff2html
 
+
+  prepare-smile:
+    runs-on: ubuntu-latest
+    name: [Smile] Prepare environment
+    needs: prepare
+    steps:
+
     - name: Checkout HA core
       uses: actions/checkout@v3
       with:
         repository: home-assistant/core
-        path: clones/beta/ha-core
+        path: beta/clones/ha-core
     - name: Checkout Plugwise fork of HA core
       uses: actions/checkout@v3
       with:
@@ -71,28 +78,40 @@ jobs:
       with:
         repository: plugwise/plugwise-beta
         ssh-key: ${{ secrets.plugwise_deploykey }}
-        path: clones/beta
+        path: beta/clones
         fetch-depth: 0
+
+  prepare-usb:
+    runs-on: ubuntu-latest
+    name: [USB] Prepare environment
+    needs: prepare
+    steps:
 
     - name: Checkout HA core for usb-beta
       uses: actions/checkout@v3
       with:
         repository: home-assistant/core
-        path: clones/usb-beta/ha-core
+        path: usb-beta/clones/ha-core
     - name: Checkout Plugwise fork of HA core for usb-beta
       uses: actions/checkout@v3
       with:
         repository: plugwise/home-assistant.core
         ssh-key: ${{ secrets.hacore_deploykey }}
-        path: clones/usb-beta/pw-core
+        path: usb-beta/clones/pw-core
         fetch-depth: 0
     - name: Checkout usb-beta component (branch-switch)
       uses: actions/checkout@v3
       with:
         repository: plugwise/plugwise-beta
         ssh-key: ${{ secrets.plugwise_deploykey }}
-        path: clones/usb-beta
+        path: usb-beta/clones
         fetch-depth: 0
+
+  checkout-smile:
+    runs-on: ubuntu-latest
+    name: [smile] Prepare environment
+    needs: prepare-smile
+    steps:
 
     - name: Checkout beta component (main-branch)
       uses: actions/checkout@v3
@@ -102,6 +121,12 @@ jobs:
         ssh-key: ${{ secrets.plugwise_deploykey }}
         path: clones/beta-main
 
+  checkout-usb:
+    runs-on: ubuntu-latest
+    name: [USB] Prepare environment
+    needs: prepare-usb
+    steps:
+
     - name: Checkout usb-beta component (main-branch)
       uses: actions/checkout@v3
       with:
@@ -110,6 +135,12 @@ jobs:
         ssh-key: ${{ secrets.plugwise_deploykey }}
         path: clones/beta-main
 
+
+  diffy-smile:
+    runs-on: ubuntu-latest
+    name: [Smile] run diff
+    needs: checkout-usb
+    steps:
 
     - name: Setup SSH Keys and known_hosts
       env:
@@ -123,6 +154,19 @@ jobs:
       env:
         SSH_AUTH_SOCK: /tmp/ssh_agent.sock
       run: scripts/diffy.sh beta
+
+  diffy-smile:
+    runs-on: ubuntu-latest
+    name: [Smile] run diff
+    needs: checkout-usb
+    steps:
+
+    - name: Setup SSH Keys and known_hosts
+      env:
+        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      run: |
+        ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+        ssh-add - <<< "${{ secrets.PROGRESS_DEPLOYKEY }}"
     - name: Setup clone (usb-beta)
       run: scripts/setup.sh usb-beta
     - name: Run diff (usb-beta)

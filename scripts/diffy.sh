@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/usr/bin/env bash -x
 if [ "${1}" == "" ]; then
         echo "Syntax: ${0} {beta|usb-beta}"
 fi
