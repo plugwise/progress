@@ -2,7 +2,7 @@
 if [ "${1}" == "" ]; then
         echo "Syntax: ${0} {beta|usb-beta}"
 fi
-clonedir="$(pwd)/${1}/clones"
+clonedir="$(pwd)/clones/${1}"
 coredir="${clonedir}/ha-core/homeassistant/components/plugwise/"
 prdir="${clonedir}/pw-core/homeassistant/components/plugwise/"
 betadir="${clonedir}/${1}/custom_components/plugwise/"
