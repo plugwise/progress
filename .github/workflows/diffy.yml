@@ -10,9 +10,18 @@ on:
   push:
 
 jobs:
+  shellcheck:
+    name: Shellcheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.5.2
+      - name: Run ShellCheck
+        uses: ludeeus/action-shellcheck@master
+
   prepare:
     runs-on: ubuntu-latest
     name: Prepare environment
+    needs: shellcheck
     steps:
     - name: Check out our own code
       uses: actions/checkout@v3
@@ -77,11 +86,19 @@ jobs:
       run: |
         ssh-agent -a $SSH_AUTH_SOCK > /dev/null
         ssh-add - <<< "${{ secrets.PROGRESS_DEPLOYKEY }}"
-    - name: Setup clones
-      run: scripts/setup.sh
-    - name: Run diffy
+    - name: Setup clone (beta)
+      run: scripts/setup.sh beta
+    - name: Run diff (beta)
       env:
         SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-      run: scripts/diffy.sh 
+      run: scripts/diffy.sh beta
+    - name: Setup clone (usb-beta)
+      run: scripts/setup.sh usb-beta
+    - name: Run diff (usb-beta)
+      env:
+        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      run: scripts/diffy.sh usb-beta
+
+
 
 
