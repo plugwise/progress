@@ -1,7 +1,7 @@
 name: Plugwise differences
 
 env:
-  CACHE_VERSION: 6
+  CACHE_VERSION: 1
 
 on:
   schedule:
@@ -47,27 +47,12 @@ jobs:
       run: npm -g install diff2html-cli diff2html
 
 
-#  prepare-smile:
-#    runs-on: ubuntu-latest
-#    name: Smile Prepare environment
-#    needs: prepare
-#    steps:
-#
-#    - name: Smile clone environment
-#      id: smile-clones
-#      uses: actions/cache@v3
-#      with:
-#        path: clones/beta
-#        key: >-
-#          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/setup.sh') }}-${{ hashFiles('scripts.diffy.sh') }}
     - name: Checkout HA core
-#      if: steps.smile-clones.outputs.cache-hit != 'true'
       uses: actions/checkout@v3
       with:
         repository: home-assistant/core
         path: clones/beta/ha-core
     - name: Checkout Plugwise fork of HA core
-#      if: steps.smile-clones.outputs.cache-hit != 'true'
       uses: actions/checkout@v3
       with:
         repository: plugwise/home-assistant.core
@@ -75,7 +60,6 @@ jobs:
         path: clones/beta/pw-core
         fetch-depth: 0
     - name: Checkout beta component (branch-switch)
-#      if: steps.smile-clones.outputs.cache-hit != 'true'
       uses: actions/checkout@v3
       with:
         repository: plugwise/plugwise-beta
@@ -103,29 +87,12 @@ jobs:
       run: scripts/diffy.sh beta
 
 
-#  checkout-usb:
-
-#  prepare-usb:
-#    runs-on: ubuntu-latest
-#    name: USB Prepare environment
-#    needs: prepare
-#    steps:
-#
-#    - name: USB clone environment
-#      id: usb-clones
-#      uses: actions/cache@v3
-#      with:
-#        path: clones/usb-beta
-#        key: >-
-#          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/setup.sh') }}-${{ hashFiles('scripts.diffy.sh') }}
     - name: Checkout HA core for usb-beta
-#      if: steps.usb-clones.outputs.cache-hit != 'true'
       uses: actions/checkout@v3
       with:
         repository: home-assistant/core
         path: clones/usb-beta/ha-core
     - name: Checkout Plugwise fork of HA core for usb-beta
-#      if: steps.usb-clones.outputs.cache-hit != 'true'
       uses: actions/checkout@v3
       with:
         repository: plugwise/home-assistant.core
@@ -133,7 +100,6 @@ jobs:
         path: clones/usb-beta/pw-core
         fetch-depth: 0
     - name: Checkout usb-beta component (branch-switch)
-#      if: steps.usb-clones.outputs.cache-hit != 'true'
       uses: actions/checkout@v3
       with:
         repository: plugwise/plugwise-beta
@@ -141,10 +107,6 @@ jobs:
         path: clones/usb-beta/usb-beta
         fetch-depth: 0
 
-#    runs-on: ubuntu-latest
-#    name: USB Prepare environment
-#    needs: prepare-usb
-#    steps:
 
     - name: Checkout usb-beta component (main-branch)
       uses: actions/checkout@v3
@@ -162,6 +124,8 @@ jobs:
         SSH_AUTH_SOCK: /tmp/ssh_agent.sock
       run: scripts/diffy.sh usb-beta
 
+    - name: Publish results
+      run: scripts/update.sh
 
 
 
