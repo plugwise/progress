@@ -19,7 +19,7 @@ cd "${clonedir}" || exit
 echo "" >  "${difffile}"
 diff -X "${pdir}/ignorelist.txt" -ur "${coredir}/" "${betadir}/" >> "${difffile}"
 
-diff2html -F "${pdir}/diff.html" -i file -- "${difffile}" || exit 1
+diff2html -s "side" -F "${pdir}/diff.html" -i file -- "${difffile}" || exit 1
 
 echo "<html>
         <head>
@@ -48,7 +48,7 @@ do
         echo "" >  "${difffile}"
         diff -X "${pdir}/ignorelist.txt" -ur "${betadir}/" "${coredir}/" >> "${difffile}"
 
-        diff2html -F "${pdir}/diff_${betabranchname}.html" -i file -- "${difffile}"
+        diff2html -s "side" -F "${pdir}/diff_${betabranchname}.html" -i file -- "${difffile}"
 
         echo "
                         <li><a href='diff_${betabranchname}.html'>Unified diff core:dev vs ${1}:${betabranch}</a></li>" >> "${pdir}/index.html"
@@ -73,7 +73,7 @@ do
         echo "" >  "${difffile}"
         diff -X "${pdir}/ignorelist.txt" -ur "${coredir}/" "${prdir}/" >> "${difffile}"
 
-        diff2html -F "${pdir}/diff_${prbranch}.html" -i file -- "${difffile}"
+        diff2html -s "side" -F "${pdir}/diff_${prbranch}.html" -i file -- "${difffile}"
 
         justprbranch=${prbranch//^plugwise-/}
         echo "
@@ -105,7 +105,7 @@ do
         echo "" >  "${difffile}"
         diff -X "${pdir}/ignorelist.txt" -ur "${bmdir}/" "${prdir}/" >> "${difffile}"
 
-        diff2html -F "${pdir}/bm_diff_${prbranch}.html" -i file -- "${difffile}"
+        diff2html -s "side" -F "${pdir}/bm_diff_${prbranch}.html" -i file -- "${difffile}"
 
         justprbranch=${prbranch//^plugwise-/}
         echo "
