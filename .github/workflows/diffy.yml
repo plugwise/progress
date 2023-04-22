@@ -1,7 +1,7 @@
 name: Plugwise differences
 
 env:
-  CACHE_VERSION: 5
+  CACHE_VERSION: 1
 
 on:
   schedule:
@@ -10,22 +10,23 @@ on:
   push:
 
 jobs:
+  shellcheck:
+    name: Shellcheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.5.2
+      - name: Run ShellCheck
+        uses: ludeeus/action-shellcheck@master
+
   prepare:
     runs-on: ubuntu-latest
     name: Prepare environment
+    needs: shellcheck
     steps:
     - name: Check out our own code
       uses: actions/checkout@v3
-    - name: Restore base environment
-      id: restore-clones
-      uses: actions/cache@v3
-      with:
-        path: clones
-        key: >-
-          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/setup.sh') }}-${{ hashFiles('scripts.diffy.sh') }}
     - name: Cache base diff environment
-      id: cache-clones
-      if: steps.restore-clones.outputs.cache-hit != 'true'
+      id: base-diff
       uses: actions/cache@v3
       with:
         path: |
@@ -36,32 +37,34 @@ jobs:
           ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/setup.sh') }}-${{ hashFiles('scripts.diffy.sh') }}
         restore-keys: |
           ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/setup.sh') }}-${{ hashFiles('scripts.diffy.sh') }}
-          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/setup.sh') }}
-          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base
     - name: Use Node.js
+      if: steps.base-diff.outputs.cache-hit != 'true'
       uses: actions/setup-node@v3
       with:
         node-version: 18
     - name: Install diff2html
+      if: steps.base-diff.outputs.cache-hit != 'true'
       run: npm -g install diff2html-cli diff2html
+
+
     - name: Checkout HA core
       uses: actions/checkout@v3
       with:
         repository: home-assistant/core
-        path: clones/ha-core
+        path: clones/beta/ha-core
     - name: Checkout Plugwise fork of HA core
       uses: actions/checkout@v3
       with:
         repository: plugwise/home-assistant.core
         ssh-key: ${{ secrets.hacore_deploykey }}
-        path: clones/pw-core
+        path: clones/beta/pw-core
         fetch-depth: 0
     - name: Checkout beta component (branch-switch)
       uses: actions/checkout@v3
       with:
         repository: plugwise/plugwise-beta
         ssh-key: ${{ secrets.plugwise_deploykey }}
-        path: clones/beta
+        path: clones/beta/beta
         fetch-depth: 0
     - name: Checkout beta component (main-branch)
       uses: actions/checkout@v3
@@ -70,18 +73,59 @@ jobs:
         ref: main
         ssh-key: ${{ secrets.plugwise_deploykey }}
         path: clones/beta-main
-
     - name: Setup SSH Keys and known_hosts
       env:
         SSH_AUTH_SOCK: /tmp/ssh_agent.sock
       run: |
         ssh-agent -a $SSH_AUTH_SOCK > /dev/null
         ssh-add - <<< "${{ secrets.PROGRESS_DEPLOYKEY }}"
-    - name: Setup clones
-      run: scripts/setup.sh
-    - name: Run diffy
+    - name: Setup clone (beta)
+      run: scripts/setup.sh beta
+    - name: Run diff (beta)
       env:
         SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-      run: scripts/diffy.sh 
+      run: scripts/diffy.sh beta
+
+
+    - name: Checkout HA core for usb-beta
+      uses: actions/checkout@v3
+      with:
+        repository: home-assistant/core
+        path: clones/usb-beta/ha-core
+    - name: Checkout Plugwise fork of HA core for usb-beta
+      uses: actions/checkout@v3
+      with:
+        repository: plugwise/home-assistant.core
+        ssh-key: ${{ secrets.hacore_deploykey }}
+        path: clones/usb-beta/pw-core
+        fetch-depth: 0
+    - name: Checkout usb-beta component (branch-switch)
+      uses: actions/checkout@v3
+      with:
+        repository: plugwise/plugwise-beta
+        ssh-key: ${{ secrets.plugwise_deploykey }}
+        path: clones/usb-beta/usb-beta
+        fetch-depth: 0
+
+
+    - name: Checkout usb-beta component (main-branch)
+      uses: actions/checkout@v3
+      with:
+        repository: plugwise/plugwise_usb-beta
+        ref: main
+        ssh-key: ${{ secrets.plugwise_deploykey }}
+        path: clones/usb-beta-main
+
+
+    - name: Setup clone (usb-beta)
+      run: scripts/setup.sh usb-beta
+    - name: Run diff (usb-beta)
+      env:
+        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      run: scripts/diffy.sh usb-beta
+
+    - name: Publish results
+      run: scripts/update.sh
+
 
 
