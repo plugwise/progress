@@ -155,12 +155,6 @@ jobs:
         path: clones/usb-beta-main
 
 
-    - name: Setup SSH Keys and known_hosts
-      env:
-        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-      run: |
-        ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-        ssh-add - <<< "${{ secrets.PROGRESS_DEPLOYKEY }}"
     - name: Setup clone (usb-beta)
       run: scripts/setup.sh usb-beta
     - name: Run diff (usb-beta)
