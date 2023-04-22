@@ -6554,7 +6554,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>import</del> <del>serial</del>.<del>tools.list_ports  #</del> <del>pw-beta</del> <del>usb</del></span>
+            <span class="d2h-code-line-ctn"><del>import</del> <del>serial.tools.list_ports  #</del> <del>pw-beta</del> <del>usb</del></span>
         </div>
     </td>
 </tr><tr>
@@ -6565,7 +6565,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><ins>from</ins> <ins>plugwise</ins>.<ins>exceptions</ins> <ins>import</ins> <ins>(</ins></span>
+            <span class="d2h-code-line-ctn"><ins>from</ins> <ins>plugwise</ins> <ins>import</ins> <ins>Smile</ins></span>
         </div>
     </td>
 </tr><tr>
@@ -6576,7 +6576,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    ConnectionFailedError,</span>
+            <span class="d2h-code-line-ctn">from plugwise.exceptions import (</span>
         </div>
     </td>
 </tr><tr>
@@ -6587,7 +6587,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    InvalidAuthentication,</span>
+            <span class="d2h-code-line-ctn">    ConnectionFailedError,</span>
         </div>
     </td>
 </tr><tr>
@@ -6598,7 +6598,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    InvalidSetupError,</span>
+            <span class="d2h-code-line-ctn">    InvalidAuthentication,</span>
         </div>
     </td>
 </tr><tr>
@@ -6609,7 +6609,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    InvalidXMLError,</span>
+            <span class="d2h-code-line-ctn">    InvalidSetupError,</span>
         </div>
     </td>
 </tr><tr>
@@ -6620,7 +6620,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    ResponseError,</span>
+            <span class="d2h-code-line-ctn">    InvalidXMLError,</span>
         </div>
     </td>
 </tr><tr>
@@ -6631,7 +6631,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    UnsupportedDeviceError,</span>
+            <span class="d2h-code-line-ctn">    ResponseError,</span>
         </div>
     </td>
 </tr><tr>
@@ -6642,7 +6642,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">)</span>
+            <span class="d2h-code-line-ctn">    UnsupportedDeviceError,</span>
         </div>
     </td>
 </tr><tr>
@@ -6653,7 +6653,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">from plugwise.smile import Smile</span>
+            <span class="d2h-code-line-ctn">)</span>
         </div>
     </td>
 </tr><tr>
@@ -9793,58 +9793,36 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">368</div>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
 <div class="line-num2">178</div>
     </td>
-    <td class="d2h-cntx">
+    <td class="d2h-ins">
         <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">369</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del d2h-change">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            <del>if user_input[FLOW_TYPE] == FLOW_USB</del>:</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-del d2h-change">
-      <div class="line-num1">370</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del d2h-change">
-        <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                <del>return</del> await self.<del>async_step_user_usb(</del>)</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins d2h-change">
+    <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
 <div class="line-num2">179</div>
     </td>
-    <td class="d2h-ins d2h-change">
+    <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            <ins>try</ins>:</span>
+            <span class="d2h-code-line-ctn">            try:</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins d2h-change">
+    <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
 <div class="line-num2">180</div>
     </td>
-    <td class="d2h-ins d2h-change">
+    <td class="d2h-ins">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                <ins>api</ins> <ins>= </ins>await <ins>validate_gw_input(</ins>self.<ins>hass, user_input</ins>)</span>
+            <span class="d2h-code-line-ctn">                api = await validate_gw_input(self.hass, user_input)</span>
         </div>
     </td>
 </tr><tr>
@@ -10035,36 +10013,58 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">368</div>
 <div class="line-num2">198</div>
     </td>
-    <td class="d2h-ins">
+    <td class="d2h-cntx">
         <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-prefix">&nbsp;</span>
             <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">199</div>
+    <td class="d2h-code-linenumber d2h-del d2h-change">
+      <div class="line-num1">369</div>
+<div class="line-num2"></div>
     </td>
-    <td class="d2h-ins">
+    <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                user_input[PW_TYPE] = API</span>
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><del>            if </del>user_input[<del>FLOW_TYPE</del>] <del>==</del> <del>FLOW_USB:</del></span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
+    <td class="d2h-code-linenumber d2h-del d2h-change">
+      <div class="line-num1">370</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                return <del>await </del>self.<del>async_step_user_usb</del>()</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins d2h-change">
+      <div class="line-num1"></div>
+<div class="line-num2">199</div>
+    </td>
+    <td class="d2h-ins d2h-change">
+        <div class="d2h-code-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn"><ins>                </ins>user_input[<ins>PW_TYPE</ins>] <ins>=</ins> <ins>API</ins></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins d2h-change">
       <div class="line-num1"></div>
 <div class="line-num2">200</div>
     </td>
-    <td class="d2h-ins">
+    <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                return self.async_create_entry(title=api.smile_name, data=user_input)</span>
+            <span class="d2h-code-line-ctn">                return self.<ins>async_create_entry</ins>(<ins>title=api.smile_name, data=user_input</ins>)</span>
         </div>
     </td>
 </tr><tr>
@@ -15439,7 +15439,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">  &quot;<ins>codeowners</ins>&quot;: [&quot;<ins>@CoMPaTech</ins>&quot;, &quot;<ins>@bouwew</ins>&quot;<ins>, &quot;@brefra&quot;, &quot;@frenck&quot;</ins>],</span>
+            <span class="d2h-code-line-ctn">  &quot;<ins>codeowners</ins>&quot;: [&quot;<ins>@CoMPaTech</ins>&quot;, &quot;<ins>@bouwew</ins>&quot;<ins>, &quot;@frenck&quot;</ins>],</span>
         </div>
     </td>
 </tr><tr>
@@ -15516,7 +15516,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">  &quot;requirements&quot;: [&quot;plugwise==0.27.<del>7</del>&quot;],</span>
+            <span class="d2h-code-line-ctn">  &quot;requirements&quot;: [&quot;plugwise==0.<del>27</del>.<del>7</del>&quot;],</span>
         </div>
     </td>
 </tr><tr>
@@ -15549,7 +15549,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">  &quot;requirements&quot;: [&quot;plugwise==0.27.<ins>5</ins>&quot;],</span>
+            <span class="d2h-code-line-ctn">  &quot;requirements&quot;: [&quot;plugwise==0.<ins>31</ins>.<ins>0</ins>&quot;],</span>
         </div>
     </td>
 </tr><tr>
