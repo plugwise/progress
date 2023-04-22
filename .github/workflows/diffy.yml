@@ -82,6 +82,28 @@ jobs:
         ssh-key: ${{ secrets.plugwise_deploykey }}
         path: clones/beta
         fetch-depth: 0
+    - name: Checkout beta component (main-branch)
+      uses: actions/checkout@v3
+      with:
+        repository: plugwise/plugwise-beta
+        ref: main
+        ssh-key: ${{ secrets.plugwise_deploykey }}
+        path: clones/beta-main
+    - name: Setup SSH Keys and known_hosts
+      env:
+        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      run: |
+        ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+        ssh-add - <<< "${{ secrets.PROGRESS_DEPLOYKEY }}"
+    - name: Setup clone (beta)
+      run: scripts/setup.sh beta
+    - name: Run diff (beta)
+      env:
+        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      run: scripts/diffy.sh beta
+
+
+#  checkout-usb:
 
 #  prepare-usb:
 #    runs-on: ubuntu-latest
@@ -119,21 +141,6 @@ jobs:
         path: clones/usb-beta
         fetch-depth: 0
 
-#  checkout-smile:
-#    runs-on: ubuntu-latest
-#    name: Smile Prepare environment
-#    needs: prepare-smile
-#    steps:
-
-    - name: Checkout beta component (main-branch)
-      uses: actions/checkout@v3
-      with:
-        repository: plugwise/plugwise-beta
-        ref: main
-        ssh-key: ${{ secrets.plugwise_deploykey }}
-        path: clones/beta-main
-
-#  checkout-usb:
 #    runs-on: ubuntu-latest
 #    name: USB Prepare environment
 #    needs: prepare-usb
@@ -147,31 +154,6 @@ jobs:
         ssh-key: ${{ secrets.plugwise_deploykey }}
         path: clones/usb-beta-main
 
-
-#  diffy-smile:
-#    runs-on: ubuntu-latest
-#    name: Smile run diff
-#    needs: checkout-usb
-#    steps:
-
-    - name: Setup SSH Keys and known_hosts
-      env:
-        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-      run: |
-        ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-        ssh-add - <<< "${{ secrets.PROGRESS_DEPLOYKEY }}"
-    - name: Setup clone (beta)
-      run: scripts/setup.sh beta
-    - name: Run diff (beta)
-      env:
-        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-      run: scripts/diffy.sh beta
-
-#  diffy-usb:
-#    runs-on: ubuntu-latest
-#    name: USB run diff
-#    needs: checkout-usb
-#    steps:
 
     - name: Setup SSH Keys and known_hosts
       env:
