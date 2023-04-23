@@ -1,7 +1,7 @@
 name: Plugwise differences
 
-env:
-  CACHE_VERSION: 2
+#env:
+#  CACHE_VERSION: 2
 
 on:
   schedule:
@@ -25,25 +25,25 @@ jobs:
     steps:
     - name: Check out our own code
       uses: actions/checkout@v3
-    - name: Cache base diff environment
-      id: base-diff
-      uses: actions/cache@v3
-      with:
-        path: |
-          ~/.npm
-          clones
-          **/node_modules
-        key: >-
-          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/setup.sh') }}-${{ hashFiles('scripts.diffy.sh') }}
-        restore-keys: |
-          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/setup.sh') }}-${{ hashFiles('scripts.diffy.sh') }}
+#    - name: Cache base diff environment
+#      id: base-diff
+#      uses: actions/cache@v3
+#      with:
+#        path: |
+#          ~/.npm
+#          clones
+#          **/node_modules
+#        key: >-
+#          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/setup.sh') }}-${{ hashFiles('scripts.diffy.sh') }}
+#        restore-keys: |
+#          ${{ env.CACHE_VERSION}}-${{ runner.os }}-base-${{ hashFiles('scripts/setup.sh') }}-${{ hashFiles('scripts.diffy.sh') }}
     - name: Use Node.js
-      if: steps.base-diff.outputs.cache-hit != 'true'
+#      if: steps.base-diff.outputs.cache-hit != 'true'
       uses: actions/setup-node@v3
       with:
         node-version: 18
     - name: Install diff2html
-      if: steps.base-diff.outputs.cache-hit != 'true'
+#      if: steps.base-diff.outputs.cache-hit != 'true'
       run: npm -g install diff2html-cli diff2html
 
 
