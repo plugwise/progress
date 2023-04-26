@@ -6,7 +6,7 @@ See site details at [Github Plugwise pages](https://plugwise.github.io/progress/
 
 Any thing we have ready in **our** `home-assistant.core` should be put in `branches.txt`. As we self-use `plugwise-{description}` for PRs add it as such.
 
-As we don't want 'push-by-push', for now (until we make this a PR mandatory repository)  you'll have to manually trigger the workflow from https://github.com/plugwise/progress/actions/workflows/diffy.yml
+As we don't want 'push-by-push', for now (until we make this a PR mandatory repository) you'll have to manually trigger the workflow from [actions](https://github.com/plugwise/progress/actions/workflows/diffy.yml)
 
 ## Gotcha's
 
