@@ -73,7 +73,7 @@
       </svg>      <a href="#d2h-861031" class="d2h-file-name">/home/runner/work/progress/progress/clones/beta/{beta/custom_components → ha-core/homeassistant/components}/plugwise/climate.py</a>
       <span class="d2h-file-stats">
           <span class="d2h-lines-added">+44</span>
-          <span class="d2h-lines-deleted">-130</span>
+          <span class="d2h-lines-deleted">-134</span>
       </span>
     </span>
 </li>
@@ -5609,7 +5609,7 @@
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -65,38 +46,19 @@</div>
+        <div class="d2h-code-side-line">@@ -65,34 +46,19 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
@@ -5768,7 +5768,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self.cdr_gateway = coordinator.data.gateway</span>
+            <span class="d2h-code-line-ctn">        self._attr_max_temp = self.device[&quot;thermostat&quot;][&quot;upper_bound&quot;]</span>
         </div>
     </td>
 </tr><tr>
@@ -5778,7 +5778,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        gateway_id: str = coordinator.data.gateway[&quot;gateway_id&quot;]</span>
+            <span class="d2h-code-line-ctn">        self._attr_min_temp = self.device[&quot;thermostat&quot;][&quot;lower_bound&quot;]</span>
         </div>
     </td>
 </tr><tr>
@@ -5788,7 +5788,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self.gateway_data = coordinator.data.devices[gateway_id]</span>
+            <span class="d2h-code-line-ctn">        # Ensure we don&#x27;t drop below 0.1</span>
         </div>
     </td>
 </tr><tr>
@@ -5798,7 +5798,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">        self._attr_target_temperature_step = max(</span>
         </div>
     </td>
 </tr><tr>
@@ -5808,7 +5808,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self._attr_max_temp = self.device[&quot;thermostat&quot;][&quot;upper_bound&quot;]</span>
+            <span class="d2h-code-line-ctn">            self.device[&quot;thermostat&quot;][&quot;resolution&quot;], 0.1</span>
         </div>
     </td>
 </tr><tr>
@@ -5818,52 +5818,12 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self._attr_min_temp = self.device[&quot;thermostat&quot;][&quot;lower_bound&quot;]</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
-      86
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        # Ensure we don&#x27;t drop below 0.1</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
-      87
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self._attr_target_temperature_step = max(</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
-      88
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            self.device[&quot;thermostat&quot;][&quot;resolution&quot;], 0.1</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
-      89
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
             <span class="d2h-code-line-ctn">        )</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      90
+      86
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -5873,7 +5833,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      91
+      87
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -5882,18 +5842,8 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
-      92
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self._homekit_enabled = homekit_enabled  # pw-beta homekit emulation</span>
-        </div>
-    </td>
-</tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      93
+      88
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -5903,7 +5853,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      94
+      89
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -5912,8 +5862,18 @@
         </div>
     </td>
 </tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      90
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        self.cdr_gateway = coordinator.data.gateway</span>
+        </div>
+    </td>
+</tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      95
+      91
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -5923,7 +5883,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      96
+      92
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -5933,7 +5893,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      97
+      93
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -5943,7 +5903,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      98
+      94
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -5953,7 +5913,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      99
+      95
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -5963,7 +5923,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      100
+      96
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -5973,7 +5933,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      101
+      97
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -5983,7 +5943,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      102
+      98
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -5994,11 +5954,11 @@
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -104,19 +66,19 @@</div>
+        <div class="d2h-code-side-line">@@ -100,29 +66,19 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      104
+      100
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -6008,7 +5968,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      105
+      101
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -6018,12 +5978,52 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      106
+      102
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
             <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
+      103
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        # Determine <del>stable</del> <del>hvac_modes</del></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
+      104
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        <del>gateway_id:</del> <del>str </del>= <del>coordinator</del>.<del>data.gateway[&quot;gateway_id&quot;</del>]</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
+      105
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        self.<del>gateway_data = </del>coordinator.data.<del>devices</del>[<del>gateway_id</del>]</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
+      106
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><del>        </del>self.<del>_homekit_enabled</del> = <del>homekit_enabled  # pw-beta homekit emulation</del></span>
         </div>
     </td>
 </tr><tr>
@@ -6033,7 +6033,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>    def</del> <del>_previous_action_mode(self,</del> <del>coordinator:</del> <del>PlugwiseDataUpdateCoordinator)</del> <del>-&gt;</del> <del>None:</del></span>
+            <span class="d2h-code-line-ctn">        self.<del>_hvac_modes: list</del>[<del>HVACMode</del>] <del>=</del> []</span>
         </div>
     </td>
 </tr><tr>
@@ -6043,52 +6043,72 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        <del>&quot;&quot;&quot;Return</del> <del>the</del> <del>previous action-mode when the regulation-mode is not heating or cooling</del>.</span>
+            <span class="d2h-code-line-ctn"><del>        if </del>(</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
+    <td class="d2h-code-side-linenumber d2h-del">
+      109
     </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            self._homekit_enabled or &quot;regulation_modes&quot; in self.gateway_data</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      110
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        ):  # pw-beta homekit emulation</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      111
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            self._hvac_modes = [HVACMode.OFF]</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      112
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
             <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
+    <td class="d2h-code-side-linenumber d2h-del">
+      113
     </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">    def _previous_action_mode(self, coordinator: PlugwiseDataUpdateCoordinator) -&gt; None:</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
+    <td class="d2h-code-side-linenumber d2h-del">
+      114
     </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Return the previous action-mode when the regulation-mode is not heating or cooling.</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      109
+      115
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -6098,7 +6118,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      110
+      116
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -6108,7 +6128,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      111
+      117
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -6118,7 +6138,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      112
+      118
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -6128,7 +6148,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      113
+      119
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -6138,7 +6158,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      114
+      120
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -6148,7 +6168,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      115
+      121
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -6158,7 +6178,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      116
+      122
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -6168,7 +6188,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      117
+      123
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -6178,7 +6198,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      118
+      124
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -6188,7 +6208,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      119
+      125
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -6198,7 +6218,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      120
+      126
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -6208,7 +6228,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      121
+      127
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -6218,7 +6238,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      122
+      128
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -6229,11 +6249,11 @@
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -150,62 +112,38 @@</div>
+        <div class="d2h-code-side-line">@@ -156,60 +112,38 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      150
+      156
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -6243,7 +6263,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      151
+      157
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -6253,7 +6273,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      152
+      158
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -6263,7 +6283,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      153
+      159
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -6273,7 +6293,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      154
+      160
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -6283,7 +6303,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      155
+      161
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -6293,7 +6313,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      156
+      162
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -6303,7 +6323,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      157
+      163
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -6313,7 +6333,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      158
+      164
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -6323,7 +6343,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      159
+      165
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -6333,7 +6353,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      160
+      166
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -6343,7 +6363,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      161
+      167
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -6353,7 +6373,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      162
+      168
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -6363,7 +6383,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      163
+      169
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -6373,7 +6393,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      164
+      170
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -6383,7 +6403,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      165
+      171
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -6393,7 +6413,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      166
+      172
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -6403,72 +6423,12 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      167
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        hvac_modes = [HVACMode.HEAT]</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
-      168
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if self.cdr_gateway[&quot;cooling_present&quot;]:</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
-      169
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            hvac_modes.remove(HVACMode.HEAT)</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
-      170
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            if (</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
-      171
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                &quot;regulation_modes&quot; in self.gateway_data</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
-      172
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                and self.gateway_data[&quot;select_regulation_mode&quot;] == &quot;cooling&quot;</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
       173
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            ):</span>
+            <span class="d2h-code-line-ctn">        hvac_modes = self._hvac_modes</span>
         </div>
     </td>
 </tr><tr>
@@ -6478,7 +6438,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                hvac_modes.append(HVACMode.COOL)</span>
+            <span class="d2h-code-line-ctn">        if self.cdr_gateway[&quot;cooling_present&quot;]:</span>
         </div>
     </td>
 </tr><tr>
@@ -6488,7 +6448,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            else:</span>
+            <span class="d2h-code-line-ctn">            if (</span>
         </div>
     </td>
 </tr><tr>
@@ -6498,7 +6458,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                hvac_modes.append(HVACMode.HEAT_COOL)</span>
+            <span class="d2h-code-line-ctn">                &quot;regulation_modes&quot; in self.gateway_data</span>
         </div>
     </td>
 </tr><tr>
@@ -6508,7 +6468,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">                and self.gateway_data[&quot;select_regulation_mode&quot;] == &quot;cooling&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -6518,7 +6478,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if (</span>
+            <span class="d2h-code-line-ctn">            ):</span>
         </div>
     </td>
 </tr><tr>
@@ -6528,7 +6488,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            self._homekit_enabled or &quot;regulation_modes&quot; in self.gateway_data</span>
+            <span class="d2h-code-line-ctn">                if HVACMode.COOL not in hvac_modes:</span>
         </div>
     </td>
 </tr><tr>
@@ -6538,7 +6498,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        ):  # pw-beta homekit emulation</span>
+            <span class="d2h-code-line-ctn">                    hvac_modes.append(HVACMode.COOL)</span>
         </div>
     </td>
 </tr><tr>
@@ -6548,7 +6508,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            hvac_modes.insert(0, HVACMode.OFF)</span>
+            <span class="d2h-code-line-ctn">            elif HVACMode.HEAT_COOL not in hvac_modes:</span>
         </div>
     </td>
 </tr><tr>
@@ -6558,7 +6518,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">                hvac_modes.append(HVACMode.HEAT_COOL)</span>
         </div>
     </td>
 </tr><tr>
@@ -6568,7 +6528,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if self.device[&quot;available_schedules&quot;] != [&quot;None&quot;]:</span>
+            <span class="d2h-code-line-ctn">        elif HVACMode.HEAT not in hvac_modes:</span>
         </div>
     </td>
 </tr><tr>
@@ -6578,7 +6538,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            hvac_modes.append(HVACMode.AUTO)</span>
+            <span class="d2h-code-line-ctn">            hvac_modes.append(HVACMode.HEAT)</span>
         </div>
     </td>
 </tr><tr>
@@ -6588,7 +6548,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        elif HVACMode.AUTO in hvac_modes:</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -6598,7 +6558,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            hvac_modes.remove(HVACMode.AUTO)</span>
+            <span class="d2h-code-line-ctn">        if self.device[&quot;available_schedules&quot;] != [&quot;None&quot;]:</span>
         </div>
     </td>
 </tr><tr>
@@ -6608,7 +6568,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">            if HVACMode.AUTO not in hvac_modes:</span>
         </div>
     </td>
 </tr><tr>
@@ -6618,7 +6578,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        return hvac_modes</span>
+            <span class="d2h-code-line-ctn">                hvac_modes.append(HVACMode.AUTO)</span>
         </div>
     </td>
 </tr><tr>
@@ -6628,7 +6588,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">        elif HVACMode.AUTO in hvac_modes:</span>
         </div>
     </td>
 </tr><tr>
@@ -6638,7 +6598,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    @property</span>
+            <span class="d2h-code-line-ctn">            hvac_modes.remove(HVACMode.AUTO)</span>
         </div>
     </td>
 </tr><tr>
@@ -6648,42 +6608,22 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    def hvac_action(self) -&gt; HVACAction:  # pw-beta add to Core</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      192
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Return the current running hvac operation if supported.&quot;&quot;&quot;</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      193
-    </td>
-    <td class="d2h-del d2h-change">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        # <del>Keep</del> <del>track</del> <del>of</del> <del>the</del> <del>previous</del> <del>action-mode</del></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      194
-    </td>
-    <td class="d2h-del d2h-change">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self.<del>_previous_action_mode</del>(<del>self.coordinator</del>)</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      195
+      192
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        return hvac_modes</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      193
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -6693,32 +6633,52 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
+      194
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">    @property</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      195
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">    def hvac_action(self) -&gt; HVACAction:  # pw-beta add to Core</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
       196
     </td>
-    <td class="d2h-del">
+    <td class="d2h-cntx">
         <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        heater: str = self.coordinator.data.gateway[&quot;heater_id&quot;]</span>
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Return the current running hvac operation if supported.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
       197
     </td>
-    <td class="d2h-del">
+    <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        heater_data = self.coordinator.data.devices[heater]</span>
+            <span class="d2h-code-line-ctn">        # <del>Keep</del> <del>track</del> <del>of</del> <del>the</del> <del>previous</del> <del>action-mode</del></span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
       198
     </td>
-    <td class="d2h-del">
+    <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if heater_data[&quot;binary_sensors&quot;][&quot;heating_state&quot;]:</span>
+            <span class="d2h-code-line-ctn">        self.<del>_previous_action_mode</del>(<del>self.coordinator</del>)</span>
         </div>
     </td>
 </tr><tr>
@@ -6728,7 +6688,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            return HVACAction.HEATING</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -6738,12 +6698,52 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        heater: str = self.coordinator.data.gateway[&quot;heater_id&quot;]</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      201
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        heater_data = self.coordinator.data.devices[heater]</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      202
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        if heater_data[&quot;binary_sensors&quot;][&quot;heating_state&quot;]:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      203
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            return HVACAction.HEATING</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      204
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
             <span class="d2h-code-line-ctn">        if heater_data[&quot;binary_sensors&quot;].get(&quot;cooling_state&quot;, False):</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      201
+      205
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -6893,52 +6893,12 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      202
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      203
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">        return HVACAction.IDLE</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      204
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      205
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">    @property</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
       206
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">    def preset_mode(self) -&gt; str | None:</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -6948,22 +6908,12 @@
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Return the current preset mode.&quot;&quot;&quot;</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      208
-    </td>
-    <td class="d2h-del d2h-change">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        return self.device<del>[</del>&quot;active_preset&quot;<del>]</del></span>
+            <span class="d2h-code-line-ctn">        return HVACAction.IDLE</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      209
+      208
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -6973,7 +6923,57 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
+      209
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">    @property</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
       210
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">    def preset_mode(self) -&gt; str | None:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      211
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Return the current preset mode.&quot;&quot;&quot;</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
+      212
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        return self.device<del>[</del>&quot;active_preset&quot;<del>]</del></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      213
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      214
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -6983,7 +6983,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      211
+      215
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -6994,11 +6994,11 @@
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -230,40 +168,16 @@</div>
+        <div class="d2h-code-side-line">@@ -234,40 +168,16 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      230
+      234
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -7008,52 +7008,12 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      231
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      232
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">    @plugwise_command</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      233
-    </td>
-    <td class="d2h-del d2h-change">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    async def async_set_hvac_mode(self, hvac_mode: <del>str</del>) -&gt; None:</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      234
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Set the hvac mode.&quot;&quot;&quot;</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
       235
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">        if hvac_mode not in self.hvac_modes:</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -7063,12 +7023,52 @@
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">    @plugwise_command</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
+      237
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">    async def async_set_hvac_mode(self, hvac_mode: <del>str</del>) -&gt; None:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      238
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Set the hvac mode.&quot;&quot;&quot;</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      239
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        if hvac_mode not in self.hvac_modes:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      240
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
             <span class="d2h-code-line-ctn">            raise HomeAssistantError(&quot;Unsupported hvac_mode&quot;)</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      237
+      241
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -7078,7 +7078,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      238
+      242
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -7088,7 +7088,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      239
+      243
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -7098,7 +7098,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      240
+      244
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -7108,7 +7108,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      241
+      245
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -7118,7 +7118,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      242
+      246
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -7128,7 +7128,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      243
+      247
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -7138,7 +7138,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      244
+      248
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -7148,7 +7148,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      245
+      249
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -7158,7 +7158,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      246
+      250
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -7168,52 +7168,12 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      247
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
-      248
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if not self._homekit_enabled:</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
-      249
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            if hvac_mode == HVACMode.OFF:</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
-      250
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                await self.coordinator.api.set_regulation_mode(hvac_mode)</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
       251
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                return</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -7223,7 +7183,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">        if not self._homekit_enabled:</span>
         </div>
     </td>
 </tr><tr>
@@ -7233,7 +7193,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            if hvac_mode != HVACMode.OFF and self.hvac_mode == HVACMode.OFF:</span>
+            <span class="d2h-code-line-ctn">            if hvac_mode == HVACMode.OFF:</span>
         </div>
     </td>
 </tr><tr>
@@ -7243,7 +7203,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                await self.coordinator.api.set_regulation_mode(self._previous_mode)</span>
+            <span class="d2h-code-line-ctn">                await self.coordinator.api.set_regulation_mode(hvac_mode)</span>
         </div>
     </td>
 </tr><tr>
@@ -7273,7 +7233,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        # pw-beta: feature request - mimic HomeKit behavior</span>
+            <span class="d2h-code-line-ctn">            if hvac_mode != HVACMode.OFF and self.hvac_mode == HVACMode.OFF:</span>
         </div>
     </td>
 </tr><tr>
@@ -7283,7 +7243,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        else:</span>
+            <span class="d2h-code-line-ctn">                await self.coordinator.api.set_regulation_mode(self._previous_mode)</span>
         </div>
     </td>
 </tr><tr>
@@ -7293,7 +7253,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            self._homekit_mode = hvac_mode  # pragma: no cover</span>
+            <span class="d2h-code-line-ctn">                return</span>
         </div>
     </td>
 </tr><tr>
@@ -7303,7 +7263,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            if self._homekit_mode == HVACMode.OFF:  # pragma: no cover</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -7313,7 +7273,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                await self.async_set_preset_mode(PRESET_AWAY)  # pragma: no cover</span>
+            <span class="d2h-code-line-ctn">        # pw-beta: feature request - mimic HomeKit behavior</span>
         </div>
     </td>
 </tr><tr>
@@ -7323,7 +7283,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            if (</span>
+            <span class="d2h-code-line-ctn">        else:</span>
         </div>
     </td>
 </tr><tr>
@@ -7333,7 +7293,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                self._homekit_mode in [HVACMode.HEAT, HVACMode.HEAT_COOL]</span>
+            <span class="d2h-code-line-ctn">            self._homekit_mode = hvac_mode  # pragma: no cover</span>
         </div>
     </td>
 </tr><tr>
@@ -7343,7 +7303,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                and self.device[&quot;active_preset&quot;] == PRESET_AWAY</span>
+            <span class="d2h-code-line-ctn">            if self._homekit_mode == HVACMode.OFF:  # pragma: no cover</span>
         </div>
     </td>
 </tr><tr>
@@ -7353,7 +7313,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            ):  # pragma: no cover</span>
+            <span class="d2h-code-line-ctn">                await self.async_set_preset_mode(PRESET_AWAY)  # pragma: no cover</span>
         </div>
     </td>
 </tr><tr>
@@ -7363,12 +7323,52 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            if (</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      267
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                self._homekit_mode in [HVACMode.HEAT, HVACMode.HEAT_COOL]</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      268
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                and self.device[&quot;active_preset&quot;] == PRESET_AWAY</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      269
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            ):  # pragma: no cover</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      270
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
             <span class="d2h-code-line-ctn">                await self.async_set_preset_mode(PRESET_HOME)  # pragma: no cover</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      267
+      271
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -7378,7 +7378,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      268
+      272
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -7388,7 +7388,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      269
+      273
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -8091,46 +8091,6 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
       57
     </td>
@@ -8138,16 +8098,6 @@
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
             <span class="d2h-code-line-ctn">        self._attr_unique_id = f&quot;{device_id}-climate&quot;</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -8178,6 +8128,16 @@
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
             <span class="d2h-code-line-ctn">        # Determine supported features</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -8302,7 +8262,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><ins>        #</ins> <ins>Determine</ins> <ins>hvac</ins> <ins>modes</ins> <ins>and</ins> <ins>current hvac mode</ins></span>
+            <span class="d2h-code-line-ctn">        # Determine <ins>hvac</ins> <ins>modes and current hvac mode</ins></span>
         </div>
     </td>
 </tr><tr>
@@ -8312,47 +8272,107 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        <ins>self._attr_hvac_modes</ins> <ins>=</ins> <ins>[HVACMode</ins>.<ins>HEAT]</ins></span>
+            <span class="d2h-code-line-ctn">        <ins>self._attr_hvac_modes</ins> = <ins>[HVACMode</ins>.<ins>HEAT</ins>]</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-ins">
+    <td class="d2h-code-side-linenumber d2h-ins d2h-change">
       71
     </td>
-    <td class="d2h-ins">
+    <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        if self.coordinator.data.gateway[&quot;cooling_present&quot;]:</span>
+            <span class="d2h-code-line-ctn">        <ins>if </ins>self.coordinator.data.<ins>gateway</ins>[<ins>&quot;cooling_present&quot;</ins>]<ins>:</ins></span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-ins">
+    <td class="d2h-code-side-linenumber d2h-ins d2h-change">
       72
     </td>
-    <td class="d2h-ins">
+    <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            self._attr_hvac_modes = [HVACMode.HEAT_COOL]</span>
+            <span class="d2h-code-line-ctn"><ins>            </ins>self.<ins>_attr_hvac_modes</ins> = <ins>[HVACMode.HEAT_COOL]</ins></span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-ins">
+    <td class="d2h-code-side-linenumber d2h-ins d2h-change">
       73
     </td>
-    <td class="d2h-ins">
+    <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        if self.device[&quot;available_schedules&quot;] != [&quot;None&quot;]:</span>
+            <span class="d2h-code-line-ctn">        <ins>if </ins>self.<ins>device</ins>[<ins>&quot;available_schedules&quot;</ins>] <ins>!=</ins> [<ins>&quot;None&quot;</ins>]<ins>:</ins></span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-ins">
+    <td class="d2h-code-side-linenumber d2h-ins d2h-change">
       74
     </td>
-    <td class="d2h-ins">
+    <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            self._attr_hvac_modes.append(HVACMode.AUTO)</span>
+            <span class="d2h-code-line-ctn"><ins>            self._attr_hvac_modes.append</ins>(<ins>HVACMode.AUTO)</ins></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -8658,26 +8678,6 @@
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn">    def <ins>hvac_action</ins>(self) -&gt; <ins>HVACAction | None</ins>:</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -18566,7 +18566,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">  &quot;<del>version</del>&quot;: &quot;<del>0</del>.<del>43</del>.<del>0a0</del>&quot;</span>
+            <span class="d2h-code-line-ctn">  &quot;<del>version</del>&quot;: &quot;<del>0</del>.<del>43</del>.<del>0a3</del>&quot;</span>
         </div>
     </td>
 </tr><tr>
