@@ -73,7 +73,7 @@
       </svg>      <a href="#d2h-861031" class="d2h-file-name">/home/runner/work/progress/progress/clones/beta/{beta/custom_components → ha-core/homeassistant/components}/plugwise/climate.py</a>
       <span class="d2h-file-stats">
           <span class="d2h-lines-added">+44</span>
-          <span class="d2h-lines-deleted">-134</span>
+          <span class="d2h-lines-deleted">-130</span>
       </span>
     </span>
 </li>
@@ -6213,7 +6213,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                self._previous_mode == mode</span>
+            <span class="d2h-code-line-ctn">                self._previous_mode = mode</span>
         </div>
     </td>
 </tr><tr>
@@ -6994,7 +6994,7 @@
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -234,40 +168,16 @@</div>
+        <div class="d2h-code-side-line">@@ -234,36 +168,16 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
@@ -7143,7 +7143,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                self.device[&quot;last_used&quot;],</span>
+            <span class="d2h-code-line-ctn">                &quot;on&quot; if hvac_mode == HVACMode.AUTO else &quot;off&quot;,</span>
         </div>
     </td>
 </tr><tr>
@@ -7153,7 +7153,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                &quot;on&quot; if hvac_mode == HVACMode.AUTO else &quot;off&quot;,</span>
+            <span class="d2h-code-line-ctn">            )</span>
         </div>
     </td>
 </tr><tr>
@@ -7163,7 +7163,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            )</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -7173,7 +7173,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">        if (</span>
         </div>
     </td>
 </tr><tr>
@@ -7183,7 +7183,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if not self._homekit_enabled:</span>
+            <span class="d2h-code-line-ctn">            not self._homekit_enabled</span>
         </div>
     </td>
 </tr><tr>
@@ -7193,7 +7193,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            if hvac_mode == HVACMode.OFF:</span>
+            <span class="d2h-code-line-ctn">        ):  # pw-beta: feature request - mimic HomeKit behavior</span>
         </div>
     </td>
 </tr><tr>
@@ -7203,7 +7203,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                await self.coordinator.api.set_regulation_mode(hvac_mode)</span>
+            <span class="d2h-code-line-ctn">            if hvac_mode == HVACMode.OFF:</span>
         </div>
     </td>
 </tr><tr>
@@ -7213,7 +7213,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                return</span>
+            <span class="d2h-code-line-ctn">                await self.coordinator.api.set_regulation_mode(hvac_mode)</span>
         </div>
     </td>
 </tr><tr>
@@ -7223,7 +7223,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">            elif self.hvac_mode == HVACMode.OFF:</span>
         </div>
     </td>
 </tr><tr>
@@ -7233,7 +7233,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            if hvac_mode != HVACMode.OFF and self.hvac_mode == HVACMode.OFF:</span>
+            <span class="d2h-code-line-ctn">                await self.coordinator.api.set_regulation_mode(self._previous_mode)</span>
         </div>
     </td>
 </tr><tr>
@@ -7243,7 +7243,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                await self.coordinator.api.set_regulation_mode(self._previous_mode)</span>
+            <span class="d2h-code-line-ctn">        else:</span>
         </div>
     </td>
 </tr><tr>
@@ -7253,7 +7253,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                return</span>
+            <span class="d2h-code-line-ctn">            self._homekit_mode = hvac_mode  # pragma: no cover</span>
         </div>
     </td>
 </tr><tr>
@@ -7263,7 +7263,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">            if self._homekit_mode == HVACMode.OFF:  # pragma: no cover</span>
         </div>
     </td>
 </tr><tr>
@@ -7273,7 +7273,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        # pw-beta: feature request - mimic HomeKit behavior</span>
+            <span class="d2h-code-line-ctn">                await self.async_set_preset_mode(PRESET_AWAY)  # pragma: no cover</span>
         </div>
     </td>
 </tr><tr>
@@ -7283,7 +7283,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        else:</span>
+            <span class="d2h-code-line-ctn">            if (</span>
         </div>
     </td>
 </tr><tr>
@@ -7293,7 +7293,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            self._homekit_mode = hvac_mode  # pragma: no cover</span>
+            <span class="d2h-code-line-ctn">                self._homekit_mode in [HVACMode.HEAT, HVACMode.HEAT_COOL]</span>
         </div>
     </td>
 </tr><tr>
@@ -7303,7 +7303,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            if self._homekit_mode == HVACMode.OFF:  # pragma: no cover</span>
+            <span class="d2h-code-line-ctn">                and self.device[&quot;active_preset&quot;] == PRESET_AWAY</span>
         </div>
     </td>
 </tr><tr>
@@ -7313,7 +7313,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                await self.async_set_preset_mode(PRESET_AWAY)  # pragma: no cover</span>
+            <span class="d2h-code-line-ctn">            ):  # pragma: no cover</span>
         </div>
     </td>
 </tr><tr>
@@ -7323,52 +7323,12 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            if (</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
-      267
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                self._homekit_mode in [HVACMode.HEAT, HVACMode.HEAT_COOL]</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
-      268
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                and self.device[&quot;active_preset&quot;] == PRESET_AWAY</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
-      269
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            ):  # pragma: no cover</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
-      270
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
             <span class="d2h-code-line-ctn">                await self.async_set_preset_mode(PRESET_HOME)  # pragma: no cover</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      271
+      267
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -7378,7 +7338,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      272
+      268
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -7388,7 +7348,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      273
+      269
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -9393,46 +9353,6 @@
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn"><ins>        )</ins></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -18556,7 +18476,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">  &quot;requirements&quot;: [&quot;<del>https:&#x2F;&#x2F;test-files.pythonhosted.org&#x2F;packages&#x2F;7f&#x2F;50&#x2F;34c0dda29a88ef36e1b05eb9c6b3ce18baeaf4473478ec4e941c35610c54&#x2F;</del>plugwise<del>-</del>0.<del>34</del>.<del>0a4.tar.gz#plugwise==</del>0<del>.34.0a4</del>&quot;],</span>
+            <span class="d2h-code-line-ctn">  &quot;requirements&quot;: [&quot;<del>https:&#x2F;&#x2F;test-files.pythonhosted.org&#x2F;packages&#x2F;6e&#x2F;78&#x2F;21efa082510adb8eb7849fd3e1dfb59016997e4483028f04aa1905fb31fd&#x2F;</del>plugwise<del>-</del>0.<del>34</del>.<del>0a5.tar.gz#plugwise==</del>0<del>.34.0a5</del>&quot;],</span>
         </div>
     </td>
 </tr><tr>
@@ -18566,7 +18486,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">  &quot;<del>version</del>&quot;: &quot;<del>0</del>.<del>43</del>.<del>0a3</del>&quot;</span>
+            <span class="d2h-code-line-ctn">  &quot;<del>version</del>&quot;: &quot;<del>0</del>.<del>43</del>.<del>0a5</del>&quot;</span>
         </div>
     </td>
 </tr><tr>
