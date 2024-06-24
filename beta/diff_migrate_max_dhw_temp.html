@@ -10870,7 +10870,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        if self.device[&quot;available_schedules&quot;] != [&quot;None&quot;]:</span>
+            <span class="d2h-code-line-ctn">        if &quot;available_schedules&quot; in self.device:</span>
         </div>
     </td>
 </tr><tr>
@@ -22878,7 +22878,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">  &quot;requirements&quot;: [&quot;plugwise==0.<ins>37</ins>.<ins>4.1</ins>&quot;],</span>
+            <span class="d2h-code-line-ctn">  &quot;requirements&quot;: [&quot;plugwise==0.<ins>38</ins>.<ins>3</ins>&quot;],</span>
         </div>
     </td>
 </tr><tr>
@@ -23477,7 +23477,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        command=lambda api, number, value: api.set_number_setpoint(<del>number, value),</del></span>
+            <span class="d2h-code-line-ctn">        command=lambda api, number, value: api.<del>set_number_setpoint</del>(<del>number, value),</del></span>
         </div>
     </td>
 </tr><tr>
@@ -23627,7 +23627,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        command=lambda api, number, value: api.set_number_setpoint(<del>number, value),</del></span>
+            <span class="d2h-code-line-ctn">        command=lambda api, number, value: api.<del>set_number_setpoint</del>(<del>number, value),</del></span>
         </div>
     </td>
 </tr><tr>
@@ -25276,7 +25276,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        command=lambda api, number, <ins>dev_id, </ins>value: api.set_number_setpoint(</span>
+            <span class="d2h-code-line-ctn">        command=lambda api, <ins>dev_id, </ins>number, value: api.<ins>set_number</ins>(</span>
         </div>
     </td>
 </tr><tr>
@@ -25286,7 +25286,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            number, dev_id, value</span>
+            <span class="d2h-code-line-ctn">            dev_id, number, value</span>
         </div>
     </td>
 </tr><tr>
@@ -25426,7 +25426,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        command=lambda api, number, <ins>dev_id, </ins>value: api.set_number_setpoint(</span>
+            <span class="d2h-code-line-ctn">        command=lambda api, <ins>dev_id, </ins>number, value: api.<ins>set_number</ins>(</span>
         </div>
     </td>
 </tr><tr>
@@ -25436,7 +25436,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            number, dev_id, value</span>
+            <span class="d2h-code-line-ctn">            dev_id, number, value</span>
         </div>
     </td>
 </tr><tr>
@@ -25526,7 +25526,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        command=lambda api, number, dev_id, value: api.set_temperature_offset(</span>
+            <span class="d2h-code-line-ctn">        command=lambda api, dev_id, number, value: api.set_temperature_offset(</span>
         </div>
     </td>
 </tr><tr>
@@ -25536,7 +25536,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            number, dev_id, value</span>
+            <span class="d2h-code-line-ctn">            dev_id, value</span>
         </div>
     </td>
 </tr><tr>
@@ -26461,7 +26461,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            self.coordinator.api, self.entity_description.key, <ins>self.device_id, </ins>value</span>
+            <span class="d2h-code-line-ctn">            self.coordinator.api, self.<ins>device_id, self.</ins>entity_description.key, value</span>
         </div>
     </td>
 </tr><tr>
