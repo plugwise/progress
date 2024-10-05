@@ -66,7 +66,7 @@
           <path d="M6 9H3V7h3V4l5 4-5 4V9z m8-7v12c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h12c0.55 0 1 0.45 1 1z m-1 0H1v12h12V2z"></path>
       </svg>      <a href="#d2h-788472" class="d2h-file-name">/home/runner/work/progress/progress/clones/beta/{ha-core/homeassistant/components → beta/custom_components}/plugwise/__init__.py</a>
       <span class="d2h-file-stats">
-          <span class="d2h-lines-added">+90</span>
+          <span class="d2h-lines-added">+87</span>
           <span class="d2h-lines-deleted">-19</span>
       </span>
     </span>
@@ -1438,7 +1438,7 @@
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -91,10 +143,29 @@</div>
+        <div class="d2h-code-side-line">@@ -91,10 +143,26 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
@@ -1538,36 +1538,6 @@
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
             <span class="d2h-code-line-ctn">            ent_reg.async_update_entity(entity_id, new_unique_id=new_unique_id)</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -3136,7 +3106,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    if entry.version &gt; 1:</span>
+            <span class="d2h-code-line-ctn">    if entry.version == 1 and entry.minor_version &lt; 2:</span>
         </div>
     </td>
 </tr><tr>
@@ -3146,7 +3116,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        return False</span>
+            <span class="d2h-code-line-ctn">        new_data = {**entry.data}</span>
         </div>
     </td>
 </tr><tr>
@@ -3156,7 +3126,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">        new_data[CONF_TIMEOUT] = get_timeout_for_version(coordinator.api.smile_version)</span>
         </div>
     </td>
 </tr><tr>
@@ -3166,7 +3136,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    if entry.version == 1 and entry.minor_version &lt; 2:</span>
+            <span class="d2h-code-line-ctn">        hass.config_entries.async_update_entry(</span>
         </div>
     </td>
 </tr><tr>
@@ -3176,7 +3146,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        new_data = {**entry.data}</span>
+            <span class="d2h-code-line-ctn">            entry, data=new_data, minor_version=2, version=1</span>
         </div>
     </td>
 </tr><tr>
@@ -3186,7 +3156,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        new_data[CONF_TIMEOUT] = get_timeout_for_version(coordinator.api.smile_version)</span>
+            <span class="d2h-code-line-ctn">        )</span>
         </div>
     </td>
 </tr><tr>
@@ -3196,7 +3166,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        hass.config_entries.async_update_entry(</span>
+            <span class="d2h-code-line-ctn">        LOGGER.debug(</span>
         </div>
     </td>
 </tr><tr>
@@ -3206,7 +3176,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            entry, data=new_data, minor_version=2, version=1</span>
+            <span class="d2h-code-line-ctn">            &quot;Migration to version %s.%s successful&quot;,</span>
         </div>
     </td>
 </tr><tr>
@@ -3216,7 +3186,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        )</span>
+            <span class="d2h-code-line-ctn">            entry.version,</span>
         </div>
     </td>
 </tr><tr>
@@ -3226,7 +3196,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        LOGGER.debug(</span>
+            <span class="d2h-code-line-ctn">            entry.minor_version,</span>
         </div>
     </td>
 </tr><tr>
@@ -3236,7 +3206,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            &quot;Migration to version %s.%s successful&quot;,</span>
+            <span class="d2h-code-line-ctn">        )</span>
         </div>
     </td>
 </tr><tr>
@@ -3246,7 +3216,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            entry.version,</span>
+            <span class="d2h-code-line-ctn">        return True</span>
         </div>
     </td>
 </tr><tr>
@@ -3256,42 +3226,12 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            entry.minor_version,</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-ins">
-      168
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        )</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-ins">
-      169
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        return True</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-ins">
-      170
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      171
+      168
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -19878,7 +19818,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    def _create_options_schema(self, coordinator):</span>
+            <span class="d2h-code-line-ctn">    def _create_options_schema(self, coordinator: PlugwiseDataUpdateCoordinator) -&gt; vol.Schema:</span>
         </div>
     </td>
 </tr><tr>
@@ -20228,7 +20168,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            return await self.async_step_none(user_input)</span>
+            <span class="d2h-code-line-ctn">            return await self.async_step_none(user_input)  # pragma: no cover</span>
         </div>
     </td>
 </tr><tr>
