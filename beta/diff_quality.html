@@ -138,8 +138,8 @@
           <path d="M6 9H3V7h3V4l5 4-5 4V9z m8-7v12c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h12c0.55 0 1 0.45 1 1z m-1 0H1v12h12V2z"></path>
       </svg>      <a href="#d2h-561020" class="d2h-file-name">/home/runner/work/progress/progress/clones/beta/{beta/custom_components → ha-core/homeassistant/components}/plugwise/coordinator.py</a>
       <span class="d2h-file-stats">
-          <span class="d2h-lines-added">+19</span>
-          <span class="d2h-lines-deleted">-44</span>
+          <span class="d2h-lines-added">+36</span>
+          <span class="d2h-lines-deleted">-48</span>
       </span>
     </span>
 </li>
@@ -198,8 +198,8 @@
           <path d="M6 9H3V7h3V4l5 4-5 4V9z m8-7v12c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h12c0.55 0 1 0.45 1 1z m-1 0H1v12h12V2z"></path>
       </svg>      <a href="#d2h-907776" class="d2h-file-name">/home/runner/work/progress/progress/clones/beta/{beta/custom_components → ha-core/homeassistant/components}/plugwise/quality_scale.yaml</a>
       <span class="d2h-file-stats">
-          <span class="d2h-lines-added">+53</span>
-          <span class="d2h-lines-deleted">-21</span>
+          <span class="d2h-lines-added">+44</span>
+          <span class="d2h-lines-deleted">-18</span>
       </span>
     </span>
 </li>
@@ -234,7 +234,7 @@
           <path d="M6 9H3V7h3V4l5 4-5 4V9z m8-7v12c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h12c0.55 0 1 0.45 1 1z m-1 0H1v12h12V2z"></path>
       </svg>      <a href="#d2h-270711" class="d2h-file-name">/home/runner/work/progress/progress/clones/beta/{beta/custom_components → ha-core/homeassistant/components}/plugwise/strings.json</a>
       <span class="d2h-file-stats">
-          <span class="d2h-lines-added">+54</span>
+          <span class="d2h-lines-added">+69</span>
           <span class="d2h-lines-deleted">-63</span>
       </span>
     </span>
@@ -258,8 +258,8 @@
           <path d="M6 9H3V7h3V4l5 4-5 4V9z m8-7v12c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h12c0.55 0 1 0.45 1 1z m-1 0H1v12h12V2z"></path>
       </svg>      <a href="#d2h-483680" class="d2h-file-name">/home/runner/work/progress/progress/clones/beta/{beta/custom_components → ha-core/homeassistant/components}/plugwise/util.py</a>
       <span class="d2h-file-stats">
-          <span class="d2h-lines-added">+0</span>
-          <span class="d2h-lines-deleted">-7</span>
+          <span class="d2h-lines-added">+8</span>
+          <span class="d2h-lines-deleted">-10</span>
       </span>
     </span>
 </li>
@@ -25118,7 +25118,7 @@
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -79,19 +65,9 @@</div>
+        <div class="d2h-code-side-line">@@ -79,42 +65,43 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
@@ -25311,18 +25311,113 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-info"></td>
-    <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -102,19 +78,17 @@</div>
-    </td>
-</tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      102
+      98
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">            raise ConfigEntryError(&quot;Authentication failed&quot;) from err</span>
+            <span class="d2h-code-line-ctn">            data = await self.api.async_update()</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      99
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        except ConnectionFailedError as err:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
+      100
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            raise UpdateFailed(<del>&quot;Failed to connect&quot;) from err</del></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      101
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        except InvalidAuthentication as err:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
+      102
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            raise ConfigEntryError(<del>&quot;Authentication failed&quot;) from err</del></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -25352,7 +25447,17 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                <del>f</del>&quot;Invalid XML data or error from Plugwise <del>device: {err}</del>&quot;</span>
+            <span class="d2h-code-line-ctn">                <del>f&quot;Invalid XML data or error from Plugwise device: {err}&quot;</del></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -25376,13 +25481,43 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
       108
     </td>
-    <td class="d2h-cntx">
+    <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            raise UpdateFailed(<del>&quot;Data incomplete or missing&quot;) from err</del></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">            raise UpdateFailed(&quot;Data incomplete or missing&quot;) from err</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -25396,43 +25531,43 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
       110
     </td>
-    <td class="d2h-cntx">
+    <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">            raise ConfigEntryError(&quot;Device with unsupported firmware&quot;) from err</span>
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            raise ConfigEntryError(<del>&quot;Device with unsupported firmware&quot;) from err</del></span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
       111
     </td>
-    <td class="d2h-del">
+    <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        else:</span>
+            <span class="d2h-code-line-ctn"><del>        else:</del></span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
       112
     </td>
-    <td class="d2h-del">
+    <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            LOGGER.debug(f&quot;{self.api.smile_name} data: %s&quot;, data)</span>
+            <span class="d2h-code-line-ctn"><del>            LOGGER.debug(f</del>&quot;<del>{self.api.smile_name} data: %s</del>&quot;,<del> data)</del></span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
       113
     </td>
-    <td class="d2h-del">
+    <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            await self.async_add_remove_devices(data, self.config_entry)</span>
+            <span class="d2h-code-line-ctn">            <del>await</del> <del>self.async_add_remove_devices(data,</del> <del>self.config_entry)</del></span>
         </div>
     </td>
 </tr><tr>
@@ -25518,7 +25653,7 @@
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -122,19 +96,20 @@</div>
+        <div class="d2h-code-side-line">@@ -122,19 +109,20 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
@@ -25733,7 +25868,7 @@
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -148,7 +123,7 @@</div>
+        <div class="d2h-code-side-line">@@ -148,7 +136,7 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
@@ -26725,28 +26860,63 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-info"></td>
-    <td class="d2h-info">
-        <div class="d2h-code-side-line">&nbsp;</div>
-    </td>
-</tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      78
+      74
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">            raise ConfigEntryError(&quot;Authentication failed&quot;) from err</span>
+            <span class="d2h-code-line-ctn">            data = await self.api.async_update()</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      79
+      75
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">        except (InvalidXMLError, ResponseError) as err:</span>
+            <span class="d2h-code-line-ctn">        except ConnectionFailedError as err:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins d2h-change">
+      76
+    </td>
+    <td class="d2h-ins d2h-change">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">            raise UpdateFailed(</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      77
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">                translation_domain=DOMAIN,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      78
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">                translation_key=&quot;failed_to_connect&quot;,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      79
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">            ) from err</span>
         </div>
     </td>
 </tr><tr>
@@ -26756,7 +26926,7 @@
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">            raise UpdateFailed(</span>
+            <span class="d2h-code-line-ctn">        except InvalidAuthentication as err:</span>
         </div>
     </td>
 </tr><tr>
@@ -26766,37 +26936,37 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                &quot;Invalid XML data<ins>,</ins> or error <ins>indication received </ins>from <ins>the </ins>Plugwise <ins>Adam&#x2F;Smile&#x2F;Stretch</ins>&quot;</span>
+            <span class="d2h-code-line-ctn">            raise ConfigEntryError(</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
+    <td class="d2h-code-side-linenumber d2h-ins">
       82
     </td>
-    <td class="d2h-cntx">
+    <td class="d2h-ins">
         <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">            ) from err</span>
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">                translation_domain=DOMAIN,</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
+    <td class="d2h-code-side-linenumber d2h-ins">
       83
     </td>
-    <td class="d2h-cntx">
+    <td class="d2h-ins">
         <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">        except PlugwiseError as err:</span>
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">                translation_key=&quot;authentication_failed&quot;,</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
+    <td class="d2h-code-side-linenumber d2h-ins">
       84
     </td>
-    <td class="d2h-cntx">
+    <td class="d2h-ins">
         <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">            raise UpdateFailed(&quot;Data incomplete or missing&quot;) from err</span>
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">            ) from err</span>
         </div>
     </td>
 </tr><tr>
@@ -26806,7 +26976,7 @@
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">        except UnsupportedDeviceError as err:</span>
+            <span class="d2h-code-line-ctn">        except (InvalidXMLError, ResponseError) as err:</span>
         </div>
     </td>
 </tr><tr>
@@ -26816,47 +26986,17 @@
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">            raise ConfigEntryError(&quot;Device with unsupported firmware&quot;) from err</span>
+            <span class="d2h-code-line-ctn">            raise UpdateFailed(</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
+    <td class="d2h-code-side-linenumber d2h-ins d2h-change">
       87
     </td>
-    <td class="d2h-cntx">
+    <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">                <ins>translation_domain=DOMAIN,</ins></span>
         </div>
     </td>
 </tr><tr>
@@ -26866,7 +27006,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        self._async_add_remove_devices(data, self.config_entry)</span>
+            <span class="d2h-code-line-ctn">                translation_key=&quot;invalid_xml_data&quot;,</span>
         </div>
     </td>
 </tr><tr>
@@ -26876,7 +27016,7 @@
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">        return data</span>
+            <span class="d2h-code-line-ctn">            ) from err</span>
         </div>
     </td>
 </tr><tr>
@@ -26886,7 +27026,7 @@
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">        except PlugwiseError as err:</span>
         </div>
     </td>
 </tr><tr>
@@ -26896,12 +27036,142 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">            raise UpdateFailed(</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      92
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">                translation_domain=DOMAIN,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      93
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">                translation_key=&quot;data_incomplete_or_missing&quot;,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      94
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">            ) from err</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      95
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        except UnsupportedDeviceError as err:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins d2h-change">
+      96
+    </td>
+    <td class="d2h-ins d2h-change">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">            raise ConfigEntryError(</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins d2h-change">
+      97
+    </td>
+    <td class="d2h-ins d2h-change">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn"><ins>                translation_domain=DOMAIN,</ins></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins d2h-change">
+      98
+    </td>
+    <td class="d2h-ins d2h-change">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn"><ins>                translation_key=</ins>&quot;<ins>unsupported_firmware</ins>&quot;,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins d2h-change">
+      99
+    </td>
+    <td class="d2h-ins d2h-change">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">            <ins>)</ins> <ins>from</ins> <ins>err</ins></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      100
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      101
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">        self._async_add_remove_devices(data, self.config_entry)</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      102
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        return data</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      103
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins d2h-change">
+      104
+    </td>
+    <td class="d2h-ins d2h-change">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn">    def <ins>_async_add_remove_devices</ins>(self, data: PlugwiseData, entry: ConfigEntry) -&gt; None:</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      92
+      105
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -26911,7 +27181,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      93
+      106
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -26921,7 +27191,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      94
+      107
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -26936,7 +27206,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      96
+      109
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -26946,7 +27216,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      97
+      110
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -26956,7 +27226,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      98
+      111
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -26966,7 +27236,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      99
+      112
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
@@ -26976,7 +27246,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      100
+      113
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -26986,7 +27256,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      101
+      114
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
@@ -26996,7 +27266,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      102
+      115
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -27006,7 +27276,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      103
+      116
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -27016,7 +27286,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      104
+      117
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -27026,7 +27296,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      105
+      118
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -27036,7 +27306,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      106
+      119
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -27056,7 +27326,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      107
+      120
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -27066,7 +27336,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      108
+      121
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
@@ -27076,7 +27346,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      109
+      122
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
@@ -27086,7 +27356,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      110
+      123
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
@@ -27096,7 +27366,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      111
+      124
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -27106,7 +27376,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      112
+      125
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -27116,7 +27386,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      113
+      126
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -27126,7 +27396,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      114
+      127
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -27136,7 +27406,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      115
+      128
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -27151,7 +27421,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      123
+      136
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -27161,7 +27431,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      124
+      137
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -27171,7 +27441,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      125
+      138
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -27181,7 +27451,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      126
+      139
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
@@ -27191,7 +27461,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      127
+      140
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -27201,7 +27471,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      128
+      141
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -27211,7 +27481,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      129
+      142
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -28975,7 +29245,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">  &quot;requirements&quot;: [&quot;plugwise==1.6.<ins>2</ins>&quot;],</span>
+            <span class="d2h-code-line-ctn">  &quot;requirements&quot;: [&quot;plugwise==1.6.<ins>3</ins>&quot;],</span>
         </div>
     </td>
 </tr><tr>
@@ -31348,132 +31618,7 @@
                     <tr>
     <td class="d2h-code-side-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -2,8 +2,12 @@</div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      2
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">  ## Bronze</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      3
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">  config-flow: done</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      4
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">  test-before-configure: done</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      5
-    </td>
-    <td class="d2h-del d2h-change">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">  unique-config-entry:<del> done</del></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      6
-    </td>
-    <td class="d2h-del d2h-change">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>  config-flow-test-coverage</del>: <del>done</del></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      7
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">  runtime-data: done</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      8
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">  test-before-setup: done</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      9
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">  appropriate-polling: done</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-info"></td>
-    <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -11,10 +15,18 @@</div>
+        <div class="d2h-code-side-line">@@ -11,10 +11,18 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
@@ -31658,7 +31803,7 @@
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -25,14 +37,20 @@</div>
+        <div class="d2h-code-side-line">@@ -25,14 +33,20 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
@@ -31863,66 +32008,16 @@
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -42,23 +60,37 @@</div>
+        <div class="d2h-code-side-line">@@ -45,20 +59,32 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      42
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">  discovery: done</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      43
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">  stale-devices: done</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      44
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">  diagnostics: done</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del d2h-change">
       45
     </td>
-    <td class="d2h-del d2h-change">
+    <td class="d2h-cntx">
         <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">  exception-translations:<del> done</del></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">  exception-translations: done</span>
         </div>
     </td>
 </tr><tr>
@@ -32251,132 +32346,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      2
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">  ## Bronze</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      3
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">  config-flow: done</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      4
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">  test-before-configure: done</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      5
-    </td>
-    <td class="d2h-ins d2h-change">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">  unique-config-entry:</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      6
-    </td>
-    <td class="d2h-ins d2h-change">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><ins>    status</ins>: <ins>todo</ins></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-ins">
-      7
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    comment: Add tests preventing second entry for same device</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-ins">
-      8
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">  config-flow-test-coverage:</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-ins">
-      9
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    status: todo</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-ins">
-      10
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    comment: Cover test_form and zeroconf</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
       11
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">  runtime-data: done</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      12
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">  test-before-setup: done</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      13
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">  appropriate-polling: done</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-info"></td>
-    <td class="d2h-info">
-        <div class="d2h-code-side-line">&nbsp;</div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      15
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -32386,7 +32356,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      16
+      12
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -32396,7 +32366,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      17
+      13
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -32406,7 +32376,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      18
+      14
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
@@ -32416,7 +32386,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      19
+      15
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
@@ -32426,7 +32396,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      20
+      16
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
@@ -32436,7 +32406,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      21
+      17
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
@@ -32446,7 +32416,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      22
+      18
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -32456,7 +32426,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      23
+      19
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -32466,7 +32436,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      24
+      20
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -32476,7 +32446,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      25
+      21
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -32486,17 +32456,17 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      26
+      22
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    comment: Rewrite top section, docs PR prepared</span>
+            <span class="d2h-code-line-ctn">    comment: Rewrite top section, docs PR prepared waiting for 36087 merge</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      27
+      23
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -32506,7 +32476,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      28
+      24
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -32516,7 +32486,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      29
+      25
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -32526,7 +32496,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      30
+      26
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -32536,7 +32506,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      31
+      27
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -32546,7 +32516,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      32
+      28
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -32561,7 +32531,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      37
+      33
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -32571,7 +32541,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      38
+      34
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -32581,7 +32551,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      39
+      35
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -32591,7 +32561,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      40
+      36
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
@@ -32601,7 +32571,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      41
+      37
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -32611,7 +32581,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      42
+      38
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
@@ -32621,7 +32591,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      43
+      39
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
@@ -32631,7 +32601,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      44
+      40
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
@@ -32641,7 +32611,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      45
+      41
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -32651,7 +32621,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      46
+      42
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -32661,7 +32631,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      47
+      43
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -32671,7 +32641,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      48
+      44
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
@@ -32681,7 +32651,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      49
+      45
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
@@ -32691,7 +32661,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      50
+      46
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -32701,7 +32671,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      51
+      47
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -32711,7 +32681,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      52
+      48
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -32721,7 +32691,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      53
+      49
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -32731,7 +32701,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      54
+      50
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -32741,7 +32711,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      55
+      51
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -32751,7 +32721,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      56
+      52
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -32766,67 +32736,17 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
+      59
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">  exception-translations: done</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
       60
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">  discovery: done</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      61
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">  stale-devices: done</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      62
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">  diagnostics: done</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      63
-    </td>
-    <td class="d2h-ins d2h-change">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">  exception-translations:</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-ins">
-      64
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    status: todo</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-ins">
-      65
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    comment: Add coordinator, util exceptions (climate done in core 132175)</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      66
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -32836,7 +32756,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      67
+      61
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -32846,7 +32766,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      68
+      62
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
@@ -32856,7 +32776,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      69
+      63
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
@@ -32866,7 +32786,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      70
+      64
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -32876,7 +32796,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      71
+      65
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -32886,7 +32806,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      72
+      66
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -32896,7 +32816,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      73
+      67
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -32906,7 +32826,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      74
+      68
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -32916,7 +32836,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      75
+      69
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
@@ -32926,7 +32846,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      76
+      70
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
@@ -32936,17 +32856,17 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      77
+      71
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><ins>    comment</ins>: <ins>Check for completeness, PR prepared</ins></span>
+            <span class="d2h-code-line-ctn"><ins>    comment</ins>: <ins>Check for completeness, PR prepared waiting for 36087 merge</ins></span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      78
+      72
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -32956,7 +32876,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      79
+      73
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -32966,17 +32886,17 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      80
+      74
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    comment: The list is there but could be improved for readability, PR prepared</span>
+            <span class="d2h-code-line-ctn">    comment: The list is there but could be improved for readability, PR prepared waiting for 36087 merge</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      81
+      75
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -32986,7 +32906,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      82
+      76
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -32996,17 +32916,17 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      83
+      77
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    comment: Check for completeness</span>
+            <span class="d2h-code-line-ctn">    comment: Check for completeness, PR prepared waiting for 36087 merge</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      84
+      78
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -33016,7 +32936,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      85
+      79
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
@@ -33026,7 +32946,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      86
+      80
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
@@ -33036,7 +32956,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      87
+      81
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
@@ -33046,7 +32966,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      88
+      82
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -33056,7 +32976,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      89
+      83
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -33066,17 +32986,17 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      90
+      84
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    comment: Check for completeness, PR prepared</span>
+            <span class="d2h-code-line-ctn">    comment: Check for completeness, PR prepared waiting for 36087 merge</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      91
+      85
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -33086,7 +33006,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      92
+      86
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -33096,17 +33016,17 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      93
+      87
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    comment: Check for completeness</span>
+            <span class="d2h-code-line-ctn">    comment: Check for completeness, PR prepared waiting for 36087 merge</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      94
+      88
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -33116,7 +33036,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      95
+      89
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -33126,7 +33046,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      96
+      90
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -46447,7 +46367,7 @@
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -278,28 +267,30 @@</div>
+        <div class="d2h-code-side-line">@@ -278,28 +267,45 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
@@ -46686,7 +46606,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">      &quot;<del>name</del>&quot;: &quot;<del>Delete</del> <del>Plugwise</del> <del>notification</del>&quot;<del>,</del></span>
+            <span class="d2h-code-line-ctn">      &quot;<del>name</del>&quot;: &quot;<del>Delete Plugwise notification</del>&quot;<del>,</del></span>
         </div>
     </td>
 </tr><tr>
@@ -46697,6 +46617,156 @@
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
             <span class="d2h-code-line-ctn"><del>      &quot;description&quot;: &quot;Deletes a Plugwise Notification&quot;</del></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -48610,7 +48680,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    &quot;<ins>invalid_temperature_change_requested</ins>&quot;: {</span>
+            <span class="d2h-code-line-ctn">    &quot;<ins>authentication_failed</ins>&quot;: {</span>
         </div>
     </td>
 </tr><tr>
@@ -48620,7 +48690,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">      &quot;<ins>message</ins>&quot;: &quot;<ins>Invalid</ins> <ins>temperature</ins> <ins>change requested.</ins>&quot;</span>
+            <span class="d2h-code-line-ctn">      &quot;<ins>message</ins>&quot;: &quot;<ins>[%key:common::config_flow::error::invalid_auth%]</ins>&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -48640,7 +48710,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    &quot;unsupported_hvac_mode_requested&quot;: {</span>
+            <span class="d2h-code-line-ctn">    &quot;data_incomplete_or_missing&quot;: {</span>
         </div>
     </td>
 </tr><tr>
@@ -48650,12 +48720,162 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">      &quot;message&quot;: &quot;Data incomplete or missing.&quot;</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      294
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">    },</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      295
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">    &quot;error_communicating_with_api&quot;: {</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      296
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">      &quot;message&quot;: &quot;Error communicating with API: {error}.&quot;</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      297
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">    },</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      298
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">    &quot;failed_to_connect&quot;: {</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      299
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">      &quot;message&quot;: &quot;[%key:common::config_flow::error::cannot_connect%]&quot;</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      300
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">    },</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      301
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">    &quot;invalid_xml_data&quot;: {</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      302
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">      &quot;message&quot;: &quot;[%key:component::plugwise::config::error::response_error%]&quot;</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      303
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">    },</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      304
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">    &quot;unsupported_firmware&quot;: {</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      305
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">      &quot;message&quot;: &quot;[%key:component::plugwise::config::error::unsupported%]&quot;</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      306
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">    },</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      307
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">    &quot;unsupported_hvac_mode_requested&quot;: {</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      308
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn">      &quot;message&quot;: &quot;Unsupported mode {hvac_mode} requested, valid modes are: {hvac_modes}.&quot;</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      294
+      309
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -48665,7 +48885,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      295
+      310
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -48675,7 +48895,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      296
+      311
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -51228,7 +51448,27 @@
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -11,11 +9,6 @@</div>
+        <div class="d2h-code-side-line">@@ -9,13 +7,9 @@</div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      9
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      10
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">from homeassistant.exceptions import HomeAssistantError</span>
+        </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
@@ -51236,6 +51476,16 @@
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
             <span class="d2h-code-line-prefix">&nbsp;</span>
             <span class="d2h-code-line-ctn"><br></span>
         </div>
@@ -51340,6 +51590,151 @@
             <span class="d2h-code-line-ctn">    func: Callable[Concatenate[_PlugwiseEntityT, _P], Awaitable[_R]],</span>
         </div>
     </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-info"></td>
+    <td class="d2h-info">
+        <div class="d2h-code-side-line">@@ -31,10 +25,14 @@</div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      31
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">    ) -&gt; _R:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      32
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        try:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      33
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">            return await func(self, *args, **kwargs)</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
+      34
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        except PlugwiseException as <del>error</del>:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      35
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">            raise HomeAssistantError(</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
+      36
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                <del>f&quot;Error communicating with API: {error}&quot;</del></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
+      37
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><del>            ) from error</del></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      38
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        finally:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      39
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">            await self.coordinator.async_request_refresh()</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      40
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
 </tr>
                     </tbody>
                 </table>
@@ -51431,6 +51826,26 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
+      7
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      8
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">from homeassistant.exceptions import HomeAssistantError</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
       9
     </td>
     <td class="d2h-cntx">
@@ -51440,13 +51855,13 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
+    <td class="d2h-code-side-linenumber d2h-ins">
       10
     </td>
-    <td class="d2h-cntx">
+    <td class="d2h-ins">
         <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">from .entity import PlugwiseEntity</span>
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">from .const import DOMAIN</span>
         </div>
     </td>
 </tr><tr>
@@ -51456,57 +51871,7 @@
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">from .entity import PlugwiseEntity</span>
         </div>
     </td>
 </tr><tr>
@@ -51520,13 +51885,63 @@
         </div>
     </td>
 </tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
       13
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">def plugwise_command[_PlugwiseEntityT: PlugwiseEntity, **_P, _R](</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -51536,7 +51951,162 @@
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">def plugwise_command[_PlugwiseEntityT: PlugwiseEntity, **_P, _R](</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      15
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
             <span class="d2h-code-line-ctn">    func: Callable[Concatenate[_PlugwiseEntityT, _P], Awaitable[_R]],</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-info"></td>
+    <td class="d2h-info">
+        <div class="d2h-code-side-line">&nbsp;</div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      25
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">    ) -&gt; _R:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      26
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        try:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      27
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">            return await func(self, *args, **kwargs)</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins d2h-change">
+      28
+    </td>
+    <td class="d2h-ins d2h-change">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">        except PlugwiseException as <ins>err</ins>:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      29
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">            raise HomeAssistantError(</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins d2h-change">
+      30
+    </td>
+    <td class="d2h-ins d2h-change">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">                <ins>translation_domain=DOMAIN,</ins></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins d2h-change">
+      31
+    </td>
+    <td class="d2h-ins d2h-change">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn"><ins>                translation_key=&quot;error_communicating_with_api&quot;,</ins></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      32
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">                translation_placeholders={</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      33
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">                    &quot;error&quot;: str(err),</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      34
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">                },</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      35
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">            ) from err</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      36
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        finally:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      37
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">            await self.coordinator.async_request_refresh()</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      38
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr>
