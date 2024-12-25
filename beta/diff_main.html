@@ -79,7 +79,7 @@
       </svg>      <a href="#d2h-532788" class="d2h-file-name">/home/runner/work/progress/progress/clones/beta/{beta/custom_components → ha-core/homeassistant/components}/plugwise/binary_sensor.py</a>
       <span class="d2h-file-stats">
           <span class="d2h-lines-added">+38</span>
-          <span class="d2h-lines-deleted">-92</span>
+          <span class="d2h-lines-deleted">-94</span>
       </span>
     </span>
 </li>
@@ -114,8 +114,8 @@
           <path d="M6 9H3V7h3V4l5 4-5 4V9z m8-7v12c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h12c0.55 0 1 0.45 1 1z m-1 0H1v12h12V2z"></path>
       </svg>      <a href="#d2h-252159" class="d2h-file-name">/home/runner/work/progress/progress/clones/beta/{beta/custom_components → ha-core/homeassistant/components}/plugwise/config_flow.py</a>
       <span class="d2h-file-stats">
-          <span class="d2h-lines-added">+27</span>
-          <span class="d2h-lines-deleted">-133</span>
+          <span class="d2h-lines-added">+28</span>
+          <span class="d2h-lines-deleted">-136</span>
       </span>
     </span>
 </li>
@@ -3126,16 +3126,66 @@
                     <tr>
     <td class="d2h-code-side-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -13,33 +13,16 @@</div>
+        <div class="d2h-code-side-line">@@ -8,9 +8,6 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      13
+      8
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">    BinarySensorEntity,</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      9
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">from plugwise.constants import BinarySensorType</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      10
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      11
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">from homeassistant.components import (</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      12
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">    persistent_notification,  # pw-beta Plugwise notifications</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      13
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">)</span>
         </div>
     </td>
 </tr><tr>
@@ -3145,7 +3195,7 @@
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">    BinarySensorEntityDescription,</span>
+            <span class="d2h-code-line-ctn">from homeassistant.components.binary_sensor import (</span>
         </div>
     </td>
 </tr><tr>
@@ -3155,42 +3205,27 @@
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">)</span>
+            <span class="d2h-code-line-ctn">    BinarySensorDeviceClass,</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
+    <td class="d2h-code-side-linenumber d2h-cntx">
       16
     </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">import homeassistant.components.persistent_notification as pn  # pw-beta Plugwise notifications</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      17
-    </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">from homeassistant.const import EntityCategory</span>
+            <span class="d2h-code-line-ctn">    BinarySensorEntity,</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      18
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">from homeassistant.core import HomeAssistant, callback</span>
-        </div>
+    <td class="d2h-code-side-linenumber d2h-info"></td>
+    <td class="d2h-info">
+        <div class="d2h-code-side-line">@@ -21,27 +18,11 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      19
+      21
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3200,7 +3235,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      20
+      22
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3210,7 +3245,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      21
+      23
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3220,7 +3255,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      22
+      24
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -3230,7 +3265,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      23
+      25
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -3240,7 +3275,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      24
+      26
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -3250,7 +3285,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      25
+      27
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -3260,7 +3295,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      26
+      28
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -3270,7 +3305,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      27
+      29
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -3280,7 +3315,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      28
+      30
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -3290,7 +3325,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      29
+      31
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -3300,7 +3335,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      30
+      32
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -3310,7 +3345,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      31
+      33
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -3320,7 +3355,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      32
+      34
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -3330,7 +3365,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      33
+      35
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -3340,7 +3375,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      34
+      36
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -3350,7 +3385,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      35
+      37
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -3360,7 +3395,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      36
+      38
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -3370,7 +3405,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      37
+      39
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -3380,7 +3415,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      38
+      40
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -3390,7 +3425,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      39
+      41
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -3400,7 +3435,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      40
+      42
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3410,7 +3445,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      41
+      43
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3420,7 +3455,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      42
+      44
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3450,7 +3485,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      43
+      45
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3460,7 +3495,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      44
+      46
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3470,7 +3505,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      45
+      47
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3481,11 +3516,11 @@
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -51,51 +34,50 @@</div>
+        <div class="d2h-code-side-line">@@ -53,51 +34,50 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      51
+      53
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3495,7 +3530,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      52
+      54
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3505,7 +3540,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      53
+      55
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3515,7 +3550,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      54
+      56
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -3525,7 +3560,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      55
+      57
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -3535,7 +3570,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      56
+      58
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3545,7 +3580,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      57
+      59
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -3555,7 +3590,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      58
+      60
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3565,7 +3600,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      59
+      61
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3575,7 +3610,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      60
+      62
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3585,7 +3620,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      61
+      63
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3595,7 +3630,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      62
+      64
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -3605,7 +3640,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      63
+      65
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -3615,7 +3650,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      64
+      66
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3625,7 +3660,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      65
+      67
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3635,7 +3670,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      66
+      68
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3645,7 +3680,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      67
+      69
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -3655,7 +3690,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      68
+      70
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -3665,7 +3700,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      69
+      71
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3675,7 +3710,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      70
+      72
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3685,7 +3720,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      71
+      73
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3695,7 +3730,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      72
+      74
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -3705,7 +3740,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      73
+      75
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -3715,7 +3750,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      74
+      76
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3725,7 +3760,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      75
+      77
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3735,7 +3770,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      76
+      78
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3745,7 +3780,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      77
+      79
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -3755,7 +3790,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      78
+      80
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -3765,7 +3800,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      79
+      81
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3775,7 +3810,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      80
+      82
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3785,7 +3820,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      81
+      83
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3795,7 +3830,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      82
+      84
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -3805,7 +3840,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      83
+      85
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -3815,7 +3850,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      84
+      86
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3825,7 +3860,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      85
+      87
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3835,7 +3870,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      86
+      88
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3845,7 +3880,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      87
+      89
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -3855,7 +3890,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      88
+      90
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -3865,7 +3900,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      89
+      91
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3875,7 +3910,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      90
+      92
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3885,7 +3920,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      91
+      93
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3895,7 +3930,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      92
+      94
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -3905,7 +3940,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      93
+      95
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -3915,7 +3950,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      94
+      96
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3925,7 +3960,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      95
+      97
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3935,7 +3970,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      96
+      98
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3945,7 +3980,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      97
+      99
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -3955,7 +3990,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      98
+      100
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -3965,7 +4000,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      99
+      101
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3975,7 +4010,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      100
+      102
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3985,7 +4020,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      101
+      103
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -3996,11 +4031,11 @@
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -106,7 +88,7 @@</div>
+        <div class="d2h-code-side-line">@@ -108,7 +88,7 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      106
+      108
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -4010,7 +4045,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      107
+      109
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -4020,7 +4055,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      108
+      110
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -4030,7 +4065,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      109
+      111
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -4040,7 +4075,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      110
+      112
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -4050,7 +4085,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      111
+      113
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -4060,7 +4095,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      112
+      114
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -4071,11 +4106,11 @@
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -115,40 +97,24 @@</div>
+        <div class="d2h-code-side-line">@@ -117,40 +97,24 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      115
+      117
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -4085,7 +4120,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      116
+      118
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -4095,32 +4130,12 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      117
+      119
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
             <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      118
-    </td>
-    <td class="d2h-del d2h-change">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        <del># Upstream consts to HA</del></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      119
-    </td>
-    <td class="d2h-del d2h-change">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>        # async_add_entities</del>(</span>
         </div>
     </td>
 </tr><tr>
@@ -4130,7 +4145,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>        #     PlugwiseBinarySensorEntity(coordinator,</del> device_id<del>,</del> <del>description)</del></span>
+            <span class="d2h-code-line-ctn">        <del># Upstream consts to HA</del></span>
         </div>
     </td>
 </tr><tr>
@@ -4140,7 +4155,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>        #     for</del> <del>device_id in coordinator.new_devices</del></span>
+            <span class="d2h-code-line-ctn"><del>        # async_add_entities</del>(</span>
         </div>
     </td>
 </tr><tr>
@@ -4150,7 +4165,7 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>        #     if</del> (</span>
+            <span class="d2h-code-line-ctn"><del>        #     PlugwiseBinarySensorEntity(coordinator,</del> device_id<del>,</del> <del>description)</del></span>
         </div>
     </td>
 </tr><tr>
@@ -4160,27 +4175,27 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>        #         </del>binary_sensors<del> := coordinator.data.devices[device_id].get(</del></span>
+            <span class="d2h-code-line-ctn"><del>        #     for</del> <del>device_id in coordinator.new_devices</del></span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
       124
     </td>
-    <td class="d2h-del">
+    <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        #             BINARY_SENSORS</span>
+            <span class="d2h-code-line-ctn"><del>        #     if</del> (</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
       125
     </td>
-    <td class="d2h-del">
+    <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        #         )</span>
+            <span class="d2h-code-line-ctn"><del>        #         </del>binary_sensors<del> := coordinator.data.devices[device_id].get(</del></span>
         </div>
     </td>
 </tr><tr>
@@ -4190,7 +4205,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        #     )</span>
+            <span class="d2h-code-line-ctn">        #             BINARY_SENSORS</span>
         </div>
     </td>
 </tr><tr>
@@ -4200,7 +4215,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        #     for description in PLUGWISE_BINARY_SENSORS</span>
+            <span class="d2h-code-line-ctn">        #         )</span>
         </div>
     </td>
 </tr><tr>
@@ -4210,7 +4225,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        #     if description.key in binary_sensors</span>
+            <span class="d2h-code-line-ctn">        #     )</span>
         </div>
     </td>
 </tr><tr>
@@ -4220,7 +4235,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        # )</span>
+            <span class="d2h-code-line-ctn">        #     for description in PLUGWISE_BINARY_SENSORS</span>
         </div>
     </td>
 </tr><tr>
@@ -4230,7 +4245,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">        #     if description.key in binary_sensors</span>
         </div>
     </td>
 </tr><tr>
@@ -4240,7 +4255,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        # pw-beta alternative for debugging</span>
+            <span class="d2h-code-line-ctn">        # )</span>
         </div>
     </td>
 </tr><tr>
@@ -4250,7 +4265,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        entities: list[PlugwiseBinarySensorEntity] = []</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -4260,7 +4275,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        for device_id in coordinator.new_devices:</span>
+            <span class="d2h-code-line-ctn">        # pw-beta alternative for debugging</span>
         </div>
     </td>
 </tr><tr>
@@ -4270,7 +4285,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            device = coordinator.data.devices[device_id]</span>
+            <span class="d2h-code-line-ctn">        entities: list[PlugwiseBinarySensorEntity] = []</span>
         </div>
     </td>
 </tr><tr>
@@ -4280,7 +4295,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            if not (binary_sensors := device.get(BINARY_SENSORS)):</span>
+            <span class="d2h-code-line-ctn">        for device_id in coordinator.new_devices:</span>
         </div>
     </td>
 </tr><tr>
@@ -4290,7 +4305,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                continue</span>
+            <span class="d2h-code-line-ctn">            device = coordinator.data.devices[device_id]</span>
         </div>
     </td>
 </tr><tr>
@@ -4300,7 +4315,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            for description in PLUGWISE_BINARY_SENSORS:</span>
+            <span class="d2h-code-line-ctn">            if not (binary_sensors := device.get(BINARY_SENSORS)):</span>
         </div>
     </td>
 </tr><tr>
@@ -4310,7 +4325,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                if description.key not in binary_sensors:</span>
+            <span class="d2h-code-line-ctn">                continue</span>
         </div>
     </td>
 </tr><tr>
@@ -4320,7 +4335,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                    continue</span>
+            <span class="d2h-code-line-ctn">            for description in PLUGWISE_BINARY_SENSORS:</span>
         </div>
     </td>
 </tr><tr>
@@ -4330,7 +4345,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                entities.append(PlugwiseBinarySensorEntity(coordinator, device_id, description))</span>
+            <span class="d2h-code-line-ctn">                if description.key not in binary_sensors:</span>
         </div>
     </td>
 </tr><tr>
@@ -4340,7 +4355,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                LOGGER.debug(</span>
+            <span class="d2h-code-line-ctn">                    continue</span>
         </div>
     </td>
 </tr><tr>
@@ -4350,12 +4365,32 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                entities.append(PlugwiseBinarySensorEntity(coordinator, device_id, description))</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      143
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                LOGGER.debug(</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      144
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
             <span class="d2h-code-line-ctn">                    &quot;Add %s %s binary sensor&quot;, device[&quot;name&quot;], description.translation_key</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      143
+      145
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -4365,7 +4400,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      144
+      146
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -4405,32 +4440,12 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      145
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      146
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">    _add_entities()</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
       147
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">    entry.async_on_unload(coordinator.async_add_listener(_add_entities))</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -4440,7 +4455,7 @@
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">    _add_entities()</span>
         </div>
     </td>
 </tr><tr>
@@ -4450,7 +4465,7 @@
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">    entry.async_on_unload(coordinator.async_add_listener(_add_entities))</span>
         </div>
     </td>
 </tr><tr>
@@ -4460,22 +4475,12 @@
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">class PlugwiseBinarySensorEntity(PlugwiseEntity, BinarySensorEntity):</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      151
-    </td>
-    <td class="d2h-del d2h-change">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    &quot;&quot;&quot;<del>Set</del> <del>up</del> <del>Plugwise</del> <del>binary_sensors from a config entry</del>.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      152
+      151
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -4485,12 +4490,22 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      153
+      152
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">    entity_description: PlugwiseBinarySensorEntityDescription</span>
+            <span class="d2h-code-line-ctn">class PlugwiseBinarySensorEntity(PlugwiseEntity, BinarySensorEntity):</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
+      153
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">    &quot;&quot;&quot;<del>Set</del> <del>up</del> <del>Plugwise</del> <del>binary_sensors from a config entry</del>.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -4504,13 +4519,33 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-info"></td>
-    <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -162,45 +128,25 @@</div>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      155
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">    entity_description: PlugwiseBinarySensorEntityDescription</span>
+        </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      162
+      156
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-info"></td>
+    <td class="d2h-info">
+        <div class="d2h-code-side-line">@@ -164,45 +128,25 @@</div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      164
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -4520,7 +4555,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      163
+      165
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -4530,7 +4565,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      164
+      166
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -4540,7 +4575,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      165
+      167
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -4550,32 +4585,12 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      166
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      167
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">    @property</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
       168
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">    def is_on(self) -&gt; bool:</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -4585,12 +4600,32 @@
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">    @property</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      170
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">    def is_on(self) -&gt; bool:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      171
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
             <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Return true if the binary sensor is on.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      170
+      172
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -4600,7 +4635,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      171
+      173
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -4610,7 +4645,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      172
+      174
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -4620,32 +4655,12 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      173
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                pn.async_create(</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
-      174
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                    self.hass, message, &quot;Plugwise Notification:&quot;, f&quot;{DOMAIN}.{notify_id}&quot;</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
       175
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                )</span>
+            <span class="d2h-code-line-ctn">                persistent_notification.async_create(</span>
         </div>
     </td>
 </tr><tr>
@@ -4655,7 +4670,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">                    self.hass, message, &quot;Plugwise Notification:&quot;, f&quot;{DOMAIN}.{notify_id}&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -4665,27 +4680,27 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        return self.device[BINARY_SENSORS][self.entity_description.key]</span>
+            <span class="d2h-code-line-ctn">                )</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
+    <td class="d2h-code-side-linenumber d2h-del">
       178
     </td>
-    <td class="d2h-cntx">
+    <td class="d2h-del">
         <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-prefix">-</span>
             <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
+    <td class="d2h-code-side-linenumber d2h-del">
       179
     </td>
-    <td class="d2h-cntx">
+    <td class="d2h-del">
         <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">    @property</span>
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        return self.device[BINARY_SENSORS][self.entity_description.key]</span>
         </div>
     </td>
 </tr><tr>
@@ -4695,7 +4710,7 @@
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">    def extra_state_attributes(self) -&gt; Mapping[str, Any] | None:</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -4705,17 +4720,17 @@
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Return entity specific state attributes.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn">    @property</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del d2h-change">
+    <td class="d2h-code-side-linenumber d2h-cntx">
       182
     </td>
-    <td class="d2h-del d2h-change">
+    <td class="d2h-cntx">
         <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if self.entity_description.key != <del>PLUGWISE_NOTIFICATION</del>:<del>  # Upstream const</del></span>
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">    def extra_state_attributes(self) -&gt; Mapping[str, Any] | None:</span>
         </div>
     </td>
 </tr><tr>
@@ -4725,37 +4740,37 @@
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Return entity specific state attributes.&quot;&quot;&quot;</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
+      184
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        if self.entity_description.key != <del>PLUGWISE_NOTIFICATION</del>:<del>  # Upstream const</del></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      185
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
             <span class="d2h-code-line-ctn">            return None</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      184
+      186
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
             <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      185
-    </td>
-    <td class="d2h-del d2h-change">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        <del>#</del> <del>pw-beta</del> <del>adjustment</del> <del>with</del> <del>attrs</del> <del>is</del> <del>to</del> <del>only</del> <del>represent</del> <del>severities *with* content</del></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      186
-    </td>
-    <td class="d2h-del d2h-change">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        <del>#</del> <del>not</del> <del>all</del> <del>severities including those without content as empty lists</del></span>
         </div>
     </td>
 </tr><tr>
@@ -4765,27 +4780,27 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>        attrs:</del> <del>dict[str,</del> <del>list[str]]</del> <del>= {}  # pw-beta Re-evaluate against Core</del></span>
+            <span class="d2h-code-line-ctn">        <del>#</del> <del>pw-beta</del> <del>adjustment</del> <del>with</del> <del>attrs</del> <del>is</del> <del>to</del> <del>only</del> <del>represent</del> <del>severities *with* content</del></span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
       188
     </td>
-    <td class="d2h-del">
+    <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self._notification = {}  # pw-beta</span>
+            <span class="d2h-code-line-ctn">        <del>#</del> <del>not</del> <del>all</del> <del>severities including those without content as empty lists</del></span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
       189
     </td>
-    <td class="d2h-del">
+    <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if notify := self.coordinator.data.gateway[NOTIFICATIONS]:</span>
+            <span class="d2h-code-line-ctn"><del>        attrs:</del> <del>dict[str,</del> <del>list[str]]</del> <del>= {}  # pw-beta Re-evaluate against Core</del></span>
         </div>
     </td>
 </tr><tr>
@@ -4795,27 +4810,27 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            for notify_id, details in notify.items():  # pw-beta uses notify_id</span>
+            <span class="d2h-code-line-ctn">        self._notification = {}  # pw-beta</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
+    <td class="d2h-code-side-linenumber d2h-del">
       191
     </td>
-    <td class="d2h-cntx">
+    <td class="d2h-del">
         <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">                for msg_type, msg in details.items():</span>
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        if notify := self.coordinator.data.gateway[NOTIFICATIONS]:</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
+    <td class="d2h-code-side-linenumber d2h-del">
       192
     </td>
-    <td class="d2h-cntx">
+    <td class="d2h-del">
         <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">                    msg_type = msg_type.lower()</span>
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            for notify_id, details in notify.items():  # pw-beta uses notify_id</span>
         </div>
     </td>
 </tr><tr>
@@ -4825,12 +4840,32 @@
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">                for msg_type, msg in details.items():</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      194
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">                    msg_type = msg_type.lower()</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      195
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
             <span class="d2h-code-line-ctn">                    if msg_type not in SEVERITIES:</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      194
+      196
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -4840,32 +4875,12 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      195
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
-      196
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                    if (</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
       197
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                        f&quot;{msg_type}_msg&quot; not in attrs</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -4875,7 +4890,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                    ):  # pw-beta Re-evaluate against Core</span>
+            <span class="d2h-code-line-ctn">                    if (</span>
         </div>
     </td>
 </tr><tr>
@@ -4885,12 +4900,32 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                        f&quot;{msg_type}_msg&quot; not in attrs</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      200
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">                    ):  # pw-beta Re-evaluate against Core</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      201
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
             <span class="d2h-code-line-ctn">                        attrs[f&quot;{msg_type}_msg&quot;] = []</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      200
+      202
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -4900,7 +4935,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      201
+      203
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -4910,7 +4945,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      202
+      204
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -4920,7 +4955,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      203
+      205
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -4930,7 +4965,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      204
+      206
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -4940,7 +4975,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      205
+      207
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -4950,7 +4985,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      206
+      208
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -4974,32 +5009,52 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      13
+      8
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">    BinarySensorEntity,</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      14
+      9
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">    BinarySensorEntityDescription,</span>
+            <span class="d2h-code-line-ctn">from plugwise.constants import BinarySensorType</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      15
+      10
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">)</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -5014,23 +5069,38 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      16
+      11
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">from homeassistant.const import EntityCategory</span>
+            <span class="d2h-code-line-ctn">from homeassistant.components.binary_sensor import (</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      17
+      12
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn">from homeassistant.core import HomeAssistant, callback</span>
+            <span class="d2h-code-line-ctn">    BinarySensorDeviceClass,</span>
         </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      13
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">    BinarySensorEntity,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-info"></td>
+    <td class="d2h-info">
+        <div class="d2h-code-side-line">&nbsp;</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
@@ -15485,7 +15555,7 @@
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -247,7 +205,8 @@</div>
+        <div class="d2h-code-side-line">@@ -247,19 +205,18 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
@@ -15568,13 +15638,133 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-info"></td>
-    <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -267,7 +226,7 @@</div>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      254
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      255
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">        configure_input = self.discovery_info or user_input</span>
+        </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      267
+      256
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        return self.async_show_form(</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      257
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">            step_id=SOURCE_USER,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del d2h-change">
+      258
+    </td>
+    <td class="d2h-del d2h-change">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            data_schema=smile_user_schema(<del>configure_input</del>),</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      259
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">            errors=errors,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      260
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        )</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      261
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      262
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      263
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">    async def async_step_reconfigure(</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      264
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        self, user_input: dict[str, Any] | None = None</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      265
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">    ) -&gt; ConfigFlowResult:</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-info"></td>
+    <td class="d2h-info">
+        <div class="d2h-code-side-line">@@ -269,7 +226,7 @@</div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      269
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -15584,7 +15774,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      268
+      270
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -15594,7 +15784,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      269
+      271
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -15604,7 +15794,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      270
+      272
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -15614,7 +15804,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      271
+      273
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -15624,7 +15814,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      272
+      274
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -15634,7 +15824,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      273
+      275
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -15645,11 +15835,11 @@
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -278,7 +237,8 @@</div>
+        <div class="d2h-code-side-line">@@ -280,7 +237,8 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      278
+      280
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -15659,7 +15849,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      279
+      281
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -15669,7 +15859,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      280
+      282
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -15679,7 +15869,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del d2h-change">
-      281
+      283
     </td>
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
@@ -15699,7 +15889,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      282
+      284
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -15709,7 +15899,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      283
+      285
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -15719,7 +15909,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      284
+      286
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -15730,11 +15920,11 @@
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -295,69 +255,3 @@</div>
+        <div class="d2h-code-side-line">@@ -297,69 +255,3 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      295
+      297
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -15744,7 +15934,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      296
+      298
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -15754,7 +15944,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      297
+      299
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -15764,32 +15954,12 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
-      298
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
-      299
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-del">
       300
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    @staticmethod</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -15799,7 +15969,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    @callback</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -15809,7 +15979,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    def async_get_options_flow(</span>
+            <span class="d2h-code-line-ctn">    @staticmethod</span>
         </div>
     </td>
 </tr><tr>
@@ -15819,7 +15989,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        config_entry: PlugwiseConfigEntry,</span>
+            <span class="d2h-code-line-ctn">    @callback</span>
         </div>
     </td>
 </tr><tr>
@@ -15829,7 +15999,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    ) -&gt; PlugwiseOptionsFlowHandler:  # pw-beta options</span>
+            <span class="d2h-code-line-ctn">    def async_get_options_flow(</span>
         </div>
     </td>
 </tr><tr>
@@ -15839,7 +16009,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Get the options flow for this handler.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn">        config_entry: PlugwiseConfigEntry,</span>
         </div>
     </td>
 </tr><tr>
@@ -15849,7 +16019,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        return PlugwiseOptionsFlowHandler(config_entry)</span>
+            <span class="d2h-code-line-ctn">    ) -&gt; PlugwiseOptionsFlowHandler:  # pw-beta options</span>
         </div>
     </td>
 </tr><tr>
@@ -15859,7 +16029,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Get the options flow for this handler.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -15869,7 +16039,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">        return PlugwiseOptionsFlowHandler(config_entry)</span>
         </div>
     </td>
 </tr><tr>
@@ -15879,7 +16049,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"># pw-beta - change the scan-interval via CONFIGURE</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -15889,7 +16059,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"># pw-beta - add homekit emulation via CONFIGURE</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -15899,7 +16069,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"># pw-beta - change the frontend refresh interval via CONFIGURE</span>
+            <span class="d2h-code-line-ctn"># pw-beta - change the scan-interval via CONFIGURE</span>
         </div>
     </td>
 </tr><tr>
@@ -15909,7 +16079,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">class PlugwiseOptionsFlowHandler(OptionsFlow):  # pw-beta options</span>
+            <span class="d2h-code-line-ctn"># pw-beta - add homekit emulation via CONFIGURE</span>
         </div>
     </td>
 </tr><tr>
@@ -15919,7 +16089,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    &quot;&quot;&quot;Plugwise option flow.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn"># pw-beta - change the frontend refresh interval via CONFIGURE</span>
         </div>
     </td>
 </tr><tr>
@@ -15929,7 +16099,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">class PlugwiseOptionsFlowHandler(OptionsFlow):  # pw-beta options</span>
         </div>
     </td>
 </tr><tr>
@@ -15939,7 +16109,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    def __init__(self, config_entry: ConfigEntry) -&gt; None:</span>
+            <span class="d2h-code-line-ctn">    &quot;&quot;&quot;Plugwise option flow.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -15949,7 +16119,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Initialize options flow.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -15959,7 +16129,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self.options = deepcopy(dict(config_entry.options))</span>
+            <span class="d2h-code-line-ctn">    def __init__(self, config_entry: ConfigEntry) -&gt; None:</span>
         </div>
     </td>
 </tr><tr>
@@ -15969,7 +16139,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Initialize options flow.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -15979,7 +16149,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    def _create_options_schema(self, coordinator: PlugwiseDataUpdateCoordinator) -&gt; vol.Schema:</span>
+            <span class="d2h-code-line-ctn">        self.options = deepcopy(dict(config_entry.options))</span>
         </div>
     </td>
 </tr><tr>
@@ -15989,7 +16159,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        interval = DEFAULT_SCAN_INTERVAL[coordinator.api.smile_type]  # pw-beta options</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -15999,7 +16169,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        schema = {</span>
+            <span class="d2h-code-line-ctn">    def _create_options_schema(self, coordinator: PlugwiseDataUpdateCoordinator) -&gt; vol.Schema:</span>
         </div>
     </td>
 </tr><tr>
@@ -16009,7 +16179,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            vol.Optional(</span>
+            <span class="d2h-code-line-ctn">        interval = DEFAULT_SCAN_INTERVAL[coordinator.api.smile_type]  # pw-beta options</span>
         </div>
     </td>
 </tr><tr>
@@ -16019,7 +16189,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                CONF_SCAN_INTERVAL,</span>
+            <span class="d2h-code-line-ctn">        schema = {</span>
         </div>
     </td>
 </tr><tr>
@@ -16029,7 +16199,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                default=self.options.get(CONF_SCAN_INTERVAL, interval.seconds),</span>
+            <span class="d2h-code-line-ctn">            vol.Optional(</span>
         </div>
     </td>
 </tr><tr>
@@ -16039,7 +16209,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            ): vol.All(cv.positive_int, vol.Clamp(min=10)),</span>
+            <span class="d2h-code-line-ctn">                CONF_SCAN_INTERVAL,</span>
         </div>
     </td>
 </tr><tr>
@@ -16049,7 +16219,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        }  # pw-beta</span>
+            <span class="d2h-code-line-ctn">                default=self.options.get(CONF_SCAN_INTERVAL, interval.seconds),</span>
         </div>
     </td>
 </tr><tr>
@@ -16059,7 +16229,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">            ): vol.All(cv.positive_int, vol.Clamp(min=10)),</span>
         </div>
     </td>
 </tr><tr>
@@ -16069,7 +16239,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if coordinator.api.smile_type == THERMOSTAT:</span>
+            <span class="d2h-code-line-ctn">        }  # pw-beta</span>
         </div>
     </td>
 </tr><tr>
@@ -16079,7 +16249,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            schema.update({</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -16089,7 +16259,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                vol.Optional(</span>
+            <span class="d2h-code-line-ctn">        if coordinator.api.smile_type == THERMOSTAT:</span>
         </div>
     </td>
 </tr><tr>
@@ -16099,7 +16269,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                    CONF_HOMEKIT_EMULATION,</span>
+            <span class="d2h-code-line-ctn">            schema.update({</span>
         </div>
     </td>
 </tr><tr>
@@ -16109,7 +16279,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                    default=self.options.get(CONF_HOMEKIT_EMULATION, False),</span>
+            <span class="d2h-code-line-ctn">                vol.Optional(</span>
         </div>
     </td>
 </tr><tr>
@@ -16119,7 +16289,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                ): vol.All(cv.boolean),</span>
+            <span class="d2h-code-line-ctn">                    CONF_HOMEKIT_EMULATION,</span>
         </div>
     </td>
 </tr><tr>
@@ -16129,7 +16299,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                vol.Optional(</span>
+            <span class="d2h-code-line-ctn">                    default=self.options.get(CONF_HOMEKIT_EMULATION, False),</span>
         </div>
     </td>
 </tr><tr>
@@ -16139,7 +16309,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                    CONF_REFRESH_INTERVAL,</span>
+            <span class="d2h-code-line-ctn">                ): vol.All(cv.boolean),</span>
         </div>
     </td>
 </tr><tr>
@@ -16149,7 +16319,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                    default=self.options.get(CONF_REFRESH_INTERVAL, 1.5),</span>
+            <span class="d2h-code-line-ctn">                vol.Optional(</span>
         </div>
     </td>
 </tr><tr>
@@ -16159,7 +16329,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">                ): vol.All(vol.Coerce(float), vol.Range(min=1.5, max=10.0)),</span>
+            <span class="d2h-code-line-ctn">                    CONF_REFRESH_INTERVAL,</span>
         </div>
     </td>
 </tr><tr>
@@ -16169,7 +16339,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            })  # pw-beta</span>
+            <span class="d2h-code-line-ctn">                    default=self.options.get(CONF_REFRESH_INTERVAL, 1.5),</span>
         </div>
     </td>
 </tr><tr>
@@ -16179,7 +16349,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">                ): vol.All(vol.Coerce(float), vol.Range(min=1.5, max=10.0)),</span>
         </div>
     </td>
 </tr><tr>
@@ -16189,7 +16359,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        return vol.Schema(schema)</span>
+            <span class="d2h-code-line-ctn">            })  # pw-beta</span>
         </div>
     </td>
 </tr><tr>
@@ -16209,7 +16379,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    async def async_step_none(</span>
+            <span class="d2h-code-line-ctn">        return vol.Schema(schema)</span>
         </div>
     </td>
 </tr><tr>
@@ -16219,7 +16389,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        self, user_input: dict[str, Any] | None = None</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -16229,7 +16399,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    ) -&gt; ConfigFlowResult:  # pragma: no cover</span>
+            <span class="d2h-code-line-ctn">    async def async_step_none(</span>
         </div>
     </td>
 </tr><tr>
@@ -16239,7 +16409,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;No options available.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn">        self, user_input: dict[str, Any] | None = None</span>
         </div>
     </td>
 </tr><tr>
@@ -16249,7 +16419,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if user_input is not None:</span>
+            <span class="d2h-code-line-ctn">    ) -&gt; ConfigFlowResult:  # pragma: no cover</span>
         </div>
     </td>
 </tr><tr>
@@ -16259,7 +16429,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            # Apparently not possible to abort an options flow at the moment</span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;No options available.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -16269,7 +16439,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            return self.async_create_entry(title=&quot;&quot;, data=self.options)</span>
+            <span class="d2h-code-line-ctn">        if user_input is not None:</span>
         </div>
     </td>
 </tr><tr>
@@ -16279,7 +16449,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        return self.async_show_form(step_id=&quot;none&quot;)</span>
+            <span class="d2h-code-line-ctn">            # Apparently not possible to abort an options flow at the moment</span>
         </div>
     </td>
 </tr><tr>
@@ -16289,7 +16459,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">            return self.async_create_entry(title=&quot;&quot;, data=self.options)</span>
         </div>
     </td>
 </tr><tr>
@@ -16299,7 +16469,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">    async def async_step_init(self, user_input: dict[str, Any] | None = None) -&gt; ConfigFlowResult:</span>
+            <span class="d2h-code-line-ctn">        return self.async_show_form(step_id=&quot;none&quot;)</span>
         </div>
     </td>
 </tr><tr>
@@ -16309,7 +16479,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Manage the Plugwise options.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -16319,7 +16489,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if not self.config_entry.data.get(CONF_HOST):</span>
+            <span class="d2h-code-line-ctn">    async def async_step_init(self, user_input: dict[str, Any] | None = None) -&gt; ConfigFlowResult:</span>
         </div>
     </td>
 </tr><tr>
@@ -16329,7 +16499,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            return await self.async_step_none(user_input)  # pragma: no cover</span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Manage the Plugwise options.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -16339,7 +16509,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">        if not self.config_entry.data.get(CONF_HOST):</span>
         </div>
     </td>
 </tr><tr>
@@ -16349,7 +16519,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        if user_input is not None:</span>
+            <span class="d2h-code-line-ctn">            return await self.async_step_none(user_input)  # pragma: no cover</span>
         </div>
     </td>
 </tr><tr>
@@ -16359,7 +16529,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            return self.async_create_entry(title=&quot;&quot;, data=user_input)</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -16369,7 +16539,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">        if user_input is not None:</span>
         </div>
     </td>
 </tr><tr>
@@ -16379,7 +16549,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        coordinator = self.config_entry.runtime_data</span>
+            <span class="d2h-code-line-ctn">            return self.async_create_entry(title=&quot;&quot;, data=user_input)</span>
         </div>
     </td>
 </tr><tr>
@@ -16389,7 +16559,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">        return self.async_show_form(</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -16399,7 +16569,7 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            step_id=INIT,</span>
+            <span class="d2h-code-line-ctn">        coordinator = self.config_entry.runtime_data</span>
         </div>
     </td>
 </tr><tr>
@@ -16409,12 +16579,32 @@
     <td class="d2h-del">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">            data_schema=self._create_options_schema(coordinator)</span>
+            <span class="d2h-code-line-ctn">        return self.async_show_form(</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-del">
       363
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            step_id=INIT,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      364
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">            data_schema=self._create_options_schema(coordinator)</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-del">
+      365
     </td>
     <td class="d2h-del">
         <div class="d2h-code-side-line">
@@ -18334,6 +18524,126 @@
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
             <span class="d2h-code-line-ctn">                return self.async_create_entry(title=api.smile_name, data=user_input)</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      213
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      214
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        return self.async_show_form(</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      215
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">            step_id=SOURCE_USER,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins d2h-change">
+      216
+    </td>
+    <td class="d2h-ins d2h-change">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">            data_schema=smile_user_schema(<ins>self.discovery_info</ins>),</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      217
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">            errors=errors,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      218
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        )</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      219
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      220
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">    async def async_step_reconfigure(</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      221
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">        self, user_input: dict[str, Any] | None = None</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-cntx">
+      222
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn">    ) -&gt; ConfigFlowResult:</span>
         </div>
     </td>
 </tr><tr>
