@@ -126,7 +126,7 @@
           <path d="M6 9H3V7h3V4l5 4-5 4V9z m8-7v12c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h12c0.55 0 1 0.45 1 1z m-1 0H1v12h12V2z"></path>
       </svg>      <a href="#d2h-561020" class="d2h-file-name">/home/runner/work/progress/progress/clones/beta/{beta/custom_components → ha-core/homeassistant/components}/plugwise/coordinator.py</a>
       <span class="d2h-file-stats">
-          <span class="d2h-lines-added">+89</span>
+          <span class="d2h-lines-added">+86</span>
           <span class="d2h-lines-deleted">-106</span>
       </span>
     </span>
@@ -22451,7 +22451,7 @@
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -25,139 +22,125 @@</div>
+        <div class="d2h-code-side-line">@@ -25,139 +22,122 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
@@ -23931,36 +23931,6 @@
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">&nbsp;</span>
             <span class="d2h-code-line-ctn">        return data</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
-      
-    </td>
-    <td class="d2h-cntx d2h-emptyplaceholder">
-        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
-            <span class="d2h-code-line-prefix">&nbsp;</span>
-            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -26109,7 +26079,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        self._async_add_remove_devices(data, self.config_entry)</span>
+            <span class="d2h-code-line-ctn">        self._async_add_remove_devices(data)</span>
         </div>
     </td>
 </tr><tr>
@@ -26139,7 +26109,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    def _async_add_remove_devices(</span>
+            <span class="d2h-code-line-ctn">    def _async_add_remove_devices(self, data: dict[str, GwEntityData]) -&gt; None:</span>
         </div>
     </td>
 </tr><tr>
@@ -26149,7 +26119,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        self, data: dict[str, GwEntityData], entry: ConfigEntry</span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Add new Plugwise devices, remove non-existing devices.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -26159,7 +26129,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    ) -&gt; None:</span>
+            <span class="d2h-code-line-ctn">        # Check for new or removed devices</span>
         </div>
     </td>
 </tr><tr>
@@ -26169,7 +26139,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Add new Plugwise devices, remove non-existing devices.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn">        self.new_devices = set(data) - self._current_devices</span>
         </div>
     </td>
 </tr><tr>
@@ -26179,7 +26149,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        # Check for new or removed devices</span>
+            <span class="d2h-code-line-ctn">        removed_devices = self._current_devices - set(data)</span>
         </div>
     </td>
 </tr><tr>
@@ -26189,7 +26159,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        self.new_devices = set(data) - self._current_devices</span>
+            <span class="d2h-code-line-ctn">        self._current_devices = set(data)</span>
         </div>
     </td>
 </tr><tr>
@@ -26199,7 +26169,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        removed_devices = self._current_devices - set(data)</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -26209,7 +26179,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        self._current_devices = set(data)</span>
+            <span class="d2h-code-line-ctn">        if removed_devices:</span>
         </div>
     </td>
 </tr><tr>
@@ -26219,7 +26189,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">            self._async_remove_devices(data)</span>
         </div>
     </td>
 </tr><tr>
@@ -26229,7 +26199,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        if removed_devices:</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -26239,7 +26209,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            self._async_remove_devices(data, entry)</span>
+            <span class="d2h-code-line-ctn">    def _async_remove_devices(self, data: dict[str, GwEntityData]) -&gt; None:</span>
         </div>
     </td>
 </tr><tr>
@@ -26249,7 +26219,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Clean registries when removed devices found.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -26259,7 +26229,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    def _async_remove_devices(</span>
+            <span class="d2h-code-line-ctn">        device_reg = dr.async_get(self.hass)</span>
         </div>
     </td>
 </tr><tr>
@@ -26269,7 +26239,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        self, data: dict[str, GwEntityData], entry: ConfigEntry</span>
+            <span class="d2h-code-line-ctn">        device_list = dr.async_entries_for_config_entry(</span>
         </div>
     </td>
 </tr><tr>
@@ -26279,7 +26249,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    ) -&gt; None:</span>
+            <span class="d2h-code-line-ctn">            device_reg, self.config_entry.entry_id</span>
         </div>
     </td>
 </tr><tr>
@@ -26289,7 +26259,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Clean registries when removed devices found.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn">        )</span>
         </div>
     </td>
 </tr><tr>
@@ -26299,7 +26269,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        device_reg = dr.async_get(self.hass)</span>
+            <span class="d2h-code-line-ctn">        # First find the Plugwise via_device</span>
         </div>
     </td>
 </tr><tr>
@@ -26309,7 +26279,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        device_list = dr.async_entries_for_config_entry(</span>
+            <span class="d2h-code-line-ctn">        gateway_device = device_reg.async_get_device({(DOMAIN, self.api.gateway_id)})</span>
         </div>
     </td>
 </tr><tr>
@@ -26319,7 +26289,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            device_reg, self.config_entry.entry_id</span>
+            <span class="d2h-code-line-ctn">        assert gateway_device is not None</span>
         </div>
     </td>
 </tr><tr>
@@ -26329,7 +26299,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        )</span>
+            <span class="d2h-code-line-ctn">        via_device_id = gateway_device.id</span>
         </div>
     </td>
 </tr><tr>
@@ -26339,7 +26309,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        # First find the Plugwise via_device</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -26349,7 +26319,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        gateway_device = device_reg.async_get_device({(DOMAIN, self.api.gateway_id)})</span>
+            <span class="d2h-code-line-ctn">        # Then remove the connected orphaned device(s)</span>
         </div>
     </td>
 </tr><tr>
@@ -26359,7 +26329,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        assert gateway_device is not None</span>
+            <span class="d2h-code-line-ctn">        for device_entry in device_list:</span>
         </div>
     </td>
 </tr><tr>
@@ -26369,7 +26339,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        via_device_id = gateway_device.id</span>
+            <span class="d2h-code-line-ctn">            for identifier in device_entry.identifiers:</span>
         </div>
     </td>
 </tr><tr>
@@ -26379,7 +26349,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">                if identifier[0] == DOMAIN:</span>
         </div>
     </td>
 </tr><tr>
@@ -26389,7 +26359,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        # Then remove the connected orphaned device(s)</span>
+            <span class="d2h-code-line-ctn">                    if (</span>
         </div>
     </td>
 </tr><tr>
@@ -26399,7 +26369,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        for device_entry in device_list:</span>
+            <span class="d2h-code-line-ctn">                        device_entry.via_device_id == via_device_id</span>
         </div>
     </td>
 </tr><tr>
@@ -26409,7 +26379,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            for identifier in device_entry.identifiers:</span>
+            <span class="d2h-code-line-ctn">                        and identifier[1] not in data</span>
         </div>
     </td>
 </tr><tr>
@@ -26419,7 +26389,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                if identifier[0] == DOMAIN:</span>
+            <span class="d2h-code-line-ctn">                    ):</span>
         </div>
     </td>
 </tr><tr>
@@ -26429,7 +26399,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                    if (</span>
+            <span class="d2h-code-line-ctn">                        device_reg.async_update_device(</span>
         </div>
     </td>
 </tr><tr>
@@ -26439,7 +26409,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                        device_entry.via_device_id == via_device_id</span>
+            <span class="d2h-code-line-ctn">                            device_entry.id,</span>
         </div>
     </td>
 </tr><tr>
@@ -26449,7 +26419,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                        and identifier[1] not in data</span>
+            <span class="d2h-code-line-ctn">                            remove_config_entry_id=self.config_entry.entry_id,</span>
         </div>
     </td>
 </tr><tr>
@@ -26459,7 +26429,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                    ):</span>
+            <span class="d2h-code-line-ctn">                        )</span>
         </div>
     </td>
 </tr><tr>
@@ -26469,7 +26439,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                        device_reg.async_update_device(</span>
+            <span class="d2h-code-line-ctn">                        LOGGER.debug(</span>
         </div>
     </td>
 </tr><tr>
@@ -26479,7 +26449,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                            device_entry.id, remove_config_entry_id=entry.entry_id</span>
+            <span class="d2h-code-line-ctn">                            &quot;Removed %s device %s %s from device_registry&quot;,</span>
         </div>
     </td>
 </tr><tr>
@@ -26489,7 +26459,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                        )</span>
+            <span class="d2h-code-line-ctn">                            DOMAIN,</span>
         </div>
     </td>
 </tr><tr>
@@ -26499,7 +26469,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                        LOGGER.debug(</span>
+            <span class="d2h-code-line-ctn">                            device_entry.model,</span>
         </div>
     </td>
 </tr><tr>
@@ -26509,42 +26479,12 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                            &quot;Removed %s device %s %s from device_registry&quot;,</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-ins">
-      143
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                            DOMAIN,</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-ins">
-      144
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                            device_entry.model,</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-ins">
-      145
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-side-line">
-            <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn">                            identifier[1],</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins">
-      146
+      143
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
@@ -28568,7 +28508,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">  &quot;<ins>requirements</ins>&quot;: <ins>[</ins>&quot;<ins>plugwise==1</ins>.<ins>7</ins>.<ins>3</ins>&quot;<ins>],</ins></span>
+            <span class="d2h-code-line-ctn">  &quot;<ins>requirements</ins>&quot;: <ins>[</ins>&quot;<ins>plugwise==1</ins>.<ins>7</ins>.<ins>4</ins>&quot;<ins>],</ins></span>
         </div>
     </td>
 </tr><tr>
