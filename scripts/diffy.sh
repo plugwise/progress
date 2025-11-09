@@ -17,7 +17,7 @@ git config --global user.email 'plugwise@users.noreply.github.com'
 
 cd "${clonedir}" || exit
 echo "" >  "${difffile}"
-diff -X "${pdir}/ignorelist.txt" -ur "${coredir}/" "${betadir}/" >> "${difffile}"
+diff -X "${pdir}/ignorelist.txt" -ur "${coredir}/" "${betadir}/" | grep -v "pw-beta" >> "${difffile}"
 
 diff2html -s "side" -F "${pdir}/diff.html" -i file -- "${difffile}" || exit 1
 
