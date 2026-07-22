@@ -138,7 +138,7 @@
           <path d="M6 9H3V7h3V4l5 4-5 4V9z m8-7v12c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h12c0.55 0 1 0.45 1 1z m-1 0H1v12h12V2z"></path>
       </svg>      <a href="#d2h-561020" class="d2h-file-name">/home/runner/work/progress/progress/clones/beta/{beta/custom_components → ha-core/homeassistant/components}/plugwise/coordinator.py</a>
       <span class="d2h-file-stats">
-          <span class="d2h-lines-added">+84</span>
+          <span class="d2h-lines-added">+88</span>
           <span class="d2h-lines-deleted">-80</span>
       </span>
     </span>
@@ -28658,7 +28658,7 @@
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-side-line">@@ -154,54 +133,79 @@</div>
+        <div class="d2h-code-side-line">@@ -154,54 +133,83 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
@@ -29057,7 +29057,47 @@
     <td class="d2h-del d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn"><del>        </del>)</span>
+            <span class="d2h-code-line-ctn"><del>        )</del></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-code-side-emptyplaceholder d2h-cntx d2h-emptyplaceholder">
+      
+    </td>
+    <td class="d2h-cntx d2h-emptyplaceholder">
+        <div class="d2h-code-side-line d2h-code-side-emptyplaceholder">
+            <span class="d2h-code-line-prefix">&nbsp;</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -31306,7 +31346,7 @@
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><ins>                device_entry := device_reg.async_get_device({(DOMAIN, device_id</ins>)<ins>})</ins></span>
+            <span class="d2h-code-line-ctn"><ins>                device_entry := device_reg.async_get_device_by_identifier(</ins></span>
         </div>
     </td>
 </tr><tr>
@@ -31316,7 +31356,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            ) is not None:</span>
+            <span class="d2h-code-line-ctn">                    (DOMAIN, device_id), self.config_entry.entry_id</span>
         </div>
     </td>
 </tr><tr>
@@ -31326,7 +31366,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                device_reg.async_update_device(</span>
+            <span class="d2h-code-line-ctn">                )</span>
         </div>
     </td>
 </tr><tr>
@@ -31336,7 +31376,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                    device_entry.id, remove_config_entry_id=self.config_entry.entry_id</span>
+            <span class="d2h-code-line-ctn">            ) is not None:</span>
         </div>
     </td>
 </tr><tr>
@@ -31346,7 +31386,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                )</span>
+            <span class="d2h-code-line-ctn">                device_reg.async_update_device(</span>
         </div>
     </td>
 </tr><tr>
@@ -31356,7 +31396,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                LOGGER.debug(</span>
+            <span class="d2h-code-line-ctn">                    device_entry.id, remove_config_entry_id=self.config_entry.entry_id</span>
         </div>
     </td>
 </tr><tr>
@@ -31366,7 +31406,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                    &quot;%s %s %s removed from device_registry&quot;,</span>
+            <span class="d2h-code-line-ctn">                )</span>
         </div>
     </td>
 </tr><tr>
@@ -31376,7 +31416,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                    DOMAIN,</span>
+            <span class="d2h-code-line-ctn">                LOGGER.debug(</span>
         </div>
     </td>
 </tr><tr>
@@ -31386,7 +31426,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                    device_entry.model,</span>
+            <span class="d2h-code-line-ctn">                    &quot;%s %s %s removed from device_registry&quot;,</span>
         </div>
     </td>
 </tr><tr>
@@ -31396,7 +31436,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                    device_id,</span>
+            <span class="d2h-code-line-ctn">                    DOMAIN,</span>
         </div>
     </td>
 </tr><tr>
@@ -31406,7 +31446,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                )</span>
+            <span class="d2h-code-line-ctn">                    device_entry.model,</span>
         </div>
     </td>
 </tr><tr>
@@ -31416,7 +31456,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">                    device_id,</span>
         </div>
     </td>
 </tr><tr>
@@ -31426,7 +31466,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            self._firmware_list.pop(device_id, None)</span>
+            <span class="d2h-code-line-ctn">                )</span>
         </div>
     </td>
 </tr><tr>
@@ -31446,7 +31486,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    def _update_device_firmware(self, data: dict[str, GwEntityData]) -&gt; None:</span>
+            <span class="d2h-code-line-ctn">            self._firmware_list.pop(device_id, None)</span>
         </div>
     </td>
 </tr><tr>
@@ -31456,7 +31496,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Detect firmware changes and update the device registry.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -31466,7 +31506,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        for device_id, device in data.items():</span>
+            <span class="d2h-code-line-ctn">    def _update_device_firmware(self, data: dict[str, GwEntityData]) -&gt; None:</span>
         </div>
     </td>
 </tr><tr>
@@ -31476,7 +31516,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            # Only update firmware when the key is present and not None, to avoid</span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Detect firmware changes and update the device registry.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -31486,7 +31526,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            # wiping stored firmware on partial or transient updates.</span>
+            <span class="d2h-code-line-ctn">        for device_id, device in data.items():</span>
         </div>
     </td>
 </tr><tr>
@@ -31496,7 +31536,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            if &quot;firmware&quot; not in device:</span>
+            <span class="d2h-code-line-ctn">            # Only update firmware when the key is present and not None, to avoid</span>
         </div>
     </td>
 </tr><tr>
@@ -31506,7 +31546,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                continue</span>
+            <span class="d2h-code-line-ctn">            # wiping stored firmware on partial or transient updates.</span>
         </div>
     </td>
 </tr><tr>
@@ -31516,7 +31556,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            new_firmware = device.get(&quot;firmware&quot;)</span>
+            <span class="d2h-code-line-ctn">            if &quot;firmware&quot; not in device:</span>
         </div>
     </td>
 </tr><tr>
@@ -31526,7 +31566,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            if new_firmware is None:</span>
+            <span class="d2h-code-line-ctn">                continue</span>
         </div>
     </td>
 </tr><tr>
@@ -31536,7 +31576,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                continue</span>
+            <span class="d2h-code-line-ctn">            new_firmware = device.get(&quot;firmware&quot;)</span>
         </div>
     </td>
 </tr><tr>
@@ -31546,7 +31586,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            if (</span>
+            <span class="d2h-code-line-ctn">            if new_firmware is None:</span>
         </div>
     </td>
 </tr><tr>
@@ -31556,7 +31596,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                device_id in self._firmware_list</span>
+            <span class="d2h-code-line-ctn">                continue</span>
         </div>
     </td>
 </tr><tr>
@@ -31566,7 +31606,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                and new_firmware != self._firmware_list[device_id]</span>
+            <span class="d2h-code-line-ctn">            if (</span>
         </div>
     </td>
 </tr><tr>
@@ -31576,7 +31616,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            ):</span>
+            <span class="d2h-code-line-ctn">                device_id in self._firmware_list</span>
         </div>
     </td>
 </tr><tr>
@@ -31586,7 +31626,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                updated = self._update_firmware_in_dr(device_id, new_firmware)</span>
+            <span class="d2h-code-line-ctn">                and new_firmware != self._firmware_list[device_id]</span>
         </div>
     </td>
 </tr><tr>
@@ -31596,7 +31636,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                if updated:</span>
+            <span class="d2h-code-line-ctn">            ):</span>
         </div>
     </td>
 </tr><tr>
@@ -31606,7 +31646,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                    self._firmware_list[device_id] = new_firmware</span>
+            <span class="d2h-code-line-ctn">                updated = self._update_firmware_in_dr(device_id, new_firmware)</span>
         </div>
     </td>
 </tr><tr>
@@ -31616,7 +31656,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn"><br></span>
+            <span class="d2h-code-line-ctn">                if updated:</span>
         </div>
     </td>
 </tr><tr>
@@ -31626,7 +31666,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    def _update_firmware_in_dr(self, device_id: str, firmware: str | None) -&gt; bool:</span>
+            <span class="d2h-code-line-ctn">                    self._firmware_list[device_id] = new_firmware</span>
         </div>
     </td>
 </tr><tr>
@@ -31636,7 +31676,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Update device sw_version in device_registry.&quot;&quot;&quot;</span>
+            <span class="d2h-code-line-ctn"><br></span>
         </div>
     </td>
 </tr><tr>
@@ -31646,7 +31686,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        device_reg = dr.async_get(self.hass)</span>
+            <span class="d2h-code-line-ctn">    def _update_firmware_in_dr(self, device_id: str, firmware: str | None) -&gt; bool:</span>
         </div>
     </td>
 </tr><tr>
@@ -31656,7 +31696,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        if (</span>
+            <span class="d2h-code-line-ctn">        &quot;&quot;&quot;Update device sw_version in device_registry.&quot;&quot;&quot;</span>
         </div>
     </td>
 </tr><tr>
@@ -31666,7 +31706,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            device_entry := device_reg.async_get_device({(DOMAIN, device_id)})</span>
+            <span class="d2h-code-line-ctn">        device_reg = dr.async_get(self.hass)</span>
         </div>
     </td>
 </tr><tr>
@@ -31676,7 +31716,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">        ) is not None:</span>
+            <span class="d2h-code-line-ctn">        if (</span>
         </div>
     </td>
 </tr><tr>
@@ -31686,7 +31726,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            device_reg.async_update_device(device_entry.id, sw_version=firmware)</span>
+            <span class="d2h-code-line-ctn">            device_entry := device_reg.async_get_device_by_identifier(</span>
         </div>
     </td>
 </tr><tr>
@@ -31696,7 +31736,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            LOGGER.debug(</span>
+            <span class="d2h-code-line-ctn">                (DOMAIN, device_id), self.config_entry.entry_id</span>
         </div>
     </td>
 </tr><tr>
@@ -31706,7 +31746,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                &quot;Firmware in device_registry updated for %s %s %s&quot;,</span>
+            <span class="d2h-code-line-ctn">            )</span>
         </div>
     </td>
 </tr><tr>
@@ -31716,7 +31756,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                DOMAIN,</span>
+            <span class="d2h-code-line-ctn">        ) is not None:</span>
         </div>
     </td>
 </tr><tr>
@@ -31726,7 +31766,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                device_entry.model,</span>
+            <span class="d2h-code-line-ctn">            device_reg.async_update_device(device_entry.id, sw_version=firmware)</span>
         </div>
     </td>
 </tr><tr>
@@ -31736,7 +31776,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">                device_id,</span>
+            <span class="d2h-code-line-ctn">            LOGGER.debug(</span>
         </div>
     </td>
 </tr><tr>
@@ -31746,7 +31786,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">            )</span>
+            <span class="d2h-code-line-ctn">                &quot;Firmware in device_registry updated for %s %s %s&quot;,</span>
         </div>
     </td>
 </tr><tr>
@@ -31756,12 +31796,52 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line">
             <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">                DOMAIN,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      210
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">                device_entry.model,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      211
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">                device_id,</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      212
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">            )</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-side-linenumber d2h-ins">
+      213
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line">
+            <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn">            return True</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      210
+      214
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line">
@@ -31771,7 +31851,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-ins d2h-change">
-      211
+      215
     </td>
     <td class="d2h-ins d2h-change">
         <div class="d2h-code-side-line">
